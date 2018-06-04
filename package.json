@@ -4,7 +4,13 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
-    "jquery": "^3.3.1"
+    "bulma": "^0.7.1",
+    "carbon-components": "^8.23.0",
+    "jquery": "^3.3.1",
+    "sweetalert": "^2.1.0",
+    "tippy": "^0.0.0",
+    "tippy.js": "^2.5.2",
+    "typed.js": "^2.0.7"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
