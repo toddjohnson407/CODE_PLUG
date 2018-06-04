@@ -7,8 +7,8 @@ function bindSweetAlertButtonDemo() {
   if (swalButton) { // protect other pages
     swalButton.addEventListener('click', () => {
       swal({
-        title: "SUCK MY COCK",
-        text: "On your knees please.",
+        title: "Welcome to CODE:PLUG",
+        text: "Learn to code.",
         icon: "success"
       });
     });

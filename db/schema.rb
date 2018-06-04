@@ -10,10 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_105221) do
+ActiveRecord::Schema.define(version: 2018_06_04_152301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "course_id"
+    t.bigint "user_id"
+    t.bigint "review_id"
+    t.integer "hours"
+    t.index ["course_id"], name: "index_bookings_on_course_id"
+    t.index ["review_id"], name: "index_bookings_on_review_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.integer "price"
+    t.string "rate"
+    t.text "description"
+    t.string "address"
+    t.string "city"
+    t.integer "rating_average"
+    t.bigint "subject_id"
+    t.bigint "user_id"
+    t.index ["subject_id"], name: "index_courses_on_subject_id"
+    t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "credits", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "available_hours"
+    t.bigint "user_id"
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_credits_on_course_id"
+    t.index ["user_id"], name: "index_credits_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "content"
+    t.integer "rating"
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "category"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +83,11 @@ ActiveRecord::Schema.define(version: 2018_06_04_105221) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "courses"
+  add_foreign_key "bookings", "reviews"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "courses", "subjects"
+  add_foreign_key "courses", "users"
+  add_foreign_key "credits", "courses"
+  add_foreign_key "credits", "users"
 end
