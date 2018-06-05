@@ -105,6 +105,9 @@
   transform: translate3d(0,0,0);
 }
 
+h2:before {
+  background-color: transparent;
+}
 
 .front p {
   letter-spacing: 1px;
