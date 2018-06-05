@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Subject.destroy_all
+
+Subject.create(category: 'Ruby')
+Subject.create(category: 'JavaScript')
+Subject.create(category: 'Python')
+Subject.create(category: 'HTML/CSS')
+Subject.create(category: 'C++')
+Subject.create(category: 'Swift')
+Subject.create(category: 'Perl')
+Subject.create(category: 'Assembly')
