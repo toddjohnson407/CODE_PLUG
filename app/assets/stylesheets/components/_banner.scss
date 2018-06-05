@@ -21,3 +21,57 @@
   margin-bottom: 30px;
 }
 
+.container h2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+ margin-left: 8px;
+  margin-top: 25px;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.container p {
+  font-size: 18px;
+  text-align: left;
+    margin-left: 8px;
+
+  font-family: "Raleway", "Helvetica", "sans-serif";
+}
+
+.container-card {
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  background:#585959;
+  color: #fff;
+  overflow: hidden;
+  // margin-bottom: 30px;
+  top: 0;
+  left: 0;
+  width: auto;
+  // height: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  // box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+}
+
+.container .fa-comments {
+  font-size: 50px;
+  margin-left: -290px;  
+  margin-top: 10px; 
+}
+
+.container .fa-lightbulb {
+  font-size: 50px;
+  margin-left: -290px;  
+  margin-top: 10px; 
+}
+
+.container .fa-history {
+  font-size: 50px;
+  margin-left: -290px;  
+  margin-top: 10px; 
+}
+
