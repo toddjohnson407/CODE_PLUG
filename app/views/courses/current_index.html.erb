@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <% @courses.each do |course| %>
+        <% if course.user_id == current_user.id %>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="card">
+              <div class="front">
+                <img src="" alt="">
+                <div class="caption">
+                  <h2><%=course.title %></h2>
+                  <% if course.subject.nil? %>
+                    <%= puts 'working' %>
+                    <h6><%=course.price%>€</h6>
+                    <p><%= course.description[0,30] %>... <br>
+                      <%= course.address %></p>
+                  <% else %>
+                    <h6><%=course.price%>€</h6>
+                    <p><%= course.description[0,30] %>... <br>
+                      <%= course.price %>€ <%= course.subject.category %><br>
+                      <%= course.address %></p>
+                  <% end %>
+                  <a href="#"><%= link_to "", course_path(course)%></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
