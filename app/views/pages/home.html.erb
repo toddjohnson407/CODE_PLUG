@@ -34,4 +34,11 @@
 </div>
 </div>
 </div>
+<%= content_for :after_js do %>
+  <%= javascript_tag do %>
+    document.app.loadDynamicBannerText();
+    document.app.bindSweetAlertButtonDemo();
+    document.app.showToolTip();
+  <% end %>
+<% end %>
 
