@@ -6,15 +6,13 @@ class CoursesController < ApplicationController
   end
 
   def index
-
-    @courses = Course.all
+    @courses = policy_scope(Course).order(created_at: :desc)
   end
 
   def show
-      @booking = Booking.new
-
+      # @booking = Booking.new
       @course = Course.find(params[:id])
-      @markers = { lat: @course.latitude, lng: @course.longitude }
+      # @markers = { lat: @course.latitude, lng: @course.longitude }
   end
 
   def new
@@ -25,7 +23,9 @@ class CoursesController < ApplicationController
   end
 
   def create
+    @subject = Subject.find_by(category: params[:course][:subject])
     @course = Course.new(course_params)
+    @course.subject = @subject
     @course.user = current_user
 
     if @course.save
@@ -55,11 +55,11 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
 
   def set_course
-    @course = course.find(params[:id])
+    @course = Course.find(params[:id])
     authorize @course
   end
 
   def course_params
-    params.require(:course).permit(:name, :user_id, :price, :description, :address, :photo)
+    params.require(:course).permit(:title, :user_id, :price, :description, :address)
   end
 end

@@ -31,6 +31,12 @@ function showToolTip() {
   });
 };
 
+document.app = {
+  loadDynamicBannerText,
+  showToolTip,
+  bindSweetAlertButtonDemo,
+};
+
 export { showToolTip };
 export { bindSweetAlertButtonDemo };
 export { loadDynamicBannerText };
