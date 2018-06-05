@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
 
   def index
     @courses = policy_scope(Course).order(created_at: :desc)
+    @courses = Course.search_by_city_and_address(params[:search])
   end
 
   def show
