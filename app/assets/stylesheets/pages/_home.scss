@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+.container .fa-comments {
+	font-size: 50px;
+	margin-left: -290px;  
+	margin-top: 10px; 
+}
+
+.container .fa-lightbulb {
+	font-size: 50px;
+	margin-left: -290px;  
+	margin-top: 10px; 
+}
+
+.container .fa-history {
+	font-size: 50px;
+	margin-left: -290px;  
+	margin-top: 10px; 
+}
+
+.container_frase {
+	text-align: center;
+	vertical-align: center;
+	margin-bottom: 10px;
+
+	h1 {
+		font-size: 30px;
+		font-weight: bold;
+		text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+		margin-top: 40px;  
+		font-family: helvetica; 
+	}
+}
