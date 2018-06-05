@@ -57,8 +57,14 @@ SimpleForm.setup do |config|
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly
-    b.use :label, class: 'form-control-label'
-    b.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid'
+
+    b.wrapper :input_wrapper, tag: 'div', class: 'input-wrapper' do |bb|
+      bb.use :label, class: 'form-control-label text-center'
+      bb.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid'
+      bb.wrapper :input_box, tag: 'div', class: 'input-box' do |bbb|
+      end
+    end
+
     b.use :full_error, wrap_with: { tag: 'div', class: 'invalid-feedback' }
     b.use :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end

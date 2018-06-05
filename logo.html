@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>CODE:PLUG</title>
+    <style>
+      @keyframes moveRectangle {
+        to {
+          transform: translateY(5px);
+        }
+      }
+      @keyframes expandRectangle {
+        to {
+          width: 10px;
+          transform: translateX(-5px);
+        }
+      }
+      @keyframes moveTextLeft {
+        to {
+          transform: translateX(-5px);
+        }
+      }
+      @keyframes moveTextRight {
+        to {
+          transform: translateX(4px);
+        }
+      }
+      @keyframes blink {
+        from {
+            opacity: 1.0;
+        }
+        to {
+            opacity: 0.0;
+        }
+      }
+      @keyframes hideRectangle {
+        to {
+          stroke: none;
+          fill: none;
+        }
+      }
+      #codeplug-logo-upper {
+        -webkit-animation-name: moveRectangle, hideRectangle;
+        -webkit-animation-duration: 1.5s, 100ms;
+        -webkit-animation-delay: 1s, 1.75s;
+        -webkit-animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: forwards;
+      }
+      #codeplug-logo-under {
+        -webkit-animation-name: expandRectangle, blink;
+        -webkit-animation-duration: 2s, 1s;
+        -webkit-animation-delay: 1.7s, 3s;
+        -webkit-animation-timing-function: cubic-bezier(1.0, -0.4, 0, 1.0);
+        -webkit-animation-iteration-count: 1, infinite;
+        -webkit-animation-fill-mode: forwards;
+      }
+      #codeplug-logo-code {
+        -webkit-animation: moveTextLeft 2s cubic-bezier(1.0, -0.4, 0, 1.0) 1.67s forwards;
+      }
+      #codeplug-logo-plug {
+        -webkit-animation: moveTextRight 2s cubic-bezier(1.0, -0.4, 0, 1.0) 1.67s forwards;
+      }
+    </style>
+  </head>
+
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="padding: 0 10px;">
+      <g id="codeplug-logo">
+        <rect id="codeplug-logo-under" stroke="#979797" fill="#D8D8D8" x="37.5" y="9.5" width="1" height="1"></rect>
+        <rect id="codeplug-logo-upper" stroke="#979797" fill="#D8D8D8" x="37.5" y="4.5" width="1" height="1"></rect>
+        <text id="codeplug-logo-plug" font-family="Helvetica-Bold, Helvetica" font-size="12" font-weight="bold" fill="#000000">
+          <tspan x="41" y="11">PLUG</tspan>
+        </text>
+        <text id="codeplug-logo-code" font-family="Helvetica-Bold, Helvetica" font-size="12" font-weight="bold" fill="#000000">
+          <tspan x="0" y="11">CODE</tspan>
+        </text>
+      </g>
+    </svg>
+  </body>
+</html>
