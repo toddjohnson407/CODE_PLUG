@@ -1,45 +1,56 @@
 <%= render 'shared/banner' %>
 
 <div class="container" style="margin-top: 10px">
-<div class="col-xs-12 col-sm-6 col-md-4">
-  <div class="container-card" style="background: #11b983; height: 300px; width: 360px;">
-    <div>
-      <i class="fas fa-history"></i>
-      <h2>WHERE WE ARE COMING FROM</h2>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-    </div>
-  </div>
-</div>
-<div class="col-xs-12 col-sm-6 col-md-4">
-  <div class="container-card" style="background: #11b983; height: 300px; width: 360px;">
-    <div>
-      <i class="far fa-lightbulb"></i>
-      <h2>OUR CONCEPT AND IDEA</h2>
-      <div class="caption">
+  <div class="container_frase" style="height: 5 0px";>
+    <h1>Would you like to learn 
+      <ul id="slides">
+          <li class="slide showing"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+        </ul>
+
       </div>
-      <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-    </div>
-  </div>
-</div>
-<div class="col-xs-12 col-sm-6 col-md-4">
-  <div class="container-card" style="background: #11b983; height: 300px; width: 360px;">
-    <div>
-      <i class="far fa-comments"></i>
-      <h2>WHAT OUR CUSTOMERS SAY</h2>
-      <div class="caption">
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="container-card" style="background: #11b983; height: 250px; width: 360px;">
+          <div>
+            <i class="fas fa-history"></i>
+            <h2>WHERE WE ARE COMING FROM</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+        </div>
       </div>
-      <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="container-card" style="background: #11b983; height: 250px; width: 360px;">
+          <div>
+            <i class="far fa-lightbulb"></i>
+            <h2>OUR CONCEPT AND IDEA</h2>
+            <div class="caption">
+            </div>
+            <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="container-card" style="background: #11b983; height: 250px; width: 360px;">
+          <div>
+            <i class="far fa-comments"></i>
+            <h2>WHAT OUR CUSTOMERS SAY</h2>
+            <div class="caption">
+            </div>
+            <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
-</div>
 
 
-<%= content_for :after_js do %>
-  <%= javascript_tag do %>
-    document.app.loadDynamicBannerText();
+  <%= content_for :after_js do %>
+    <%= javascript_tag do %>
     document.app.bindSweetAlertButtonDemo();
     document.app.showToolTip();
+    document.app.nextSlide();
+    <% end %>
   <% end %>
-<% end %>

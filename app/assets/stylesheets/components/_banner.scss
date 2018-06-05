@@ -54,24 +54,40 @@
   cursor: pointer;
   transition: 0.6s;
   transform-style: preserve-3d;
+  margin-bottom: 50px;
+  margin-top: 20px;
   // box-shadow: 0 1px 5px rgba(0,0,0,0.9);
 }
 
-.container .fa-comments {
-  font-size: 50px;
-  margin-left: -290px;  
-  margin-top: 10px; 
+
+#submit_address {
+  width: 500px;
+  margin: 60px auto;
+  position: relative;
+  background-color: transparent;
+  width: 350px;
+  background: transparent;
+  outline: 0;
+  border: 0;
+  border-bottom: 2px solid #11b983;
+  border-radius: 5%;
+  color: white;
+  transition: 300ms;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid yellow;
+  }
+  &::placeholder {
+    color: white ;
+  }
 }
 
-.container .fa-lightbulb {
-  font-size: 50px;
-  margin-left: -290px;  
-  margin-top: 10px; 
-}
 
-.container .fa-history {
-  font-size: 50px;
-  margin-left: -290px;  
-  margin-top: 10px; 
+.searchbutton {
+ display:none;
+ color: white;
 }
 
