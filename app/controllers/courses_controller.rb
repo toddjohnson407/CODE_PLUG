@@ -18,8 +18,8 @@ class CoursesController < ApplicationController
   end
 
   def show
-      # @booking = Booking.new
       @course = Course.find(params[:id])
+      @booking = Booking.new
       # @markers = { lat: @course.latitude, lng: @course.longitude }
   end
 
