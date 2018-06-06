@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+
       <% @courses.each do |course| %>
         <div class="col-xs-12 col-sm-6 col-md-6">
           <div class="card">
@@ -8,23 +9,26 @@
               <img src="" alt="">
               <div class="caption">
                 <h2><%=course.title %></h2>
-                <% if course.subject.nil? %>
-                  <%= puts 'working' %>
-                  <h6><%=course.price%>€</h6>
-                  <p><%= course.description[0,30] %>... <br>
-                    <%= course.address %></p>
-                <% else %>
-                  <h6><%=course.price%>€</h6>
-                  <p><%= course.description[0,30] %>... <br>
-                    <%= course.price %>€ <%= course.subject.category %><br>
-                    <%= course.address %></p>
-                <% end %>
+                <h6><%=course.price%>€</h6>
+                <p><%= course.description[0,30] %>... <br>
+                  <%= course.price %>€ <%= course.subject.category %><br>
+                  <%= course.address %></p>
                 <a href="#"><%= link_to "", course_path(course)%></a>
               </div>
             </div>
           </div>
         </div>
       <% end %>
+
+      <div
+        class="col-xs-12 col-md-4"
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+      >
+      </div>
+
     </div>
   </div>
 </div>
