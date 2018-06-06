@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -28,10 +27,8 @@ class BookingsController < ApplicationController
 
 
     if @booking.save
-      puts 'yes'
       redirect_to course_booking_path(@course, @booking), notice: 'You have booked this course.'
     else
-      puts 'no'
       redirect_to course_path(@course), notice: 'Could not book.'
     end
   end
@@ -64,7 +61,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:hours, :course_id, :user_id)
+    params.require(:booking).permit(:hours, :course_id, :user_id, :review_id)
   end
 
 end

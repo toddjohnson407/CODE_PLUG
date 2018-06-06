@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   before_destroy :check
 
-  has_many :booking, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
   private
 
