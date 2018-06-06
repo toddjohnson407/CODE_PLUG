@@ -1,20 +1,20 @@
 .search-form {
-	border-bottom: 5px solid #2F80ED; 
-	
+	border-bottom: 5px solid #2F80ED;
+
 }
 
 .search-input {
-	border: none; 
+	border: none;
 	background-color: transparent;
 	box-shadow: none;
-	font-size: 26px; 
-	width: 50vh; 
+	font-size: 26px;
+	width: 50vh;
 			margin-left: 5px;
 
 	&::placeholder {
-		color: white; 
+		color: white;
 		margin-left: 5px;
-	} 
+	}
 }
 
 .fa-search {

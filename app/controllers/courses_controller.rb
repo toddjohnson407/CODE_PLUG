@@ -6,8 +6,15 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = policy_scope(Course).order(created_at: :desc)
+    @courses = policy_scope(Course).where.not(latitude: nil, longitude: nil)
     @courses = Course.search_by_city_and_address(params[:search])
+
+    @markers = @courses.map do |course|
+      {
+        lat: course.latitude,
+        lng: course.longitude
+      }
+    end
   end
 
   def show
