@@ -1,0 +1,62 @@
+@keyframes moveRectangle {
+        to {
+          transform: translateY(5px);
+        }
+      }
+      @keyframes expandRectangle {
+        to {
+          width: 10px;
+          transform: translateX(-5px);
+        }
+      }
+      @keyframes moveTextLeft {
+        to {
+          transform: translateX(-5px);
+        }
+      }
+      @keyframes moveTextRight {
+        to {
+          transform: translateX(4px);
+        }
+      }
+      @keyframes blink {
+        from {
+            opacity: 1.0;
+        }
+        to {
+            opacity: 0.0;
+        }
+      }
+      @keyframes hideRectangle {
+        to {
+          stroke: none;
+          fill: none;
+        }
+      }
+      #codeplug-logo-upper {
+        -webkit-animation-name: moveRectangle, hideRectangle;
+        -webkit-animation-duration: 1.5s, 100ms;
+        -webkit-animation-delay: 1s, 1.75s;
+        -webkit-animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: forwards;
+      }
+      #codeplug-logo-under {
+        -webkit-animation-name: expandRectangle, blink;
+        -webkit-animation-duration: 2s, 1s;
+        -webkit-animation-delay: 1.7s, 3s;
+        -webkit-animation-timing-function: cubic-bezier(1.0, -0.4, 0, 1.0);
+        -webkit-animation-iteration-count: 1, infinite;
+        -webkit-animation-fill-mode: forwards;
+      }
+      #codeplug-logo-code {
+        -webkit-animation: moveTextLeft 2s cubic-bezier(1.0, -0.4, 0, 1.0) 1.67s forwards;
+      }
+      #codeplug-logo-plug {
+        -webkit-animation: moveTextRight 2s cubic-bezier(1.0, -0.4, 0, 1.0) 1.67s forwards;
+      }
+      #codeplug-logo {
+        margin-top: 300px;
+        z-index: 10;
+        fill: black;
+      }
