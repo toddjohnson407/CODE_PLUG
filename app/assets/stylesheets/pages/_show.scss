@@ -1,0 +1,244 @@
+.user-card-left {
+	width: 33%;
+	p {
+		text-align: center;
+		margin-top: 5px	;
+		font-size: 16px;
+		margin-left: -2px;
+
+	}
+}
+
+
+.user-card-right {
+	width: 66%;
+	h1 {
+		font-size: 20px;
+		font-weight: bold;
+		text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 8px;
+	}
+	p {
+		font-size: 14px;
+		margin-left: 10px;
+		margin-top: -8px;
+	}
+
+}
+
+.teacher {
+border-top: 3px solid #02b3e4;
+background-color: #fff;
+border-radius: 0.375rem;
+box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+padding: 4px; }
+
+
+.user-card {
+	margin-top: 10px;
+	position: relative;
+	display: flex;
+	text-align: center;
+	top: 0px;
+}
+
+
+.fa-phone{
+	font-size: 14px;
+	margin-top: 2px;
+	margin-right: 4px;
+}
+
+
+.fa-map-marker{
+	font-size: 14px;
+	margin-top: 2px;
+	margin-right: 4px;
+	
+}
+
+.fa-dollar-sign{
+	font-size: 14px;
+	margin-top: 2px;
+	margin-right: 4px;
+	
+}
+
+
+.fa-star{
+	font-size: 14px;
+	color: #f1c550;	
+	margin-top: 2px;
+	margin-right: 4px;
+
+}
+
+.course-description {
+	width: 70%;
+}
+
+.course-movie {
+	width: 10%;
+}
+
+.course-information {
+	position: relative;
+	display: flex;
+	text-align: center;
+	top: 0px;
+	h3 {
+		font-size: 16px;
+		font-weight: bold;
+		text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 14px; 
+
+	}
+	p {
+		font-size: 14px;
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 12px;
+		text-align: justify;	
+	}
+
+}
+
+.teacher-about-me {
+	h1 {
+		font-size: 16px;
+		font-weight: bold;
+		text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 14px;
+
+	}
+	p {
+		font-size: 14px;
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 12px;
+		text-align: justify;
+		margin-right: 10px;
+
+	}
+}
+
+
+.teacher-skills {
+	h1 {
+		font-size: 18px;
+		font-weight: bold;
+		text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 40px; 
+
+	}
+	li {
+		font-size: 14px;
+		text-align: left; 
+		margin-left: 10px;
+		text-align: justify;
+	}
+}
+
+.feedback {
+	h1 {
+		font-size: 18px;
+		font-weight: bold;
+		text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 40px; 
+
+	}
+}
+
+.course {
+	margin-left: 2px; 
+	h1 {
+		font-size: 40px;
+		font-weight: bold;
+		color: black; 
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 4px;
+
+	}
+	h4 {
+		font-size: 14px;
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: -13px;
+		text-align: justify;	
+	}
+
+}
+
+.course-movie {
+	width: 100%;
+}
+
+
+.review {
+	display: flex; 
+	border-top: 1px solid #dedfe0; 
+}
+
+.review-name {
+	width: 50%; 
+	margin-top: 10px;  
+	h1 {
+		font-size: 18px;
+		color: black; 
+		text-align: left; 
+		margin-left: 3px;
+		margin-top: 10px;		
+	}
+	p {
+		font-size: 10px;
+		text-align: left; 
+		margin-left: 3px;
+		margin-top: -11px;
+		text-align: justify;
+
+	}
+}
+
+.review-description {
+	width: 100%; 
+	margin-left: -30px; 
+	p {
+		font-size: 14px;
+		text-align: left; 
+		margin-top: 5px;
+		text-align: left;
+	}
+	.fa-star {
+		text-align: left; 
+		margin-left: 10px;
+	}
+}
+
+.book-class {
+	width: 40%; 
+	margin-left: 20px; 
+	margin-right: -120px !important; 
+	background-color:#25292E;
+	margin-top: -60px;
+
+	p {
+		margin-left: 0px;	
+		color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px; 	
+	} 
+
+}
+
