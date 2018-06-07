@@ -1,12 +1,107 @@
 
+<div class="wrapper" style="background-color: white">
+	<div class="container">
+		<div class="row">
 
-<center>
-<h1><%= @course.title %></h1> <br>
-<h2>Located in: <br> <%= @course.address %> <br> <br> About this course: </h2>
-<h4><%= @course.description %></h4>
-<%= cl_image_tag @course.photo, height: 300, width: 400, crop: :fill %>
-</center>
+			<div class="hidden-xs col-sm-4" style="margin-left: -20px; padding-right: 70px;">
+				<div class="teacher">
+				<div class="user-card">
+					<div class="user-card-left"> 
+						<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
+					</div>
+					<div class="user-card-right">
+						<h1> Arthur Pfeister </h1>
+						<p><i class="fas fa-phone"></i>918806070</p>
+						<p><i class="fas fa-map-marker"></i>Lisbon</p>	
+							<p><i class="fas fa-star"></i></p>
+
+						</div>
+					</div>
+					<div class="teacher-about-me">
+						<h1>Software engineer at X</h1>
+						<p>John Elder is a pioneer in Internet Marketing who created one of the first Internet advertising networks back in 1997. He sold it to a publicly traded company at the height of the dot com boom and then went on to create the best-selling Submission-Spider search engine submission software that’s been used by over 3 million individuals and small businesses in over 45 countries.</p>
+					</div>
+												</div>
+
+					<div class="teacher-skills">
+						<h1>Tech skills</h1>
+						<li>Ruby</li>
+						<li>JavaScript</li>
+					</div>
+
+					<div class="feedback">
+						<h1>Teacher feedback</h1>
+						<div class="review">
+							<div class="review-name">
+								<h1>Marta</h1>
+								<p>1 month ago</p>
+							</div>
+							<div class="review-description">
+								<br><i class="fas fa-star"></i></br>
+								<p>The teacher was not that good, I had some difficulties understanding it.</p>
+							</div>
+						</div>
+					</div>
+					<div class="feedback">
+						<div class="review">
+							<div class="review-name">
+								<h1>Marta</h1>
+								<p>1 month ago</p>
+							</div>
+							<div class="review-description">
+								<br><i class="fas fa-star"></i></br>
+								<p>The teacher was not that good, I had some difficulties understanding it.</p>
+							</div>
+						</div>
+					</div>
+					<div class="feedback">
+						<div class="review">
+							<div class="review-name">
+								<h1>Marta</h1>
+								<p>1 month ago</p>
+							</div>
+							<div class="review-description">
+								<br><i class="fas fa-star"></i></br>
+								<p>The teacher was not that good, I had some difficulties understanding it.</p>
+							</div>
+						</div>
+							<div class="review">
+							</div>
+					</div>
+					<button type="button" class="btn btn-default">More reviews</button>
+				</div>
+
+
+				<div class="col-xs-12 col-sm-8" style="margin-left: -60px">
+					<div class="course">
+						<h1><%= @course.title %></h1>
+						<h4>Lisbon - Cais do Sodré</h4>
+						<div class="course-information">
+							<div class="course-description">
+								<h3>Course Description</h3>
+								<p><%= @course.description %></p>
+								<h3>What will you learn?</h3>
+								<p> Ruby Basics, how to create formulas</p>
+								<h3>Requirements</h3>
+								<p> You should know something about Ruby basics</p>
+
+							</div>
+							<div class="book-class">
+								<div class="course-movie">
+									<p><iframe width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+								<p>€<%= @course.price %> per month</p>
+								<button type="button" class="btn btn-primary">Book Class</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
 
 <div class="text-center" style="margin-top: 6vh;">
   <% unless @course.user_id == current_user.id %>
