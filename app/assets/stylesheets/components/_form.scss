@@ -1,0 +1,84 @@
+html, body {border: 0; margin: 0; padding: 0;}
+body {font: 14px "Lato", Arial, sans-serif; min-width: 100%; min-height: 100%; color: #666;}
+.container{margin: 0 auto; max-width: 1200px;}
+*{margin: 0; padding: 0; box-sizing: border-box;}
+.row{float: left; width: 100%; padding: 20px 0 50px;}
+h2{text-align: center; color: #2079df; font-size: 46px; float: left; width: 100%; margin: 30px 0; position: relative; line-height: 58px; font-weight: 500;}
+h2:before{content: ""; position: absolute; left: 50%; bottom: 0; width: 100px; height: 2px; background-color: #2079df; margin-left: -50px;}
+/*= Reset CSS End
+================= */
+
+/*= input focus effects css
+=========================== */
+:focus{outline: none;}
+
+.col-3{float: left; width: 27.33%; margin: 40px 3%; position: relative;} /* necessary to give position: relative to parent. */
+input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+
+
+.effect-4{
+  border: 0; padding: 5px 0 7px; border: 1px solid transparent; border-bottom-color: #ccc; transition: 0.4s;
+}
+
+.effect-4:focus{
+  padding: 5px 14px 7px; transition: 0.4s;
+}
+
+.effect-4 ~ .focus-border{position: absolute; height: 0; bottom: 0; left: 0; width: 100%; transition: 0.4s; z-index: -1;}
+.effect-4:focus ~ .focus-border{transition: 0.4s; height: 36px; border: 2px solid #3399FF; z-index: 1;}
+
+h1 {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+ }
+
+.input-wrapper {
+  position: relative;
+  input, textarea {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid gray;
+    border-radius: 0;
+    &::placeholder {
+      text-transform: uppercase;
+      font-size: 15px;
+
+    }
+  }
+  input:focus, textarea:focus, select:focus {
+    box-shadow: none;
+    border-color: gray;
+  }
+  .input-box {
+    border: none;
+    width: 100%;
+    position: absolute;
+    height: 0;
+    bottom: 0%;
+    transition: height ease 0.2s;
+  }
+  &:focus-within {
+    .input-box {
+      border: 1px solid blue;
+      height: 100%;
+    }
+    label {
+      opacity: 1;
+
+    }
+  }
+  label {
+    font-weight: 100;
+    position: absolute;
+    height: 100%;
+    left: 110%;
+    width: 30%;
+    opacity: 0;
+    transition: opacity ease 0.2s;
+          &::after {
+        opacity: 0;
+      }
+  }
+}

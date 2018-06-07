@@ -1,0 +1,67 @@
+/*
+essential styles:
+these make the slideshow work
+*/
+#slides{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.slide{
+    margin-left: 5px; 
+    position: absolute;
+    left: 0px;
+    top: -10px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    background-size: cover; 
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing{
+    opacity: 1;
+    z-index: 2;
+}
+
+
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+// .slide{
+//     font-size: 40px;
+//     padding: 40px;
+//     box-sizing: border-box;
+//     background: #333;
+//     color: #fff;
+// }
+
+.slide:nth-of-type(1){
+    background-image: url(http://netcoders.com.br/wp-content/uploads/2015/10/js3.png);
+}
+.slide:nth-of-type(2){
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png);
+}
+.slide:nth-of-type(3){
+    background-image: url(http://developerschool.com.br/edu/wp-content/uploads/2018/04/css3_logo.png);
+}
+.slide:nth-of-type(4){
+    background-image: url(http://gloify.com/wp-content/uploads/2018/02/rails-300x300.png);
+}
+.slide:nth-of-type(5){
+    background-image: url(https://i.pinimg.com/originals/08/91/3a/08913a93a8b4e46a83e75a21c5706755.png    );
+}

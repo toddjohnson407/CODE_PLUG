@@ -1,8 +1,10 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+  <!-- <%= link_to root_path, class: "navbar-wagon-brand" do %> -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logowhite.png" %>
   <% end %>
+  <!-- <% end %> -->
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -10,9 +12,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Become a Teacher", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Courses", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "List a New Course", new_course_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Courses", current_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <!--<%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %> -->
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -22,6 +24,11 @@
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-envelope"></i>  <%= t(".settings", default: "Messages") %>
               <% end %>
             </li>
             <li>
@@ -40,6 +47,8 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <div class="vl"></div>
+      <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 

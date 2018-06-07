@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_04_163034) do
+ActiveRecord::Schema.define(version: 2018_06_06_094325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2018_06_04_163034) do
     t.integer "rating_average"
     t.bigint "subject_id"
     t.bigint "user_id"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["subject_id"], name: "index_courses_on_subject_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(version: 2018_06_04_163034) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
