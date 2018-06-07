@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 <div class="wrapper" style="background-color: white">
 	<div class="container">
 		<div class="row">
@@ -104,19 +103,6 @@
 	</div>
 </div>
 
-
-
-
-=======
-
-<center>
-<h1><%= @course.title %></h1> <br>
-<h2>Located in: <br> <%= @course.address %> <br> <br> About this course: </h2>
-<h4><%= @course.description %></h4>
-<%= cl_image_tag @course.photo, height: 300, width: 400, crop: :fill %>
-</center>
-
-
 <div class="text-center" style="margin-top: 6vh;">
   <% unless @course.user_id == current_user.id %>
     <%= link_to "Book this Course", new_course_booking_path(@course), class: " btn btn-success", data: { toggle: "modal", target: "#bookingModal" } %>
@@ -151,4 +137,3 @@
     </div>
   </div>
 </div>
->>>>>>> 54ce11f5108954d437d48af138f759de76ade87b
