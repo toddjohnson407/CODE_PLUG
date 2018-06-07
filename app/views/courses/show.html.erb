@@ -4,6 +4,7 @@
 <h1><%= @course.title %></h1> <br>
 <h2>Located in: <br> <%= @course.address %> <br> <br> About this course: </h2>
 <h4><%= @course.description %></h4>
+<%= cl_image_tag @course.photo, height: 300, width: 400, crop: :fill %>
 </center>
 
 
@@ -37,7 +38,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
