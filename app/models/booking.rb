@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :course
-  has_many :reviews, dependent: :destroy
+  belongs_to :review, optional: true
 end

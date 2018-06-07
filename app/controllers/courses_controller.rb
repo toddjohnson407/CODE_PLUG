@@ -18,8 +18,8 @@ class CoursesController < ApplicationController
   end
 
   def show
-      # @booking = Booking.new
       @course = Course.find(params[:id])
+      @booking = Booking.new
       # @markers = { lat: @course.latitude, lng: @course.longitude }
   end
 
@@ -68,6 +68,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :user_id, :price, :description, :address)
+    params.require(:course).permit(:title, :user_id, :price, :description, :address, :city, :photo)
   end
 end

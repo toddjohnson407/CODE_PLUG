@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <div class="wrapper" style="background-color: white">
 	<div class="container">
 		<div class="row">
@@ -106,3 +107,48 @@
 
 
 
+=======
+
+<center>
+<h1><%= @course.title %></h1> <br>
+<h2>Located in: <br> <%= @course.address %> <br> <br> About this course: </h2>
+<h4><%= @course.description %></h4>
+<%= cl_image_tag @course.photo, height: 300, width: 400, crop: :fill %>
+</center>
+
+
+<div class="text-center" style="margin-top: 6vh;">
+  <% unless @course.user_id == current_user.id %>
+    <%= link_to "Book this Course", new_course_booking_path(@course), class: " btn btn-success", data: { toggle: "modal", target: "#bookingModal" } %>
+  <% end %>
+  <% if policy(@course).destroy? %>
+    <%= link_to "Remove this Course", @course, class: " btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <% if policy(@course).edit? %>
+    <%= link_to "Edit this Course", edit_course_path(@course), class: " btn btn-success" %>
+  <% end %>
+  <br>
+  <br>
+  <br>
+
+</div>
+
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book this Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'bookings/form', booking: @booking, course: @course  %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+>>>>>>> 54ce11f5108954d437d48af138f759de76ade87b

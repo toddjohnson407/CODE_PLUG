@@ -1,34 +1,41 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-8">
 
-      <% @courses.each do |course| %>
-        <div class="col-xs-12 col-sm-6 col-md-6">
-          <div class="card">
-            <div class="front">
-              <img src="" alt="">
-              <div class="caption">
-                <h2><%=course.title %></h2>
-                <h6><%=course.price%>€</h6>
-                <p><%= course.description[0,30] %>... <br>
-                  <%= course.price %>€ <%= course.subject.category %><br>
-                  <%= course.address %></p>
-                <a href="#"><%= link_to "", course_path(course)%></a>
+    <div class="col-md-8">
+
+
+      <div class="row pull-right">
+ <div class="lol">
+         <% @courses.each do |course| %>
+           <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="card">
+              <div class="front">
+                <img src="" alt="">
+                <div class="caption">
+                 <h2><%=course.title %></h2>
+                 <h6><%=course.price%>€    per hour</h6><br>
+                 <p><%= course.description[0,230] %>...</p>
+                  <%= link_to "", course_path(course) %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+</div>
 
-      <div
-        class="col-xs-12 col-md-4"
-        id="map"
-        style="width: 100%;
-        height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-      >
       </div>
 
+
     </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4" position = static>
+      <div id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"></div>
+    </div>
+
   </div>
+
 </div>
+

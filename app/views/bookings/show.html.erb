@@ -1,0 +1,11 @@
+<body style="background-color: black;">
+  <div class="container" style="height: 700px; margin-left: 80px; color: white;">
+      <% course = Course.find_by(params[:user_id]) %>
+  <br>
+      <h2>You have booked <%= course.title %> for <%= @booking.hours %> hours
+      <br>
+      Total Cost: $ <%= @booking.hours * course.price %>
+      <br>
+      <%= link_to "Cancel this booking",  course_booking_path(params[:course_id], @booking), class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</body>

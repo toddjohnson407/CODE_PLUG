@@ -1,32 +1,33 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <% @courses.each do |course| %>
-        <% if course.user_id == current_user.id %>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="card">
+    <% @courses.each do |course| %>
+      <% if course.user_id == current_user.id %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <div class="card">
+            <% if course.photo.url.nil? %>
               <div class="front">
-                <img src="" alt="">
+                <img src="http://res.cloudinary.com/arthurpfister/image/upload/v1527849942/goran-ivos-343495-unsplash.jpg" alt="" class="center">
                 <div class="caption">
                   <h2><%=course.title %></h2>
-                  <% if course.subject.nil? %>
-                    <%= puts 'working' %>
-                    <h6><%=course.price%>€</h6>
-                    <p><%= course.description[0,30] %>... <br>
-                      <%= course.address %></p>
-                  <% else %>
-                    <h6><%=course.price%>€</h6>
-                    <p><%= course.description[0,30] %>... <br>
-                      <%= course.price %>€ <%= course.subject.category %><br>
-                      <%= course.address %></p>
-                  <% end %>
-                  <a href="#"><%= link_to "", course_path(course)%></a>
+                  <h6><%=course.price%>€    per hour</h6><br>
+                  <p><%= course.description[0,300] %>...
+                    <a href="#"><%= link_to "", course_path(course)%></a>
                 </div>
               </div>
-            </div>
+            <% else %>
+              <div class="front">
+                <img src=<%= cl_image_path course.photo %>>
+                <div class="caption">
+                  <h2><%=course.title %></h2>
+                  <h6><%=course.price%>€    per hour</h6><br>
+                  <p><%= course.description[0,300] %>...
+                    <a href="#"><%= link_to "", course_path(course)%></a>
+                </div>
+              </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
