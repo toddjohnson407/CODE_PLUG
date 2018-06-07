@@ -1,0 +1,6 @@
+
+<h2>fooorm</h2>
+<%= simple_form_for(courses_path, remote: true, method: :get) do |form| %>
+  <%= form.input :price %>
+  <%= form.button :submit %>
+<% end %>
