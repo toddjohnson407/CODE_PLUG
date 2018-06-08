@@ -10,8 +10,11 @@
         <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name" %>
         <%= f.input :last_name, required: true, autofocus: true, placeholder: "Last name" %>
         <%= f.input :email, required: true, placeholder: "Email", autofocus: true %>
+        <%= f.input :phone_number, required: true, placeholder: "Phone Number", autofocus: true %>
         <% if session[:teacher] %>
+        <%= f.input :location, required: true, autofocus: true, placeholder: "Tell us where you are located" %>
         <%= f.input :description, required: true, autofocus: true, placeholder: "Tell us about yourself and your skills" %>
+        <%= f.input :current_position, required: true, autofocus: true, placeholder: "Describe your current professional position" %>
         
         
         <%= f.input :teacher, as: :hidden, value: true %>
