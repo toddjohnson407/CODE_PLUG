@@ -10,21 +10,21 @@
 
 					</div>
 					<div class="user-card-right">
-						<h1> <%= @course.user.last_name %> </h1>
-						<p><i class="fas fa-phone"></i>918806070</p>
-						<p><i class="fas fa-map-marker"></i>Lisbon</p>	
+						<h1> <%= @course.user.first_name %><%= @course.user.last_name %> </h1>
+						<p><i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
+						<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>	
 						<p><i class="fas fa-star"></i></p>
 
 					</div>
 				</div>
 				<div class="teacher-about-me">
-					<h1>Software engineer at X</h1>
-					<p>John Elder is a pioneer in Internet Marketing who created one of the first Internet advertising networks back in 1997. He sold it to a publicly traded company at the height of the dot com boom and then went on to create the best-selling Submission-Spider search engine submission software that’s been used by over 3 million individuals and small businesses in over 45 countries.</p>
+					<h1><%=@course.user.current_position %></h1>
+					<p><%=@course.user.description %></p>
 				</div>
 
 
 				<div class="teacher-skills">
-					<h1>Tech skills</h1>
+					<h1>Coding languages</h1>
 					<li>Ruby</li>
 					<li>JavaScript</li>
 				</div>
@@ -46,7 +46,7 @@
 				<div class="feedback">
 					<div class="review">
 						<div class="review-name">
-							<h1>Marta</h1>
+							<h1>Arthur</h1>
 							<p>1 month ago</p>
 						</div>
 						<div class="review-description">
@@ -58,7 +58,7 @@
 				<div class="feedback">
 					<div class="review">
 						<div class="review-name">
-							<h1>Marta</h1>
+							<h1>Alex</h1>
 							<p>1 month ago</p>
 						</div>
 						<div class="review-description">
@@ -75,16 +75,16 @@
 
 			<div class="col-xs-12 col-sm-8" style="margin-left: -60px">
 				<div class="course">
-					<h1><%= @course.title %></h1>
-					<h4>Lisbon - Cais do Sodré</h4>
+					<h1><%= @course.title %> <img url="https://www.google.com/search?q=ruby+on+rails&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjPhLiNmcTbAhWG1RQKHSwjCIkQ_AUICigB&biw=1680&bih=881#imgrc=MILBv4TzszrH9M:" alt=""></h1> 
+					<h4><%= @course.address %> - <%= @course.city %></h4>
 					<div class="course-information">
 						<div class="course-description">
 							<h3>Course Description</h3>
 							<p><%= @course.description %></p>
 							<h3>What will you learn?</h3>
-							<p> Ruby Basics, how to create formulas</p>
+							<p> <%= @course.learning %></p>
 							<h3>Requirements</h3>
-							<p> You should know something about Ruby basics</p>
+							<p> <%= @course.requirement%></p>
 
 						</div>
 						<div class="book-class">

@@ -4,24 +4,26 @@
     <h1 style="margin-bottom: 3vh;">Design your own course - be creative :</h1> <br> <br>
     <div class="col-md-8">
 
-    <%= simple_form_for(@course) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <%= simple_form_for(@course) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
-      <%= f.input :title , as: :string, label: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ut atque repudiandae animi modi necessitatibus maiores. Officia magnam fugiat dicta, eaque placeat, architecto eius, dolore fugit ea cum repellat impedit!", placeholder: "Name of the course" %> <br> <br>
-      <%= f.input :description, class: "effect-4", label: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ut atque repudiandae animi modi necessitatibus maiores. Officia magnam fugiat dicta, eaque placeat, architecto eius, dolore fugit ea cum repellat impedit!", placeholder: "Describe your course" %><br>
-      <%= f.input :price, label: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ut atque repudiandae animi modi necessitatibus maiores. Officia magnam fugiat dicta, eaque placeat, architecto eius, dolore fugit ea cum repellat impedit!", placeholder: "Your price per hour?" %><br>
-      <%= f.input :address, label: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ut atque repudiandae animi modi necessitatibus maiores. Officia magnam fugiat dicta, eaque placeat, architecto eius, dolore fugit ea cum repellat impedit!", placeholder: "Where would you teach?"  %><br>
-      <%= f.input :city, label: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ut atque repudiandae animi modi necessitatibus maiores. Officia magnam fugiat dicta, eaque placeat, architecto eius, dolore fugit ea cum repellat impedit!", placeholder: "In what area?" %> <br> <br>
-      <%= f.input :subject, as: :select, collection: Subject.all.map(&:category)%> <br> <br> <br>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-    </div>
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-treehouse", value: "Create your Course"%>
-    </div>
-    <% end %>
+      <div class="form-inputs">
+        <%= f.input :title , as: :string, label: "Please indicate the name of the course you are teaching, e.g. 'Ruby on Rails' ", placeholder: "Name of the course" %> <br> <br>
+          <%= f.input :description, class: "effect-4", label: "Please make a detailed description on the course, stating what it is about and how it will be organized   ", placeholder: "Course description" %><br>
+        <%= f.input :learning, class: "effect-4", label: "Describe what the teacher will know by the end of the course", placeholder: "Describe what the student will learn" %><br>
+         <%= f.input :requirement, class: "effect-4", label: "If the student should already know some basics before enrolling in the course, please state here. Otherwise state 'no requirements'", placeholder: "Describe what the student should already know" %><br>
+        <%= f.input :price, label: "Indicate what is the price you are requiring for teaching   per hour", placeholder: "Your price per hour" %><br>
+        <%= f.input :address, label: "Indicate the current address you would be teaching the student. In case you don't have a specific address, state the city", placeholder: "Where would you teach?"  %><br>
+        <%= f.input :city, label: "Indicate in which area in the city you will be teaching", placeholder: "In what area?" %> <br> <br>
+        <%= f.input :subject, as: :select, collection: Subject.all.map(&:category) %> <br> <br> <br>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-treehouse", value: "Create your Course"%>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -31,4 +33,4 @@
           <input class="effect-4" type="text" placeholder="Placeholr Text">
             <span class="focus-border"></span>
         </div>
- -->
+      -->
