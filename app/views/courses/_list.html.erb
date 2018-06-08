@@ -1,0 +1,15 @@
+      <% @courses.each do |course| %>
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="card">
+          <div class="front">
+            <img src="" alt="">
+            <div class="caption">
+             <h2><%=course.title %></h2>
+             <h6><%=course.price%>€    per hour</h6><br>
+             <p><%= course.description[0,230] %>...</p>
+             <%= link_to "", course_path(course) %>
+           </div>
+         </div>
+       </div>
+     </div>
+     <% end %>

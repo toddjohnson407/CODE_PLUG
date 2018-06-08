@@ -1,13 +1,21 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
+  def add_teacher
+    current_user.teacher = true
+    current_user.save
+    redirect_to teacher_path
+  end
+
   def current_index
     @courses = policy_scope(Course).order(created_at: :desc)
   end
 
   def index
+    # @courses = policy_scope(Course).limit(1)
     @courses = policy_scope(Course).where.not(latitude: nil, longitude: nil)
     @courses = Course.search_by_city_and_address(params[:search])
+    # @courses = policy_scope(Course).limit(3)
 
     @markers = @courses.map do |course|
       {
@@ -15,6 +23,12 @@ class CoursesController < ApplicationController
         lng: course.longitude
       }
     end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def show
@@ -68,6 +82,6 @@ class CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :user_id, :price, :description, :address, :city, :photo)
+    params.require(:course).permit(:title, :user_id, :price, :description, :address, :city, :photo, :requirement, :learning)
   end
 end

@@ -50,6 +50,7 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  background-color: #25292E
   // width: 50px;
 }
 .navbar-wagon-dropdown-menu li > a {
@@ -59,9 +60,10 @@
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
+  background-color: #25292E
 }
 .navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
+  background-color: #25292E;
   color: #2F80ED !important;
 }
 .navbar-wagon-dropdown-menu:before {

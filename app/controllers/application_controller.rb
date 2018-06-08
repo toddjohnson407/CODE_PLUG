@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   # Pundit: white-list approach.
-  after_action :verify_authorized, except: [:index, :current_index, :new, :create], unless: :skip_pundit?
+  after_action :verify_authorized, except: [:add_teacher, :index, :current_index, :new, :create], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   # Uncomment when you *really understand* Pundit!
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :description, :teacher, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :location, :current_position, :current_position, :last_name, :phone_number, :description, :teacher, :password, :password_confirmation])
   end
 
   def skip_pundit?
