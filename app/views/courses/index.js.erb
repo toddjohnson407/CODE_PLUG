@@ -1,10 +1,10 @@
-const new_list_html = '<%= j render "list" %>'
-const new_map_html = '<%= j render "map" %>'
+var new_list_html = '<%= j render "list" %>'
+var new_map_html = '<%= j render "map" %>'
 
-  const newList = document.getElementById('courses-list');
+  var newList = document.getElementById('courses-list');
   newList.innerHTML = new_list_html;
 
-  const newMap = document.getElementById('courses-map');
+  var newMap = document.getElementById('courses-map');
   newMap.innerHTML = new_map_html;
 
   document.loadGoogleMap();

@@ -12,7 +12,6 @@ class CoursesController < ApplicationController
   end
 
   def index
-
     # @courses = policy_scope(Course).limit(1)
     @courses = policy_scope(Course).where.not(latitude: nil, longitude: nil)
     @courses = Course.search_by_city_and_address(params[:search])
