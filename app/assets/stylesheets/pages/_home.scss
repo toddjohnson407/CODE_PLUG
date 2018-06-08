@@ -1,20 +1,20 @@
 // Specific CSS for your home-page
 .container .fa-comments {
 	font-size: 50px;
-	margin-left: -290px;  
-	margin-top: 10px; 
+	margin-left: -290px;
+	margin-top: 10px;
 }
 
 .container .fa-lightbulb {
 	font-size: 50px;
-	margin-left: -290px;  
-	margin-top: 10px; 
+	margin-left: -290px;
+	margin-top: 10px;
 }
 
 .container .fa-history {
 	font-size: 50px;
-	margin-left: -290px;  
-	margin-top: 10px; 
+	margin-left: -290px;
+	margin-top: 10px;
 }
 
 .container_frase {
@@ -24,7 +24,7 @@
 	margin-top: -30px;
 
 	h1 {
-		
+
     font-size: 30px;
     font-weight: normal;
     color: white;
@@ -37,5 +37,86 @@
 }
 
 .background-color {
-	color: #333333;
+	color: #f7f7f7;
 }
+
+.container.home {
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.container.home .fa-lightbulb {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.container.home h4 {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  color: #2F80ED;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.container.home p {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  margin-right: 50px;
+  font-size: 16px;
+}
+
+.container.home .icon-teacher-page {
+  height:50px;
+  margin-right: 10px;
+}
+
+.container.home .image-teacher-page {
+  height: 300px;
+}
+
+.opacity {
+    position: absolute !important;
+    z-index: 1 !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    width: 100% !important;
+    height: 200px !important;
+    background-repeat: no-repeat !important;
+    background-image: -webkit-linear-gradient(-180deg, rgba(247,247,247,0.00) 0%, rgba(247,247,247,0.67) 60%, rgba(247,247,247,0.88) 80%, rgba(247,247,247,1.00) 100%) !important;
+    background-image: -moz-linear-gradient(-180deg, rgba(247,247,247,0.00) 0%, rgba(247,247,247,0.67) 60%, rgba(247,247,247,0.88) 80%, rgba(247,247,247,1.00) 100%) !important;
+    background-image: linear-gradient(-180deg, rgba(247,247,247,0.00) 0%, rgba(247,247,247,0.67) 60%, rgba(247,247,247,0.88) 80%, rgba(247,247,247,1.00) 100%) !important;
+}
+
+.contain-why {
+  height: 50vh;
+  margin: 30px 200px;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.container.home h5 {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  color: #25292E;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.container.home h6 {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  color: #25292E;
+  font-size: 50px;
+  font-weight: bold;
+}
+
