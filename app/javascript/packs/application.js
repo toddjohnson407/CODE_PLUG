@@ -6,4 +6,7 @@ import { loadDynamicBannerText } from '../components/banner';
 
 import { nextSlide } from '../pages/home';
 
+import { days } from '../components/calendar'
+
 showToolTip();import { showToolTip } from '../components/banner';
+
