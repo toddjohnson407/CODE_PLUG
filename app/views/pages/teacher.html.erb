@@ -1,3 +1,8 @@
 <h1>BECOME A TEACHER</h1>
 
-<%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "btn btn-primary" %>
+
+<% if current_user.nil? %>
+  <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to t(".sign_up", default: "Sign Up"), edit_user_registration_path, class: "btn btn-primary" %>
+<% end %>

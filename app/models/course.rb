@@ -15,7 +15,6 @@ class Course < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_by_city_and_address,
-    against: [ :description, :title ],
     associated_against: {
       subject: [ :category ]
     },

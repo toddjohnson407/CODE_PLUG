@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   # Pundit: white-list approach.
-  after_action :verify_authorized, except: [:index, :current_index, :new, :create], unless: :skip_pundit?
+  after_action :verify_authorized, except: [:add_teacher, :index, :current_index, :new, :create], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   # Uncomment when you *really understand* Pundit!

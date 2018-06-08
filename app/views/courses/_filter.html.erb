@@ -1,6 +1,4 @@
-
-<h2>filter form</h2>
 <%= simple_form_for(courses_path, remote: true, method: :get) do |form| %>
-  <%= form.input :price %>
+  <%= form.input :search, value: "Javascript" %>
   <%= form.button :submit %>
 <% end %>
