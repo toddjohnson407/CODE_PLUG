@@ -3,16 +3,22 @@
 	<div class="container">
 		<div class="row">
 
+<!-- <marquee behavior="" direction="up" bgcolor="turquoise"><h1>My A$$ Fuck</h1></marquee>
+<marquee truespeed="20" direction="down" width="600" height="600" behavior="alternate" style="border:solid">
+  <marquee behavior="alternate">
+    <h2 style="font-size: 40px">WHAT THE ACTUAL FUCK</h2>
+  </marquee>
+</marquee> -->
 			<div class="hidden-xs col-sm-4" style="margin-left: -20px; padding-right: 70px;">
 				<div class="user-card">
-					<div class="user-card-left"> 
+					<div class="user-card-left">
 						<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
 					</div>
 					<div class="user-card-right">
 						<h1> <%= @course.user.first_name %><%= @course.user.last_name %> </h1>
 						<p><i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
-						<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>	
+						<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
 						<p><i class="fas fa-star"></i></p>
 
 					</div>
@@ -75,7 +81,7 @@
 
 			<div class="col-xs-12 col-sm-8" style="margin-left: -60px">
 				<div class="course">
-					<h1><%= @course.title %> <img url="https://www.google.com/search?q=ruby+on+rails&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjPhLiNmcTbAhWG1RQKHSwjCIkQ_AUICigB&biw=1680&bih=881#imgrc=MILBv4TzszrH9M:" alt=""></h1> 
+					<h1><%= @course.title %> <img url="https://www.google.com/search?q=ruby+on+rails&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjPhLiNmcTbAhWG1RQKHSwjCIkQ_AUICigB&biw=1680&bih=881#imgrc=MILBv4TzszrH9M:" alt=""></h1>
 					<h4><%= @course.address %> - <%= @course.city %></h4>
 					<div class="course-information">
 						<div class="course-description">
@@ -123,7 +129,7 @@
 											From 14 to 15
 										</div>
 										<div  id="sa" class="availability">	<%= 77 %></div>
-										<div id="su"  class="availability">	<%= 88 %></div> 
+										<div id="su"  class="availability">	<%= 88 %></div>
 									</div>
 								</div>
 

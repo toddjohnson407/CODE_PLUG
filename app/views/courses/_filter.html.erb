@@ -1,4 +1,59 @@
-<%= simple_form_for(courses_path, remote: true, method: :get) do |form| %>
-  <%= form.input :search, value: "Javascript" %>
-  <%= form.button :submit %>
-<% end %>
+
+<style>
+  .flex-container {
+    display: flex;
+  }
+  .flex {
+    margin: 15px;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="flex-container">
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, "HTML", style: "display:none" %>
+            <%= submit_tag :submit, class: "btn btn-primary", value:"HTML/CSS" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, "Python", style: "display:none" %>
+            <%= submit_tag :submit, class: "btn btn-primary", value:"Python" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, "C++", style: "display:none" %>
+            <%= submit_tag :submit, class: "btn btn-primary", value:"C++" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, "Swift", style: "display:none" %>
+            <%= submit_tag :submit, class: "btn btn-primary", value:"Swift" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, "JavaScript", style: "display:none" %>
+            <%= submit_tag :submit, class: "btn btn-primary", value:"JavaScript" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, "Ruby", style: "display:none" %>
+            <%= submit_tag :submit, class: "btn btn-primary", value:"Ruby" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
