@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 94.2 13" style="enable-background:new 0 0 94.2 13;" xml:space="preserve">
+<style type="text/css">
+  @keyframes moveRectangle {
+    to {
+      transform: translateY(5px);
+    }
+  }
+  @keyframes expandRectangle {
+    to {
+      width: 10px;
+      transform: translateX(-5px);
+    }
+  }
+  @keyframes moveTextLeft {
+    to {
+      transform: matrix(1, 0, 0, 1, 5.2407, 11)
+    }
+  }
+  @keyframes moveTextRight {
+    to {
+      transform: matrix(1, 0, 0, 1, 55.2407, 11)
+    }
+  }
+  @keyframes blink {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.0;
+    }
+  }
+  @keyframes hideRectangle {
+    to {
+      stroke: none;
+      fill: none;
+    }
+  }
+  .st0 {
+    fill:#EEE;
+    stroke:#EEE;
+  }
+  .st1 {
+    font-family:'Helvetica-Light';
+    fill:#FFF;
+    stroke:#FFF;
+  }
+  .st2 {
+    font-size:12px;
+  }
+  #codeplug-logo-upper {
+    -webkit-animation-name: moveRectangle, hideRectangle;
+    -webkit-animation-delay: 0s, 2s;
+    -webkit-animation-duration: 2s, 100ms;
+    -webkit-animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+  }
+  #codeplug-logo-under {
+    animation: blink 1s cubic-bezier(1.0, 0, 0, 1.0) infinite;
+    -webkit-animation-name: expandRectangle, blink;
+    -webkit-animation-delay: 2s, 4s;
+    -webkit-animation-duration: 2s, 1s;
+    -webkit-animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+    -webkit-animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+  }
+  #codeplug-logo-code {
+    -webkit-animation: moveTextLeft 2s cubic-bezier(1.0, 0, 0, 1.0) 2s forwards;
+  }
+  #codeplug-logo-plug {
+    -webkit-animation: moveTextRight 2s cubic-bezier(1.0, 0, 0, 1.0) 2s forwards;
+  }
+</style>
+<g id="codeplug-logo">
+  <rect id="codeplug-logo-under" x="47.7" y="9.5" class="st0" width="1" height="1"/>
+  <rect id="codeplug-logo-upper" x="47.7" y="4.5" class="st0" width="1" height="1"/>
+  <text transform="matrix(1 0 0 1 51.2407 11)" class="st1 st2" id="codeplug-logo-plug">PLUG</text>
+  <text transform="matrix(1 0 0 1 10.2407 11)" class="st1 st2" id="codeplug-logo-code">CODE</text>
+</g>
+</svg>
