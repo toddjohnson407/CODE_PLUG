@@ -6,9 +6,45 @@ class CoursesController < ApplicationController
   end
 
   def index
+    # byebug
+    @subjects = Subject.all
+     @courses = policy_scope(Course)
     # @courses = policy_scope(Course).limit(1)
-    @courses = policy_scope(Course).where.not(latitude: nil, longitude: nil)
-    @courses = Course.search_by_city_and_address(params[:search])
+    @courses = @courses.where.not(latitude: nil, longitude: nil)
+
+    if params[:subject_id]
+      @courses = @courses.where(subject_id: params[:subject_id])
+    end
+
+
+# ["0-20€", 1], ["21-50€", 2], ["51€<", 3] PRICE
+# ["0-5km", 1], ["6-10km", 2], ["10km<", 3 DISTANCE
+
+    if params[:price]
+      if params[:price] == "1"
+        @courses = @courses.where("price > ? AND price < ?", 0, 20)
+      elsif params[:price] == "2"
+        @courses = @courses.where("price > ? AND price < ?", 21, 50)
+      elsif params[:price] == "3"
+        @courses = @courses.where("price > ?", 51)
+      end
+    end
+
+    # DISTANCE to where?
+
+    # if params[:distance]
+    #   if params[:distance] == "1"
+    #     @courses = @courses.where()
+    #   elsif params[:distance] == "2"
+    #     @courses = @courses.where()
+    #   elsif params[:distance] == "3"
+    #     @courses = @courses.where()
+    #   end
+    # end
+
+
+
+    # @courses = Course.search_by_city_and_address(params[:subject])
     # @courses = policy_scope(Course).limit(3)
 
     @markers = @courses.map do |course|
