@@ -17,11 +17,12 @@
         <%= f.input :address, label: "Indicate the current address you would be teaching the student. In case you don't have a specific address, state the city", placeholder: "Where would you teach?"  %><br>
 
         <%= f.input :city, label: "Indicate in which area in the city you will be teaching", placeholder: "In what area?" %> <br> <br>
-     
-        <br> <br>
+
         
-        <%= f.input :subject, as: :select, collection: Subject.all.map(&:category) %> <br>
-        <br> <br>
+
+        <%= f.input :subject, as: :select, collection: Subject.all.map(&:category) %> <br> <br> <br>
+        <%= f.input :documents %>
+        <%= f.input :documents_cache, as: :hidden %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
       </div>
@@ -30,7 +31,7 @@
       </div>
       <% end %>
     </div>
-  </div>
+  </div> name
 </div>
 
 
