@@ -6,4 +6,42 @@
 	font-size: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
-	border: none;}
+	border: none;
+}
+
+.btn-filter {
+  height: 35px;
+  width: 100px;
+  // margin: 15px auto;
+  // padding: 10px;
+  background-color: #FFF;
+  border: 1px solid #ccc;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform-style: flat;
+  transition: all 250ms ease-out;
+  border-radius: 8px;
+
+
+
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    // border: 1px solid gray;
+    background-color: #D8D8D8;
+
+
+    &:before {
+      box-shadow: 0 15px 10px -10px rgba(31, 31, 31, 0.5);
+    }
+  }
+}
+
+
+
