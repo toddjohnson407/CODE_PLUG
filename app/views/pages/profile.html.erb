@@ -2,6 +2,7 @@
 
 <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill %>
 <h1><%= current_user.email %></h1>
+<h1><%= current_user.first_name %></h1>
 <% if current_user.teacher? %>
   <h1>Teacher</h1>
 <% else %>

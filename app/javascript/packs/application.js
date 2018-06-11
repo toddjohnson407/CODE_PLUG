@@ -10,3 +10,5 @@ import { days } from '../components/calendar'
 
 showToolTip();import { showToolTip } from '../components/banner';
 
+import '../components/message-form.js';
+import '../components/messages.js';

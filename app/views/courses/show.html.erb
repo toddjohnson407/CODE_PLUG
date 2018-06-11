@@ -11,7 +11,7 @@
 </marquee> -->
 			<div class="hidden-xs col-sm-4" style="margin-left: -20px; padding-right: 70px;">
 				<div class="profile-line">
-				<div class="user-card">	
+				<div class="user-card">
 					<div class="user-card-left">
 						<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
@@ -186,6 +186,8 @@
 		</div>
 	</div>
 </div>
+
+<h2><%= link_to "CHAT", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post %></h2>
 
 
 <%= content_for :after_js do %>
