@@ -1,3 +1,10 @@
+<style>
+.flatpickr-weekdays {
+	display: none !important;
+}
+</style>
+
+
 
 <div class="wrapper" style="background-color: #eef0f2">
 	<div class="container">
@@ -37,14 +44,14 @@
 
 
 		<div class="feedback">
-			<h1>Teacher feedback</h1>
+			<h1>Teacher feedback (150 reviews) <br> Average: <i class="fas fa-star"></i></h1> 
 			<div class="review">
 				<div class="review-name">
+					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
 					<h1>Marta</h1>
 					<p>1 month ago</p>
 				</div>
 				<div class="review-description">
-					<br><i class="fas fa-star"></i></br>
 					<p>The teacher was not that good, I had some difficulties understanding it.</p>
 				</div>
 			</div>
@@ -52,11 +59,11 @@
 		<div class="feedback">
 			<div class="review">
 				<div class="review-name">
+					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
 					<h1>Arthur</h1>
 					<p>1 month ago</p>
 				</div>
 				<div class="review-description">
-					<br><i class="fas fa-star"></i></br>
 					<p>The teacher was not that good, I had some difficulties understanding it.</p>
 				</div>
 			</div>
@@ -64,11 +71,11 @@
 		<div class="feedback">
 			<div class="review">
 				<div class="review-name">
+					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
 					<h1>Alex</h1>
 					<p>1 month ago</p>
 				</div>
 				<div class="review-description">
-					<br><i class="fas fa-star"></i></br>
 					<p>The teacher was not that good, I had some difficulties understanding it.</p>
 				</div>
 			</div>
@@ -89,20 +96,30 @@
 					<h1><%= @course.title %> </h1>
 					<h4><%= @course.address %> - <%= @course.city %></h4>
 
-					<div class="video-container" data-video-id="GY7Ps8fqGdc"><iframe width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc" id="video-frame" frameborder="0" allow="encrypted-media" allowfullscreen controls="0" disablekb="1" fs="0" modestbranding="1" ></iframe></div>
-					<h3>Course Description</h3>
-					<p><%= @course.description %></p>
-					<h3>What will you learn?</h3>
-					<p> <%= @course.learning %></p>
-					<h3>Requirements</h3>
-					<p> <%= @course.requirement%></p>
+					<div class="video-container">
+						<a onclick="changeVideo('GY7Ps8fqGdc')">Video 1</a>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-body">
+										<iframe id="iframeYoutube" width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc" frameborder="0" allowfullscreen ></iframe>
+									</div>
+								</div>
+							</div>
+						</div>
+						<h3>Course Description</h3>
+						<p><%= @course.description %></p>
+						<h3>What will you learn?</h3>
+						<p> <%= @course.learning %></p>
+						<h3>Requirements</h3>
+						<p> <%= @course.requirement%></p>
+					</div>
 				</div>
-
 			</div>
 
 
 			<div class="book-class">
-				<div class="teacher">
+				<div class="book-menu">
 					<p>Choose your dates:</p>
 					<div class="dates">
 						<%= simple_form_for [@course, @booking] do |f| %>
@@ -222,3 +239,4 @@
 document.app.days();
 <% end %>
 <% end %>
+

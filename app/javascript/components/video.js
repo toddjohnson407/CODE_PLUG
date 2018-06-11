@@ -1,6 +1,16 @@
-import ModalVideo from 'modal-video';
+import $ from "jquery";
 
-//const videoModal = new ModalVideo('.video-container');
-const videoModal = $(".video-container").modalVideo();
+$(document).ready(function(){
+  $("#myModal").on("hidden.bs.modal",function(){
+    $("#iframeYoutube").attr("src","#");
+  })
+})
 
-export { videoModal };
+export function changeVideo(vId){
+  var iframe=document.getElementById("iframeYoutube");
+  iframe.src="https://www.youtube.com/embed/"+vId;
+
+  $("#myModal").modal("show");
+}
+
+export {changeVideo};

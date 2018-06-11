@@ -1,64 +1,8 @@
-
-
-.user-card-left {
-	width: 33%;
-	p {
-		text-align: center;
-		margin-top: 5px	;
-		font-size: 16px;
-		margin-left: -2px;
-
-	}
-}
-
-
-.user-card-right {
-	width: 66%;
-	h1 {
-		font-size: 16px;
-		line-height: 24px;
-		font-weight: bold;
-		color: #000;
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: 8px;
-	}
-	p {
-		font-size: 12px;
-		line-height: 16px;
-		margin-left: 10px;
-		color: #000;
-		margin-top: -8px;
-	}
-
-}
-
-
-.teacher {
-	border-top: 1px solid #2F80ED;
-	background-color: #fff;
-	border-radius: 0.375rem;
-	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
-	padding: 4px; 
-
-
-}
-
 .profile-line {
 	border-top: 1px solid #2F80ED;
 	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
 	background-color: white;
 }
-
-#description-card 
-{
-	border-top: 1px solid #2F80ED;
-	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
-	background-color: white;
-	min-height: calc(100vh - 150px);
-}
-
-
 
 .user-card {
 	padding-left: 5px;
@@ -72,10 +16,30 @@
 	border-top: 2px solid #2F80ED;
 }
 
-.feed-identity {		
-	display: block;
-	height: 30px;
-	background-size: cover;
+.user-card-left {
+	width: 33%;
+
+}
+
+.user-card-right {
+	width: 66%;
+	h1 {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: bold;
+		color: #000;
+		text-align: left; 
+		margin-left: 30px;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	p {
+		font-size: 12px;
+		line-height: 16px;
+		margin-left: 30px;
+		color: #000;
+		margin-top: -8px;
+	}
 
 }
 
@@ -100,7 +64,6 @@
 
 }
 
-
 .fa-star{
 	font-size: 14px;
 	color: #f1c550;	
@@ -108,6 +71,123 @@
 	margin-right: 4px;
 
 }
+
+.teacher-about-me {
+	border-bottom: 1px solid rgba(0,0,0,.15);
+	h1 {
+		font-size: 16px;
+		font-weight: bold;
+		color: #000;
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+
+	}
+	p {	
+		font-size: 14px;
+		margin-left: 35px;
+		margin-right: 35px; 
+		margin-bottom: 20px;
+		text-align: justify;
+		font-family: helvetica;
+
+	}
+}
+
+.teacher-skills {
+	align-items: center;
+	padding-bottom: 12px;
+	border-bottom: 1px solid rgba(0,0,0,.15);
+
+	h1 {
+		font-size: 16px;
+		font-weight: bold;
+		color: #000;
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+
+	}
+	p {	
+		font-size: 14px;
+		margin-left: 35px;
+		margin-right: 35px; 
+		margin-bottom: 20px;
+		text-align: justify;
+		font-family: helvetica;
+	}
+}
+
+.feedback {
+	padding-left: 15px;
+	h1 {
+		margin-right: 10px;		
+		margin-bottom: 20px;
+		font-size: 16px;
+		font-weight: bold;
+		color: #000;
+		text-align: left; 
+		margin-top: 20px;
+		text-align: center;
+
+	}
+}
+
+.review {
+	display: flex; 
+}
+
+.review-name {
+	width: 50%; 
+	margin-top: 10px;  
+	h1 {
+		font-size: 14px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		color: black; 
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+	p {
+		font-size: 10px;
+		text-align: left; 
+		margin-left: 10px;
+		margin-top: -20px;
+		text-align: justify;
+		font-family: helvetica;
+	}
+}
+
+.review-description {
+	width: 50%; 
+	margin-left: -30px; 
+	p {
+		margin-left: -5px;
+		font-size: 14px;
+		text-align: left; 
+		margin-top: 5px;
+		text-align: justify;
+	}
+	.fa-star {
+		text-align: left; 
+		margin-left: 10px;
+	}
+}
+
+
+#description-card 
+{
+	border-top: 1px solid #2F80ED;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+	background-color: white;
+	min-height: calc(100vh - 150px);
+}
+
 
 .course-description {
 	width: 70%;
@@ -132,7 +212,7 @@
 		text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 		text-align: left; 
 		margin-left: 10px;
-		margin-top: 14px; 
+		margin-top: 20px; 
 
 	}
 	p {
@@ -146,71 +226,13 @@
 
 }
 
-.teacher-about-me {
-	h1 {
-		font-size: 16px;
-		font-weight: bold;
-		color: #000;
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: 14px;
-		text-align: center;
 
-	}
-	p {	
-		color: #000;
-		font-size: 14px;
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: 12px;
-		text-align: justify;
-		margin-right: 10px;
-
-	}
-}
-
-
-.teacher-skills {
-	align-items: center;
-	padding-bottom: 12px;
-	border-bottom: 1px solid rgba(0,0,0,.15);
-
-	h1 {
-		font-size: 18px;
-		font-weight: bold;
-		color: #000;
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: 10px; 
-		margin-bottom: 10px;
-
-	}
-	p {
-		font-size: 14px;
-		text-align: left; 
-		margin-left: 10px;
-		text-align: justify;
-		width: 40px; 
-
-	}
-}
-
-.feedback {
-	h1 {
-		font-size: 18px;
-		font-weight: bold;
-		color: #000;
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: 40px; 
-
-	}
-}
 
 .course {
 	margin-left: 2px; 
 	h1 {
 		font-size: 40px;
+		margin-bottom: 20px;
 		font-weight: bold;
 		color: black; 
 		text-align: left; 
@@ -228,48 +250,15 @@
 
 }
 
+.book-menu {
+	border-top: 1px solid #2F80ED;
+	background-color: #fff;
+	border-radius: 0.375rem;
+	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+	padding: 4px; 
 
 
-.review {
-	display: flex; 
-	border-top: 1px solid #dedfe0; 
 }
-
-.review-name {
-	width: 50%; 
-	margin-top: 10px;  
-	h1 {
-		font-size: 18px;
-		color: black; 
-		text-align: left; 
-		margin-left: 3px;
-		margin-top: 10px;		
-	}
-	p {
-		font-size: 10px;
-		text-align: left; 
-		margin-left: 3px;
-		margin-top: -11px;
-		text-align: justify;
-
-	}
-}
-
-.review-description {
-	width: 100%; 
-	margin-left: -30px; 
-	p {
-		font-size: 14px;
-		text-align: left; 
-		margin-top: 5px;
-		text-align: left;
-	}
-	.fa-star {
-		text-align: left; 
-		margin-left: 10px;
-	}
-}
-
 .book-class {
 	width: 40%; 
 	margin-left: 20px; 

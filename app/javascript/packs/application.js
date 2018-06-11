@@ -13,4 +13,4 @@ initDatePicker();
 
 showToolTip();import { showToolTip } from '../components/banner';
 
-import { videoModal } from '../components/video';
+import { changeVideo } from '../components/video';
