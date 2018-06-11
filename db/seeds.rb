@@ -8,6 +8,7 @@
 
 Subject.destroy_all
 
+Subject.create(category: 'Assembly')
 Subject.create(category: 'Ruby')
 Subject.create(category: 'JavaScript')
 Subject.create(category: 'Python')
@@ -15,6 +16,6 @@ Subject.create(category: 'HTML/CSS')
 Subject.create(category: 'C++')
 Subject.create(category: 'Swift')
 Subject.create(category: 'Perl')
-Subject.create(category: 'Assembly')
+
 
 
