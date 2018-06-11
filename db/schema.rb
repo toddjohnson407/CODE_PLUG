@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_083349) do
+ActiveRecord::Schema.define(version: 2018_06_11_103014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 2018_06_11_083349) do
     t.index ["course_id"], name: "index_bookings_on_course_id"
     t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -59,10 +66,12 @@ ActiveRecord::Schema.define(version: 2018_06_11_083349) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.text "body"
     t.bigint "user_id"
+    t.bigint "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -113,5 +122,6 @@ ActiveRecord::Schema.define(version: 2018_06_11_083349) do
   add_foreign_key "courses", "users"
   add_foreign_key "credits", "courses"
   add_foreign_key "credits", "users"
+  add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
 end
