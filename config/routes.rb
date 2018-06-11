@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'documents/index'
+  get 'documents/new'
+  get 'documents/create'
+  get 'documents/destroy'
   devise_for :users
 
   root to: 'pages#home'
