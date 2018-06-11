@@ -41,10 +41,14 @@
   <h6>How to become a teacher</h6>
   <div class="row">
     <div class="col-md-6 col-md-6">
-      <%= image_tag "tools.png", class: "icon-teacher-page" %>
-      <h4>Create your course</h4>
-      <p>Udacity versteht die Zukunft als Aufgabe. Als einen Raum, der durch jeden Einzelnen gestaltet werden soll. Welches Feld willst du mitgestalten? Die Mobilität? Das Gesundheitswesen? Kommunikation? Ökologie? Regierungsarbeit? Mit unseren Online-Programmen stehen dir etliche Branchen und Zukünfte offen.Udacity versteht die Zukunft als Aufgabe.</p>
+      <div class="flexbox-card">
+        <div class="icon-header">
+          <%= image_tag "tools.png", class: "icon-teacher-page" %>
+          <h4>Create your course</h4>
+        </div>
+        <p>Udacity versteht die Zukunft als Aufgabe. Als einen Raum, der durch jeden Einzelnen gestaltet werden soll. Welches Feld willst du mitgestalten? Die Mobilität? Das Gesundheitswesen? Kommunikation? Ökologie? Regierungsarbeit? Mit unseren Online-Programmen stehen dir etliche Branchen und Zukünfte offen.Udacity versteht die Zukunft als Aufgabe.</p>
       </div>
+    </div>
     <div class="col-md-6 col-md-6">
       <%= image_tag "createpens.jpg", class: "image-teacher-page" %>
     </div>
@@ -55,15 +59,17 @@
       <%= image_tag "teaching.jpg", class: "image-teacher-page" %>
     </div>
     <div class="col-md-6 col-md-6">
+      <div class="icon-header">
       <%= image_tag "teach.png", class: "icon-teacher-page" %>
       <h4>Teach your students</h4>
+      </div>
       <p>Udacity versteht die Zukunft als Aufgabe. Als einen Raum, der durch jeden Einzelnen gestaltet werden soll. Welches Feld willst du mitgestalten? Die Mobilität? Das Gesundheitswesen? Kommunikation? Ökologie? Regierungsarbeit? Mit unseren Online-Programmen stehen dir etliche Branchen und Zukünfte offen.Udacity versteht die Zukunft als Aufgabe.</p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6 col-md-6">
-      <div class="test">
+      <div class="icon-header">
       <%= image_tag "give-money.png", class: "icon-teacher-page" %>
       <h4>Get paid</h4>
       </div>
@@ -79,8 +85,10 @@
       <%= image_tag "teachcafe.jpg", class: "image-teacher-page" %>
     </div>
     <div class="col-md-6 col-md-6">
+      <div class="icon-header">
       <%= image_tag "community.png", class: "icon-teacher-page" %>
       <h4>Join a community</h4>
+      </div>
       <p>Udacity versteht die Zukunft als Aufgabe. Als einen Raum, der durch jeden Einzelnen gestaltet werden soll. Welches Feld willst du mitgestalten? Die Mobilität? Das Gesundheitswesen? Kommunikation? Ökologie? Regierungsarbeit? Mit unseren Online-Programmen stehen dir etliche Branchen und Zukünfte offen.Udacity versteht die Zukunft als Aufgabe.</p>
     </div>
   </div>
@@ -101,11 +109,5 @@
   document.app.showToolTip();
   <% end %>
   <% end %>
-=======
 
-<% if current_user.nil? %>
-  <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "btn btn-primary" %>
-<% else %>
-  <%= link_to t(".sign_up", default: "Sign Up"), edit_user_registration_path, class: "btn btn-primary" %>
-<% end %>
 
