@@ -1,12 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  def add_teacher
-    current_user.teacher = true
-    current_user.save
-    redirect_to teacher_path
-  end
-
   def current_index
     @courses = policy_scope(Course).order(created_at: :desc)
   end

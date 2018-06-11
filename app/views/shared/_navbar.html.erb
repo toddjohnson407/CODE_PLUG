@@ -16,7 +16,7 @@
       <% if current_user.teacher %>
         <%= link_to "List a New Course", new_course_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% else %>
-        <%= link_to "Become a Teacher", add_teacher_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Become a Teacher", teacher_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
       <%= link_to "My Courses", current_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!--<%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %> -->
