@@ -1,3 +1,9 @@
+<style>
+.flatpickr-weekdays {
+	display: none !important;
+}
+</style>
+
 
 <div class="wrapper" style="background-color: #eef0f2">
 	<div class="container">
@@ -9,96 +15,135 @@
     <h2 style="font-size: 40px">WHAT THE ACTUAL FUCK</h2>
   </marquee>
 </marquee> -->
-			<div class="hidden-xs col-sm-4" style="margin-left: -20px; padding-right: 70px;">
-				<div class="profile-line">
-				<div class="user-card">
-					<div class="user-card-left">
-						<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
+<div class="col-sm-3">
+	<div class="profile-line">
+		<div class="user-card">	
+			<div class="user-card-left">
+				<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
-					</div>
-					<div class="user-card-right">
-						<h1> <%= @course.user.first_name %><%= @course.user.last_name %> </h1>
-						<p><i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
-						<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
-						<p><i class="fas fa-star"></i></p>
-
-					</div>
-				</div>
-				<div class="teacher-about-me">
-					<h1><%=@course.user.current_position %></h1>
-					<p><%=@course.user.description %></p>
-				</div>
-
-
-				<div class="teacher-skills">
-					<h1>Coding languages</h1>
-					<p> <%= @course.user.languages %> </p>
-				</div>
-
-
-				<div class="feedback">
-					<h1>Teacher feedback</h1>
-					<div class="review">
-						<div class="review-name">
-							<h1>Marta</h1>
-							<p>1 month ago</p>
-						</div>
-						<div class="review-description">
-							<br><i class="fas fa-star"></i></br>
-							<p>The teacher was not that good, I had some difficulties understanding it.</p>
-						</div>
-					</div>
-				</div>
-				<div class="feedback">
-					<div class="review">
-						<div class="review-name">
-							<h1>Arthur</h1>
-							<p>1 month ago</p>
-						</div>
-						<div class="review-description">
-							<br><i class="fas fa-star"></i></br>
-							<p>The teacher was not that good, I had some difficulties understanding it.</p>
-						</div>
-					</div>
-				</div>
-				<div class="feedback">
-					<div class="review">
-						<div class="review-name">
-							<h1>Alex</h1>
-							<p>1 month ago</p>
-						</div>
-						<div class="review-description">
-							<br><i class="fas fa-star"></i></br>
-							<p>The teacher was not that good, I had some difficulties understanding it.</p>
-						</div>
-					</div>
-					<div class="review">
-					</div>
-				</div>
-				<button type="button" class="btn btn-default">More reviews</button>
 			</div>
+			<div class="user-card-right">
+				<h1> <%= @course.user.first_name %><%= @course.user.last_name %> </h1>
+				<p><i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
+				<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
+				<p><i class="fas fa-star"></i></p>
+
 			</div>
+		</div>
+		<div class="teacher-about-me">
+			<h1><%=@course.user.current_position %></h1>
+			<p><%=@course.user.description %></p>
+		</div>
 
 
-			<div class="col-xs-12 col-sm-8" style="margin-left: -60px">
-				<div class="course">
-					<h1><%= @course.title %> <img url="https://www.google.com/search?q=ruby+on+rails&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjPhLiNmcTbAhWG1RQKHSwjCIkQ_AUICigB&biw=1680&bih=881#imgrc=MILBv4TzszrH9M:" alt=""></h1>
+		<div class="teacher-skills">
+			<h1>Coding languages</h1>
+			<p> <%= @course.user.languages %> </p>
+		</div>
+
+
+		<div class="feedback">
+			<h1>Teacher feedback (150 reviews) <br> Average: <i class="fas fa-star"></i></h1> 
+			<div class="review">
+				<div class="review-name">
+					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
+					<h1>Marta</h1>
+					<p>1 month ago</p>
+				</div>
+				<div class="review-description">
+					<p>The teacher was not that good, I had some difficulties understanding it.</p>
+				</div>
+			</div>
+		</div>
+		<div class="feedback">
+			<div class="review">
+				<div class="review-name">
+					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
+					<h1>Arthur</h1>
+					<p>1 month ago</p>
+				</div>
+				<div class="review-description">
+					<p>The teacher was not that good, I had some difficulties understanding it.</p>
+				</div>
+			</div>
+		</div>
+		<div class="feedback">
+			<div class="review">
+				<div class="review-name">
+					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
+					<h1>Alex</h1>
+					<p>1 month ago</p>
+				</div>
+				<div class="review-description">
+					<p>The teacher was not that good, I had some difficulties understanding it.</p>
+				</div>
+			</div>
+			<div class="review">
+			</div>
+		</div>
+		<button type="button" class="btn btn-default">More reviews</button>
+	</div>
+</div>
+
+
+<div class="col-xs-12 col-sm-9">
+	<div class="course">
+
+		<div class="course-information">
+			<div class="course-description">
+				<div id="description-card">
+					<h1><%= @course.title %> </h1>
 					<h4><%= @course.address %> - <%= @course.city %></h4>
-					<div class="course-information">
-						<div class="course-description">
-							<h3>Course Description</h3>
-							<p><%= @course.description %></p>
-							<h3>What will you learn?</h3>
-							<p> <%= @course.learning %></p>
-							<h3>Requirements</h3>
-							<p> <%= @course.requirement%></p>
+
+					<div class="video-container">
+						<a onclick="changeVideo('GY7Ps8fqGdc')">Video 1</a>
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-body">
+										<iframe id="iframeYoutube" width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc" frameborder="0" allowfullscreen ></iframe>
+									</div>
+								</div>
+							</div>
+						</div>
+						<h3>Course Description</h3>
+						<p><%= @course.description %></p>
+						<h3>What will you learn?</h3>
+						<p> <%= @course.learning %></p>
+						<h3>Requirements</h3>
+						<p> <%= @course.requirement%></p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="book-class">
+				<div class="book-menu">
+					<p>Choose your dates:</p>
+					<div class="dates">
+						<%= simple_form_for [@course, @booking] do |f| %>
+						<div class="col-md-6">
+							<div class="courses-booking-form">
+								<p>Start Date</p>
+								<div class="check_in">
+									<p>
+										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<p>End Date</p>
+							<div class="check_out">
+								<p>
+									<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
+								</p>
+							</div>	
 
 						</div>
-						<div class="book-class">
-							<div class="teacher">
-								<div class="course-movie">
-									<div class="video-container"><iframe width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc" id="video-frame" frameborder="0" allow="encrypted-media" allowfullscreen controls="0" disablekb="1" fs="0" modestbranding="1" ></iframe></div>
-									<p>€<%= @course.price %> per month</p>
+						<p>€<%= @course.price %> per hour</p>
+
+	<!-- 						<% end %>
 
 
 									<div id="calendar">
@@ -132,7 +177,7 @@
 										<div  id="sa" class="availability">	<%= 77 %></div>
 										<div id="su"  class="availability">	<%= 88 %></div>
 									</div>
-								</div>
+								</div> -->
 
 								<% unless @course.user_id == current_user.id %>
 								<%= link_to "Book this Course", new_course_booking_path(@course), class: " btn btn-success", data: { toggle: "modal", target: "#bookingModal" } %>
@@ -187,11 +232,10 @@
 	</div>
 </div>
 
-<h2><%= link_to "CHAT", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post %></h2>
-
 
 <%= content_for :after_js do %>
 <%= javascript_tag do %>
 document.app.days();
 <% end %>
 <% end %>
+
