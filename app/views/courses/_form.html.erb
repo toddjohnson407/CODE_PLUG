@@ -10,12 +10,16 @@
 
       <div class="form-inputs">
         <%= f.input :title , as: :string, label: "Please indicate the name of the course you are teaching, e.g. 'Ruby on Rails' ", placeholder: "Name of the course" %> <br> <br>
-          <%= f.input :description, class: "effect-4", label: "Please make a detailed description on the course, stating what it is about and how it will be organized   ", placeholder: "Course description" %><br>
+        <%= f.input :description, class: "effect-4", label: "Please make a detailed description on the course, stating what it is about and how it will be organized   ", placeholder: "Course description" %><br>
         <%= f.input :learning, class: "effect-4", label: "Describe what the teacher will know by the end of the course", placeholder: "Describe what the student will learn" %><br>
-         <%= f.input :requirement, class: "effect-4", label: "If the student should already know some basics before enrolling in the course, please state here. Otherwise state 'no requirements'", placeholder: "Describe what the student should already know" %><br>
+        <%= f.input :requirement, class: "effect-4", label: "If the student should already know some basics before enrolling in the course, please state here. Otherwise state 'no requirements'", placeholder: "Describe what the student should already know" %><br>
         <%= f.input :price, label: "Indicate what is the price you are requiring for teaching   per hour", placeholder: "Your price per hour" %><br>
         <%= f.input :address, label: "Indicate the current address you would be teaching the student. In case you don't have a specific address, state the city", placeholder: "Where would you teach?"  %><br>
+
         <%= f.input :city, label: "Indicate in which area in the city you will be teaching", placeholder: "In what area?" %> <br> <br>
+
+        
+
         <%= f.input :subject, as: :select, collection: Subject.all.map(&:category) %> <br> <br> <br>
         <%= f.input :documents %>
         <%= f.input :documents_cache, as: :hidden %>

@@ -22,12 +22,11 @@ class CoursesController < ApplicationController
       format.html
       format.js
     end
-
   end
 
   def show
-      @course = Course.find(params[:id])
-      @booking = Booking.new
+    @course = Course.find(params[:id])
+    @booking = Booking.new
       # @markers = { lat: @course.latitude, lng: @course.longitude }
   end
 
@@ -68,12 +67,13 @@ class CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
 
   def set_course
     @course = Course.find(params[:id])
     authorize @course
   end
+
 
   def course_params
     params.require(:course).permit(:title, :user_id, :price, :description, :address, :city, :photo, :documents, :requirement, :learning)
