@@ -40,12 +40,24 @@
 	border-radius: 0.375rem;
 	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
 	padding: 4px; 
+
+
 }
 
 .profile-line {
+	border-top: 1px solid #2F80ED;
 	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
 	background-color: white;
 }
+
+#description-card 
+{
+	border-top: 1px solid #2F80ED;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
+	background-color: white;
+	min-height: calc(100vh - 150px);
+}
+
 
 
 .user-card {
@@ -99,17 +111,14 @@
 
 .course-description {
 	width: 70%;
-}
-
-.course-movie {
-	width: 10%;
 	.video-container {
 		cursor: pointer;
 		#video-frame {
 			pointer-events: none;
 		}
-	}
+	}	
 }
+
 
 .course-information {
 	position: relative;
@@ -219,9 +228,6 @@
 
 }
 
-.course-movie {
-	width: 100%;
-}
 
 
 .review {
@@ -268,16 +274,47 @@
 	width: 40%; 
 	margin-left: 20px; 
 	margin-right: -120px !important; 
-	margin-top: -60px;
 
 	p {
 		margin-left: 0px;	
-		color: white;
+		color: black;
 		text-align: center;
 		font-weight: bold;
-		font-size: 20px; 	
+		font-size: 18px; 	
 	} 
 
 }
 
 
+.dates{
+	display: flex; 
+	border-radius: 2px; 
+	width: 100%;
+	box-sizing: border-box;
+	b {
+		font-family: helvetica;
+		font-size:14px;
+	}
+}
+
+.check_in{
+	font-size: 17px; 
+	line-height: 24px; 
+	display: flex;
+	vertical-align: middle;
+	margin-right: -10px;
+	input {
+		width:100%;
+	}
+}	
+
+.check_out{
+	margin-left: -10px;
+	font-size: 17px; 
+	line-height: 24px; 
+	display: flex;
+	vertical-align: middle;
+	input {
+		width:100%;
+	}
+}
