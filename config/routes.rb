@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/add_teacher", to: "courses#add_teacher"
   get "/bookings/current_index", to: "bookings#current_index"
   get "/teacher", to: "pages#teacher"
+  get "/profile", to: "pages#profile"
 end

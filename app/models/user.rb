@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :credits
   has_many :bookings
   has_many :messages
+  mount_uploader :photo, PhotoUploader
 
   before_save :set_teacher
 
