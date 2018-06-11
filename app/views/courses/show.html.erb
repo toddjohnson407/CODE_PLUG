@@ -1,5 +1,5 @@
 
-<div class="wrapper" style="background-color: white">
+<div class="wrapper" style="background-color: #eef0f2">
 	<div class="container">
 		<div class="row">
 
@@ -10,7 +10,8 @@
   </marquee>
 </marquee> -->
 			<div class="hidden-xs col-sm-4" style="margin-left: -20px; padding-right: 70px;">
-				<div class="user-card">
+				<div class="profile-line">
+				<div class="user-card">	
 					<div class="user-card-left">
 						<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
@@ -31,8 +32,7 @@
 
 				<div class="teacher-skills">
 					<h1>Coding languages</h1>
-					<li>Ruby</li>
-					<li>JavaScript</li>
+					<p> <%= @course.user.languages %> </p>
 				</div>
 
 
@@ -76,6 +76,7 @@
 					</div>
 				</div>
 				<button type="button" class="btn btn-default">More reviews</button>
+			</div>
 			</div>
 
 
