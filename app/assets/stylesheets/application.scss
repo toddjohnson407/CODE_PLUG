@@ -14,3 +14,9 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// General rules
+.container {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
