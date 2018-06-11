@@ -24,10 +24,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.course = @course
-
-
     if @booking.save
-      redirect_to course_booking_path(@course, @booking), notice: 'You have booked this course.'
+      redirect_to bookings_current_index_path, notice: 'You have booked this course.'
     else
       redirect_to course_path(@course), notice: 'Could not book.'
     end

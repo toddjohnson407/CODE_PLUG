@@ -8,4 +8,14 @@ class User < ApplicationRecord
   has_many :credits
   has_many :bookings
   has_many :messages
+  mount_uploader :photo, PhotoUploader
+
+  before_save :set_teacher
+
+  def set_teacher
+    if self.description
+      self.teacher = true
+    end
+  end
+
 end

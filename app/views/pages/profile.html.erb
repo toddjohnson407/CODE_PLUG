@@ -1,0 +1,12 @@
+<h1>Your Profile</h1>
+
+<%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill %>
+<h1><%= current_user.email %></h1>
+<h1><%= current_user.first_name %></h1>
+<% if current_user.teacher? %>
+  <h1>Teacher</h1>
+<% else %>
+  <h1>Student</h1>
+<% end %>
+<%= link_to "Edit Your Profile", edit_user_registration_path, class: "btn btn-primary" %>
+

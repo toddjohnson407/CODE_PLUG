@@ -1,8 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
-gem 'geocoder'
+gem 'attach'
 gem 'pundit'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
+gem 'geocoder'
 gem 'pg_search'
 gem 'bootsnap', require: false
 gem 'devise'

@@ -1,44 +1,197 @@
 
+<div class="wrapper" style="background-color: #eef0f2">
+	<div class="container">
+		<div class="row">
 
-<center>
-<h1><%= @course.title %></h1> <br>
-<h2>Located in: <br> <%= @course.address %> <br> <br> About this course: </h2>
-<h4><%= @course.description %></h4>
-</center>
+<!-- <marquee behavior="" direction="up" bgcolor="turquoise"><h1>My A$$ Fuck</h1></marquee>
+<marquee truespeed="20" direction="down" width="600" height="600" behavior="alternate" style="border:solid">
+  <marquee behavior="alternate">
+    <h2 style="font-size: 40px">WHAT THE ACTUAL FUCK</h2>
+  </marquee>
+</marquee> -->
+			<div class="hidden-xs col-sm-4" style="margin-left: -20px; padding-right: 70px;">
+				<div class="profile-line">
+				<div class="user-card">
+					<div class="user-card-left">
+						<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
+					</div>
+					<div class="user-card-right">
+						<h1> <%= @course.user.first_name %><%= @course.user.last_name %> </h1>
+						<p><i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
+						<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
+						<p><i class="fas fa-star"></i></p>
+
+					</div>
+				</div>
+				<div class="teacher-about-me">
+					<h1><%=@course.user.current_position %></h1>
+					<p><%=@course.user.description %></p>
+				</div>
+
+
+				<div class="teacher-skills">
+					<h1>Coding languages</h1>
+					<p> <%= @course.user.languages %> </p>
+				</div>
+
+
+				<div class="feedback">
+					<h1>Teacher feedback</h1>
+					<div class="review">
+						<div class="review-name">
+							<h1>Marta</h1>
+							<p>1 month ago</p>
+						</div>
+						<div class="review-description">
+							<br><i class="fas fa-star"></i></br>
+							<p>The teacher was not that good, I had some difficulties understanding it.</p>
+						</div>
+					</div>
+				</div>
+				<div class="feedback">
+					<div class="review">
+						<div class="review-name">
+							<h1>Arthur</h1>
+							<p>1 month ago</p>
+						</div>
+						<div class="review-description">
+							<br><i class="fas fa-star"></i></br>
+							<p>The teacher was not that good, I had some difficulties understanding it.</p>
+						</div>
+					</div>
+				</div>
+				<div class="feedback">
+					<div class="review">
+						<div class="review-name">
+							<h1>Alex</h1>
+							<p>1 month ago</p>
+						</div>
+						<div class="review-description">
+							<br><i class="fas fa-star"></i></br>
+							<p>The teacher was not that good, I had some difficulties understanding it.</p>
+						</div>
+					</div>
+					<div class="review">
+					</div>
+				</div>
+				<button type="button" class="btn btn-default">More reviews</button>
+			</div>
+			</div>
+
+
+			<div class="col-xs-12 col-sm-8" style="margin-left: -60px">
+				<div class="course">
+					<h1><%= @course.title %> <img url="https://www.google.com/search?q=ruby+on+rails&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjPhLiNmcTbAhWG1RQKHSwjCIkQ_AUICigB&biw=1680&bih=881#imgrc=MILBv4TzszrH9M:" alt=""></h1>
+					<h4><%= @course.address %> - <%= @course.city %></h4>
+					<div class="course-information">
+						<div class="course-description">
+							<h3>Course Description</h3>
+							<p><%= @course.description %></p>
+							<h3>What will you learn?</h3>
+							<p> <%= @course.learning %></p>
+							<h3>Requirements</h3>
+							<p> <%= @course.requirement%></p>
+
+						</div>
+						<div class="book-class">
+							<div class="teacher">
+								<div class="course-movie">
+									<div class="video-container"><iframe width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc" id="video-frame" frameborder="0" allow="encrypted-media" allowfullscreen controls="0" disablekb="1" fs="0" modestbranding="1" ></iframe></div>
+									<p>€<%= @course.price %> per month</p>
+
+
+									<div id="calendar">
+										<ul class="list-inline">
+											<li data-target="mo" class="active-day"><a href="#">MO</a></li>
+											<li data-target="tu" ><a href="#">TU</a></li>
+											<li data-target="we"><a href="#">WE</a></li>
+											<li data-target="th"><a href="#">TH</a></li>
+											<li data-target="fr"><a href="#">FR</a></li>
+											<li data-target="sa"><a href="#">SA</a></li>
+											<li data-target="su"><a href="#">SU</a></li>
+										</ul>
+
+										<div id="mo" class="availability active-availability">
+
+											From 9 to 10
+										</div>
+										<div id="tu" class="availability">
+
+											From 10 to 11
+										</div>
+										<div id="we" class="availability">					From 12 to 13
+										</div>
+										<div id="th" class="availability">
+											From 14 to 15
+										</div>
+										<div id="fr" class="availability">
+																						F
+											From 14 to 15
+										</div>
+										<div  id="sa" class="availability">	<%= 77 %></div>
+										<div id="su"  class="availability">	<%= 88 %></div>
+									</div>
+								</div>
+
+								<% unless @course.user_id == current_user.id %>
+								<%= link_to "Book this Course", new_course_booking_path(@course), class: " btn btn-success", data: { toggle: "modal", target: "#bookingModal" } %>
+								<% end %>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
 
 <div class="text-center" style="margin-top: 6vh;">
-  <% unless @course.user_id == current_user.id %>
-    <%= link_to "Book this Course", new_course_booking_path(@course), class: " btn btn-success", data: { toggle: "modal", target: "#bookingModal" } %>
-  <% end %>
-  <% if policy(@course).destroy? %>
-    <%= link_to "Remove this Course", @course, class: " btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-  <% if policy(@course).edit? %>
-    <%= link_to "Edit this Course", edit_course_path(@course), class: " btn btn-success" %>
-  <% end %>
-  <br>
-  <br>
-  <br>
+
+	<% if policy(@course).destroy? %>
+	<%= link_to "Remove this Course", @course, class: " btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+	<% if policy(@course).edit? %>
+	<%= link_to "Edit this Course", edit_course_path(@course), class: " btn btn-success" %>
+	<% end %>
+	<br>
+	<br>
+	<br>
 
 </div>
 
 <div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Book this Course</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= render 'bookings/form', booking: @booking, course: @course  %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Book this Course</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<%= render 'bookings/form', booking: @booking, course: @course  %>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
 </div>
+
+<h2><%= link_to "CHAT", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post %></h2>
+
+
+<%= content_for :after_js do %>
+<%= javascript_tag do %>
+document.app.days();
+<% end %>
+<% end %>
