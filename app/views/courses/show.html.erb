@@ -6,7 +6,7 @@
 
 
 <div class="wrapper" style="background-color: #eef0f2">
-	<div class="container">
+	<div class="container show-container">
 		<div class="row">
 
 <!-- <marquee behavior="" direction="up" bgcolor="turquoise"><h1>My A$$ Fuck</h1></marquee>
@@ -17,33 +17,40 @@
 </marquee> -->
 <div class="col-sm-3">
 	<div class="profile-line">
+		<div class="user-card">	
 		<div class="user-card">
 			<div class="user-card-left">
 				<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
+			<div class="user-card-left">
+				 <%= cl_image_tag current_user.photo, id: "avatar" %>
 			</div>
+
 			<div class="user-card-right">
 				<h1> <%= @course.user.first_name %><%= @course.user.last_name %> </h1>
 				<p><i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
 				<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
 				<p><i class="fas fa-star"></i></p>
-
 			</div>
 		</div>
+
 		<div class="teacher-about-me">
-			<h1><%=@course.user.current_position %></h1>
+			<h4>Lalalalal<%=@course.user.current_position %></h4>
 			<p><%=@course.user.description %></p>
 		</div>
 
 
 		<div class="teacher-skills">
-			<h1>Coding languages</h1>
-			<p> <%= @course.user.languages %> </p>
+			<h4>Coding languages</h4>
+			<p>  teacher was not that good, I had some difficulties understandi <%= @course.user.languages %> </p>
 		</div>
 
 
 		<div class="feedback">
-			<h1>Teacher feedback (150 reviews) <br> Average: <i class="fas fa-star"></i></h1>
+
+			<h4>Teacher feedback </h4>
+			<p>(150 reviews)</p> 
+			<p> Average: <i class="fas fa-star"></i></p>
 			<div class="review">
 				<div class="review-name">
 					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
@@ -51,6 +58,7 @@
 					<p>1 month ago</p>
 				</div>
 				<div class="review-description">
+					<h5>Great teacher!</h5>
 					<p>The teacher was not that good, I had some difficulties understanding it.</p>
 				</div>
 			</div>
@@ -63,6 +71,7 @@
 					<p>1 month ago</p>
 				</div>
 				<div class="review-description">
+					<h5>Great teacher!</h5>
 					<p>The teacher was not that good, I had some difficulties understanding it.</p>
 				</div>
 			</div>
@@ -75,12 +84,16 @@
 					<p>1 month ago</p>
 				</div>
 				<div class="review-description">
+					<h5>Great teacher!</h5>
 					<p>The teacher was not that good, I had some difficulties understanding it.</p>
 				</div>
 			</div>
 			<div class="review">
 			</div>
 		</div>
+
+		<button type="button" class="button_2">More reviews</button>
+
 		<button type="button" class="btn btn-default">More reviews</button>
    <%= link_to "Chat Here", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "btn btn-default", type: "button" %>
 
@@ -88,28 +101,61 @@
 </div>
 
 
-<div class="col-xs-12 col-sm-9" style="display: flex">
+<div class="col-xs-12 col-sm-6" style="display: flex">
 	<div class="course">
-		<div class="course-information">
-			<div class="course-description">
-				<div id="description-card">
-					<h1><%= @course.title %> </h1>
-					<h4><%= @course.address %> - <%= @course.city %></h4>
-					<div class="video-container">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @course.video %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						<%= cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
-					</div>
-					<h3>Course Description</h3>
-					<p><%= @course.description %></p>
-					<h3>What will you learn?</h3>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="course-top" >
+					<h1><%= @course.title %></h1>
+					<p><%= @course.address %> - <%= @course.city %></p>			
+				</div> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="course-video">
+					<iframe src="https://www.youtube.com/embed/<%= @course.video %>" height="auto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>				
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="course-details">
+					<h4>Course Description</h4>
+					<p><%= @course.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias voluptas laudantium a vero esse, porro voluptate commodi in dolores necessitatibus temporibus deleniti cum quod accusantium numquam id quo magni consectetur!</p>
+					<h4>What will you learn?</h4>
 					<p> <%= @course.learning %></p>
-					<h3>Requirements</h3>
-					<p> <%= @course.requirement%></p>
+					<h4>Requirements</h4>
+					<p><%= @course.requirement %></p>
+					<h4>Resources</h4>
+					<div class="row">
+						<div class="col-xs-12 col-md-4">
+							<a href="<%= @course.documents.url %>">
+								<%= cl_image_tag(@course.documents, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
+							</a>					
+						</div>
+						<div class="col-xs-12 col-md-4">
+							<a href="<%= @course.documents.url %>">
+								<%= cl_image_tag(@course.documents, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
+							</a>					
+						</div>
+						<div class="col-xs-12 col-md-4">
+							<a href="<%= @course.documents.url %>">
+								<%= cl_image_tag(@course.documents, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
+							</a>					
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+  <%# cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
+
+</div>
+
+<div class="col-xs-12 col-md-3">
+	
 	<div class="book-class">
 		<div class="book-menu">
 			<p>Choose your dates:</p>
@@ -178,15 +224,12 @@
 
 							</div>
 						</div>
+
 					</div>
-
 				</div>
-
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 
 </div>
 </div>
@@ -194,10 +237,10 @@
 <div class="text-center" style="margin-top: 6vh;">
 
 	<% if policy(@course).destroy? %>
-	<%= link_to "Remove this Course", @course, class: " btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to "Remove this Course", @course, class: "button_2", method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>
 	<% if policy(@course).edit? %>
-	<%= link_to "Edit this Course", edit_course_path(@course), class: " btn btn-success" %>
+	<%= link_to "Edit this Course", edit_course_path(@course), class: "button_2" %>
 	<% end %>
 	<br>
 	<br>
