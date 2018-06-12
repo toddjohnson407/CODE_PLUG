@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2018_06_12_100737) do
     t.bigint "user_id"
     t.bigint "review_id"
     t.integer "hours"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.index ["course_id"], name: "index_bookings_on_course_id"
     t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"

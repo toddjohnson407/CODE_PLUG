@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   def index
     # byebug
     @subjects = Subject.all
-     @courses = policy_scope(Course)
+    @courses = policy_scope(Course)
     # @courses = policy_scope(Course).limit(1)
     @courses = @courses.where.not(latitude: nil, longitude: nil)
 
@@ -30,13 +30,15 @@ class CoursesController < ApplicationController
       end
     end
 
-
+    unless current_user.location.nil?
      coords = current_user.location.split("-")
      loc = []
      coords.each do |coord|
       coord = coord.to_f
       loc<< coord
      end
+    end
+
 
 
     # DISTANCE to where?
