@@ -102,7 +102,6 @@ class CoursesController < ApplicationController
       learning: course_params[:learning],
       requirement: course_params[:requirement],
       vimeo_file: course_params[:vimeo_file],
-      documents: course_params[:documents]
     )
 
     if @course.save
@@ -139,6 +138,6 @@ class CoursesController < ApplicationController
 
 
   def course_params
-    params.require(:course).permit(:video_url, :video, :vimeo_file, :title, :user_id, :price, :description, :address, :city, :photo, :documents, :requirement, :learning, :subject, :documents_cache, :photo_cache)
+    params.require(:course).permit(:video_url, :video, :vimeo_file, :title, :user_id, :price, :description, :address, :city, :photo, :document_1, :document_1_cache, :requirement, :learning, :subject, :photo_cache, :document_2, :document_2_cache, :document_3, :document_3_cache)
   end
 end

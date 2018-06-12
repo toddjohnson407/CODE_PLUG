@@ -19,7 +19,7 @@
 	display: flex;
 	text-align: center;
 	top: 0px;
-	border-bottom: 0.5px solid #2F80ED;
+	border-bottom: 0.5px solid #25292E;
 	background-color: white;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .teacher-about-me {
-	border-bottom: 0.5px solid #2F80ED;
+	border-bottom: 0.5px solid #25292E;
 	h4 {
 		text-align: left; 
 		margin-left: 35px;
@@ -109,7 +109,7 @@
 }
 
 .teacher-skills {
-	border-bottom: 0.5px solid #2F80ED;
+	border-bottom: 0.5px solid #25292E;
 	h4 {
 		text-align: left !important; 
 		margin-left: 35px;
@@ -232,6 +232,17 @@
 	}
 }
 
+.talk-teacher {
+	margin-left: 63px;
+	margin-top: 40px;
+}
+
+
+
+.talk-teacher-2 {
+	margin-left: 65px;
+	margin-top: 20px;
+}
 
 #description-card 
 {		width: 100%;
@@ -300,7 +311,7 @@ text-align: center;
 }
 h1 {
 	text-transform: uppercase;
-	border-bottom: 3px solid #2F80ED;
+	border-bottom: 3px solid #25292E;
 	font-size: 40px;
 	font-weight: bolder;
 	margin-bottom: 0.1em;
@@ -312,7 +323,7 @@ h1 {
 		cursor: pointer;
 		pointer-events: none;
 		height: 100%;
-		margin-left: 26px;
+		margin-left: 45px;
 	}
 	height: 340px;
 }
@@ -334,7 +345,31 @@ h1 {
 	background-color: #fff;
 	border-radius: 0.375rem;
 	box-shadow: 30px 30px 100px 0 rgba(46, 61, 73, 0.2);
-	padding: 4px; 
+	padding: 2em; 
+	h4 {
+		text-align: left; 
+		margin-left: 35px;
+		margin-right: 35px;
+		font-size: 24px;
+		margin-top: 30px;
+		text-align: left;
+		color: #26292E;
+		font-weight: bold;
+
+	}
+	h6 {	
+		font-size: 20px;
+		line-height: 25px;
+		margin-left: 35px;
+		margin-right: 35px;
+		margin-top: 1em; 
+		margin-bottom: 1em;
+		text-align: left;
+		font-family: helvetica;
+		color: #666;
+		border-bottom: 1px solid #2F80ED
+
+	}
 
 
 }
@@ -373,6 +408,7 @@ h1 {
 }	
 
 .check_out{
+	margin-top: 10px;
 	margin-left: -10px;
 	font-size: 17px; 
 	line-height: 24px; 

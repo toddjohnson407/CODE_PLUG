@@ -21,8 +21,13 @@
         
 
         <%= f.input :subject, as: :select, collection: Subject.all.map(&:category) %> <br> <br> <br>
-        <%= f.input :video, label: "Insert the URL from the video (youtube)", placeholder: "Youtube video" %> <br> <br>        <%= f.input :documents %>
-        <%= f.input :documents_cache, as: :hidden %>
+        <%= f.input :video, label: "Insert the URL from the video (youtube)", placeholder: "Youtube video" %> <br> <br>        
+        <%= f.input :document_1, label: "Import a PDF document"  %>
+        <%= f.input :document_1_cache, as: :hidden %>
+        <%= f.input :document_2, label: "Import a PDF document"%>
+        <%= f.input :document_2_cache, as: :hidden %>
+        <%= f.input :document_3, label: "Import a PDF document"%>
+        <%= f.input :document_3_cache, as: :hidden %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
       </div>
@@ -31,7 +36,7 @@
       </div>
       <% end %>
     </div>
-  </div> name
+  </div> 
 </div>
 
 
