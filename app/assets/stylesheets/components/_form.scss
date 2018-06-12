@@ -2,7 +2,6 @@ html, body {border: 0; margin: 0; padding: 0;}
 body {font: 14px "Lato", Arial, sans-serif; min-width: 100%; min-height: 100%; color: #666;}
 .container{margin: 0 auto; max-width: 1200px;}
 *{margin: 0; padding: 0; box-sizing: border-box;}
-.row{float: left; width: 100%; padding: 20px 0 50px;}
 h2{text-align: center; color: #2079df; font-size: 46px; float: left; width: 100%; margin: 30px 0; position: relative; line-height: 58px; font-weight: 500;}
 h2:before{content: ""; position: absolute; left: 50%; bottom: 0; width: 100px; height: 2px; background-color: #2079df; margin-left: -50px;}
 /*= Reset CSS End
