@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_142826) do
+
+ActiveRecord::Schema.define(version: 2018_06_12_100737) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +54,8 @@ ActiveRecord::Schema.define(version: 2018_06_11_142826) do
     t.string "learning"
     t.string "requirement"
     t.string "documents"
+    t.string "video"
+    t.string "vimeo_file"
     t.index ["subject_id"], name: "index_courses_on_subject_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
@@ -117,8 +121,8 @@ ActiveRecord::Schema.define(version: 2018_06_11_142826) do
     t.string "phone_number"
     t.string "location"
     t.string "current_position"
-    t.string "languages"
     t.string "photo"
+    t.string "languages"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

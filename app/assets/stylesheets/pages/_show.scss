@@ -181,7 +181,7 @@
 
 
 #description-card 
-{
+{		width: 100%;
 	border-top: 1px solid #2F80ED;
 	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
 	background-color: white;
@@ -190,7 +190,7 @@
 
 
 .course-description {
-	width: 70%;
+	width: 100%;
 	.video-container {
 		cursor: pointer;
 		#video-frame {
@@ -229,6 +229,7 @@
 
 
 .course {
+	width: 80%;
 	margin-left: 2px; 
 	h1 {
 		font-size: 40px;

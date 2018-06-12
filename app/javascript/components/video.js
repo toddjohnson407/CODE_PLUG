@@ -11,6 +11,7 @@ export function changeVideo(vId){
   iframe.src="https://www.youtube.com/embed/"+vId;
 
   $("#myModal").modal("show");
+
 }
 
 //export {changeVideo};

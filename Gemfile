@@ -23,7 +23,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-
+gem 'mime-types'
+gem 'mini_magick'
+gem 'carrierwave-video'
+gem 'carrierwave-video-thumbnailer'
+gem 'carrierwave-ffmpeg'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
