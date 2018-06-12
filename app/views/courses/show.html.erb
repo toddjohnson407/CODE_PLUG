@@ -86,62 +86,53 @@
 </div>
 
 
-<div class="col-xs-12 col-sm-9">
+<div class="col-xs-12 col-sm-9" style="display: flex">
 	<div class="course">
-
 		<div class="course-information">
 			<div class="course-description">
 				<div id="description-card">
 					<h1><%= @course.title %> </h1>
 					<h4><%= @course.address %> - <%= @course.city %></h4>
-
 					<div class="video-container">
-						<a onclick="changeVideo('GY7Ps8fqGdc')">Video 1</a>
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-body">
-										<iframe id="iframeYoutube" width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc" frameborder="0" allowfullscreen ></iframe>
-									</div>
-								</div>
-							</div>
-						</div>
-						<h3>Course Description</h3>
-						<p><%= @course.description %></p>
-						<h3>What will you learn?</h3>
-						<p> <%= @course.learning %></p>
-						<h3>Requirements</h3>
-						<p> <%= @course.requirement%></p>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @course.video %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						<%= cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
 					</div>
+					<h3>Course Description</h3>
+					<p><%= @course.description %></p>
+					<h3>What will you learn?</h3>
+					<p> <%= @course.learning %></p>
+					<h3>Requirements</h3>
+					<p> <%= @course.requirement%></p>
 				</div>
 			</div>
+		</div>
+	</div>	
 
-
-			<div class="book-class">
-				<div class="book-menu">
-					<p>Choose your dates:</p>
-					<div class="dates">
-						<%= simple_form_for [@course, @booking] do |f| %>
-						<div class="col-md-6">
-							<div class="courses-booking-form">
-								<p>Start Date</p>
-								<div class="check_in">
-									<p>
-										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
-									</p>
-								</div>
-							</div>
+	<div class="book-class">
+		<div class="book-menu">
+			<p>Choose your dates:</p>
+			<div class="dates">
+				<%= simple_form_for [@course, @booking] do |f| %>
+				<div class="col-md-6">
+					<div class="courses-booking-form">
+						<p>Start Date</p>
+						<div class="check_in">
+							<p>
+								<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
+							</p>
 						</div>
-						<div class="col-md-6">
-							<p>End Date</p>
-							<div class="check_out">
-								<p>
-									<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
-								</p>
-							</div>	
+					</div>
+				</div>
+				<div class="col-md-6">
+					<p>End Date</p>
+					<div class="check_out">
+						<p>
+							<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
+						</p>
+					</div>	
 
-						</div>
-						<p>€<%= @course.price %> per hour</p>
+				</div>
+				<p>€<%= @course.price %> per hour</p>
 
 	<!-- 						<% end %>
 
@@ -195,7 +186,6 @@
 </div>
 </div>
 
-</div>
 </div>
 </div>
 
