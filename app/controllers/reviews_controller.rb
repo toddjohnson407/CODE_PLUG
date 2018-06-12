@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :set_course, only: [:new, :create]
+
   def new
     @review = Review.new
   end
@@ -6,7 +8,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      redirect_to review_path(@review)
+      redirect_to course_path(@course)
     else
       render :new
     end
@@ -23,6 +25,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_course
+    @course = Course.find(params[:course_id])
+  end
 
   def review_params
     params.require(:review).permit(:content)

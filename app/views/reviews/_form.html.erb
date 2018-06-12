@@ -3,7 +3,7 @@
     <h1 style="margin-bottom: 3vh;">Write your review: </h1> <br> <br>
     <div class="col-md-8">
 
-      <%= simple_form_for(@review) do |f| %>
+      <%= simple_form_for[@course, @review] do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
