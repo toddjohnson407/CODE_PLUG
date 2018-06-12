@@ -1,5 +1,13 @@
 import "bootstrap";
 
+
+import { setCurrentLocation } from '../components/getlocation';
+setCurrentLocation();
+// document.app = {
+//   setCurrentLocation
+// }
+
+
 import { bindSweetAlertButtonDemo } from '../components/banner';
 
 import { loadDynamicBannerText } from '../components/banner';
@@ -18,3 +26,6 @@ changeVideo('sdsddasdasd');
 
 import '../components/message-form.js';
 import '../components/messages.js';
+
+
+
