@@ -8,9 +8,11 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+
     <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name" %>
     <%= f.input :last_name, required: true, autofocus: true, placeholder: "Last name" %>
     <%= f.input :email, required: true, placeholder: "Email", autofocus: true %>
+
     <% if current_user.teacher = true %>
       <%= f.input :description, required: true, autofocus: true, placeholder: "Tell us about yourself and your skills" %>
       <%= f.input :teacher, as: :hidden, value: true %>

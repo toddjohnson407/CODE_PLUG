@@ -8,52 +8,19 @@
   }
 </style>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
+
       <div class="flex-container">
-        <div class="flex item">
+        <div class="flex-item">
           <%= form_tag(courses_path, remote: true, method: :get) do %>
-            <%= text_field_tag :search, "HTML", style: "display:none" %>
-            <%= submit_tag :submit, class: "btn btn-primary", value:"HTML/CSS" %>
-          <% end %>
-        </div>
 
-        <div class="flex item">
-          <%= form_tag(courses_path, remote: true, method: :get) do %>
-            <%= text_field_tag :search, "Python", style: "display:none" %>
-            <%= submit_tag :submit, class: "btn btn-primary", value:"Python" %>
-          <% end %>
-        </div>
+            <%= select_tag "subject_id", options_from_collection_for_select(@subjects, "id", "category")%>
 
-        <div class="flex item">
-          <%= form_tag(courses_path, remote: true, method: :get) do %>
-            <%= text_field_tag :search, "C++", style: "display:none" %>
-            <%= submit_tag :submit, class: "btn btn-primary", value:"C++" %>
-          <% end %>
-        </div>
+            <%= select_tag "price", options_for_select([["Any", nil], ["0-20€", 1], ["21-50€", 2], ["51€<", 3] ])%>
 
-        <div class="flex item">
-          <%= form_tag(courses_path, remote: true, method: :get) do %>
-            <%= text_field_tag :search, "Swift", style: "display:none" %>
-            <%= submit_tag :submit, class: "btn btn-primary", value:"Swift" %>
-          <% end %>
-        </div>
+            <%= select_tag "distance", options_for_select([["Any", nil], ["0-5km", 5], ["6-10km", 10], ["10km<", 15] ])%>
 
-        <div class="flex item">
-          <%= form_tag(courses_path, remote: true, method: :get) do %>
-            <%= text_field_tag :search, "JavaScript", style: "display:none" %>
-            <%= submit_tag :submit, class: "btn btn-primary", value:"JavaScript" %>
-          <% end %>
-        </div>
-
-        <div class="flex item">
-          <%= form_tag(courses_path, remote: true, method: :get) do %>
-            <%= text_field_tag :search, "Ruby", style: "display:none" %>
-            <%= submit_tag :submit, class: "btn btn-primary", value:"Ruby" %>
+            <%= submit_tag :submit, class: "btn-filter", value:"Search" %>
           <% end %>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+

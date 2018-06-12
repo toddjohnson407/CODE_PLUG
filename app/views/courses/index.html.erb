@@ -2,25 +2,30 @@
   <div class="row">
 
     <%= render "filter" %>
+
+    <!-- <input type="submit" id="demo" onclick="setCurrentLocation()"> -->
+
+
+
     <div class="col-md-8">
 
 
-  <div id="courses-list" class="row pull-right">
-    <%= render "list" %>
+      <div id="courses-list" class="row pull-right">
+        <%= render "list" %>
 
 
 
 
-  </div>
+      </div>
 
+
+    </div>
+
+    <div id="courses-map" class="col-xs-12 col-sm-6 col-md-4 " position = static>
+     <%= render "map" %>
+   </div>
 
  </div>
 
- <div id="courses-map" class="col-xs-12 col-sm-6 col-md-4 " position = static>
- <%= render "map" %>
-</div>
 
-</div>
-
-</div>
 

@@ -1,5 +1,13 @@
 import "bootstrap";
 
+
+import { setCurrentLocation } from '../components/getlocation';
+setCurrentLocation();
+// document.app = {
+//   setCurrentLocation
+// }
+
+
 import { bindSweetAlertButtonDemo } from '../components/banner';
 
 import { loadDynamicBannerText } from '../components/banner';

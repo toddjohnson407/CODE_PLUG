@@ -18,6 +18,9 @@
 <div class="col-sm-3">
 	<div class="profile-line">
 		<div class="user-card">	
+		<div class="user-card">
+			<div class="user-card-left">
+				<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
 
 			<div class="user-card-left">
 				 <%= cl_image_tag current_user.photo, id: "avatar" %>
@@ -44,6 +47,7 @@
 
 
 		<div class="feedback">
+
 			<h4>Teacher feedback </h4>
 			<p>(150 reviews)</p> 
 			<p> Average: <i class="fas fa-star"></i></p>
@@ -87,7 +91,12 @@
 			<div class="review">
 			</div>
 		</div>
+
 		<button type="button" class="button_2">More reviews</button>
+
+		<button type="button" class="btn btn-default">More reviews</button>
+   <%= link_to "Chat Here", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "btn btn-default", type: "button" %>
+
 	</div>
 </div>
 
@@ -140,7 +149,8 @@
 			</div>
 		</div>
 	</div>
-	<%# cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
+
+  <%# cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
 
 </div>
 
@@ -167,7 +177,7 @@
 						<p>
 							<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
 						</p>
-					</div>	
+					</div>
 
 				</div>
 				<p>€<%= @course.price %> per hour</p>

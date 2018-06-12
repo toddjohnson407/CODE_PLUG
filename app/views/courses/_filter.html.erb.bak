@@ -1,0 +1,59 @@
+
+<style>
+  .flex-container {
+    display: flex;
+  }
+  .flex {
+    margin: 15px;
+  }
+</style>
+
+<div class="container">
+  <div class="row-filter">
+    <div class="col-md-12">
+      <div class="flex-container">
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, , style: "display:none" %>
+            <%= submit_tag :submit, class: "btn-filter", value:"HTML/CSS" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, , style: "display:none" %>
+            <%= submit_tag :submit, class: "btn-filter", value:"Python" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, , style: "display:none" %>
+            <%= submit_tag :submit, class: "btn-filter", value:"C++" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, , style: "display:none" %>
+            <%= submit_tag :submit, class: "btn-filter", value:"Swift" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, , style: "display:none" %>
+            <%= submit_tag :submit, class: "btn-filter", value:"JavaScript" %>
+          <% end %>
+        </div>
+
+        <div class="flex item">
+          <%= form_tag(courses_path, remote: true, method: :get) do %>
+            <%= text_field_tag :search, , style: "display:none" %>
+            <%= submit_tag :submit, class: "btn-filter", value:"Ruby" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

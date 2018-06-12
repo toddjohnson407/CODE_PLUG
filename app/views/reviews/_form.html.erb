@@ -1,0 +1,19 @@
+<div class="container" style="margin-top: 3vh;">
+  <div class="row">
+    <h1 style="margin-bottom: 3vh;">Write your review: </h1> <br> <br>
+    <div class="col-md-8">
+
+      <%= simple_form_for[@course, @review] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs">
+        <%= f.input :content , as: :string, label: "", placeholder: "Write a review" %> <br> <br>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-treehouse", value: "Submit Review"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
