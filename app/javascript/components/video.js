@@ -13,4 +13,4 @@ export function changeVideo(vId){
   $("#myModal").modal("show");
 }
 
-export {changeVideo};
+//export {changeVideo};

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'documents/index'
   get 'documents/new'
   get 'documents/create'
@@ -21,4 +23,7 @@ Rails.application.routes.draw do
   get "/bookings/current_index", to: "bookings#current_index"
   get "/teacher", to: "pages#teacher"
   get "/profile", to: "pages#profile"
+
+
+  post "/current_locations", to: "pages#user_location"
 end
