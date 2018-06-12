@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
   def index
     # byebug
     @subjects = Subject.all
-     @courses = policy_scope(Course)
+    @courses = policy_scope(Course)
     # @courses = policy_scope(Course).limit(1)
     @courses = @courses.where.not(latitude: nil, longitude: nil)
 
@@ -30,13 +30,15 @@ class CoursesController < ApplicationController
       end
     end
 
-
+    unless current_user.location.nil?
      coords = current_user.location.split("-")
      loc = []
      coords.each do |coord|
       coord = coord.to_f
       loc<< coord
      end
+    end
+
 
 
     # DISTANCE to where?
@@ -85,14 +87,28 @@ class CoursesController < ApplicationController
 
   def create
     @subject = Subject.find_by(category: params[:course][:subject])
-    @course = Course.new(course_params)
-    @video_url = course_params[:video].split("=").last
-    @course.subject = @subject
-    @course.user = current_user
+    @video = course_params[:video].split("=").last
+    @course = Course.new(
+      subject: @subject,
+      video: @video,
+      user: current_user,
+      title: course_params[:title],
+      price: course_params[:price],
+      rate: course_params[:rate],
+      description: course_params[:description],
+      address: course_params[:address],
+      city: course_params[:city],
+      photo: course_params[:photo],
+      learning: course_params[:learning],
+      requirement: course_params[:requirement],
+      vimeo_file: course_params[:vimeo_file],
+      documents: course_params[:documents]
+    )
 
     if @course.save
       redirect_to course_path(@course)
     else
+      raise
       render :new
     end
   end
@@ -123,6 +139,8 @@ class CoursesController < ApplicationController
 
 
   def course_params
-    params.require(:course).permit(:video_url, :video, :vimeo_file, :title, :user_id, :price, :description, :address, :city, :photo, :documents, :requirement, :learning)
+
+    params.require(:course).permit(:video_url, :video, :vimeo_file, :title, :user_id, :price, :description, :address, :city, :photo, :documents, :requirement, :learning, :subject, :documents_cache, :photo_cache)
+
   end
 end

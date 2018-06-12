@@ -1,19 +1,26 @@
+.show-container {
+	max-width: 80vw;
+}
+
+@media (min-width: 1200px) {
+	.show-container {
+		width: 80vw;
+	}
+}
+
 .profile-line {
-	border-top: 1px solid #2F80ED;
-	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
 	background-color: white;
+	box-shadow: 30px 30px 100px 0 rgba(46, 61, 73, 0.2);
+	padding: 2em;
 }
 
 .user-card {
-	padding-left: 5px;
 	position: relative;
 	display: flex;
 	text-align: center;
 	top: 0px;
-	border-bottom: 1px solid rgba(0,0,0,.15);
+	border-bottom: 0.5px solid #2F80ED;
 	background-color: white;
-	padding-top: 5px;
-	border-top: 2px solid #2F80ED;
 }
 
 .user-card-left {
@@ -23,19 +30,20 @@
 
 .user-card-right {
 	width: 66%;
+	margin-bottom: 20px;	
 	h1 {
-		font-size: 16px;
-		line-height: 24px;
+		font-size: 24px;
+		line-height: 30px;
 		font-weight: bold;
 		color: #000;
 		text-align: left; 
 		margin-left: 30px;
 		margin-top: 20px;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 	p {
-		font-size: 12px;
-		line-height: 16px;
+		font-size: 14px;
+		line-height: 20px;
 		margin-left: 30px;
 		color: #000;
 		margin-top: -8px;
@@ -46,21 +54,21 @@
 .fa-phone{
 	font-size: 14px;
 	margin-top: 2px;
-	margin-right: 4px;
+	margin-right: 15px;
 }
 
 
 .fa-map-marker{
 	font-size: 14px;
 	margin-top: 2px;
-	margin-right: 4px;
+	margin-right: 15px;
 
 }
 
 .fa-dollar-sign{
 	font-size: 14px;
 	margin-top: 2px;
-	margin-right: 4px;
+	margin-right: 15px;
 
 }
 
@@ -68,77 +76,99 @@
 	font-size: 14px;
 	color: #f1c550;	
 	margin-top: 2px;
-	margin-right: 4px;
+	margin-right: 15px;
 
 }
 
 .teacher-about-me {
-	border-bottom: 1px solid rgba(0,0,0,.15);
-	h1 {
-		font-size: 16px;
-		font-weight: bold;
-		color: #000;
+	border-bottom: 0.5px solid #2F80ED;
+	h4 {
 		text-align: left; 
-		margin-left: 10px;
-		margin-top: 20px;
+		margin-left: 35px;
+		margin-right: 35px;
+		font-size: 20px;
+		margin-top: 30px;
 		margin-bottom: 20px;
-		text-align: center;
+		text-align: left;
+		color: #26292E;
+		font-weight: bold;
 
 	}
 	p {	
 		font-size: 14px;
+		line-height: 25px;
 		margin-left: 35px;
-		margin-right: 35px; 
-		margin-bottom: 20px;
-		text-align: justify;
+		margin-right: 35px;
+		margin-top: 1em; 
+		margin-bottom: 3em;
+		text-align: left;
 		font-family: helvetica;
+		color: #666;
 
 	}
 }
 
 .teacher-skills {
-	align-items: center;
-	padding-bottom: 12px;
-	border-bottom: 1px solid rgba(0,0,0,.15);
-
-	h1 {
-		font-size: 16px;
-		font-weight: bold;
-		color: #000;
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: 20px;
+	border-bottom: 0.5px solid #2F80ED;
+	h4 {
+		text-align: left !important; 
+		margin-left: 35px;
+		margin-right: 35px;
+		font-size: 20px;
+		margin-top: 30px;
 		margin-bottom: 20px;
 		text-align: center;
+		color: #26292E;
 
 	}
+
 	p {	
 		font-size: 14px;
+		line-height: 25px;
 		margin-left: 35px;
-		margin-right: 35px; 
-		margin-bottom: 20px;
-		text-align: justify;
+		margin-right: 35px;
+		margin-top: 1em; 
+		margin-bottom: 3em;
+		text-align: left;
 		font-family: helvetica;
+		color: #666;
+
 	}
 }
 
+
 .feedback {
-	padding-left: 15px;
-	h1 {
-		margin-right: 10px;		
-		margin-bottom: 20px;
-		font-size: 16px;
-		font-weight: bold;
-		color: #000;
-		text-align: left; 
-		margin-top: 20px;
-		text-align: center;
+	h4 {
+		text-align: left !important; 
+		margin-left: 35px;
+		margin-right: 35px;
+		font-size: 20px;
+		margin-top: 30px;
+		color: #26292E;
+		margin-bottom: 0 !important;
 
 	}
+
+	p {	
+		font-size: 14px;
+		line-height: 25	px;
+		margin-left: 35px;
+		margin-right: 35px;
+		margin-top: 6px; 
+		margin-bottom: px !important;
+		text-align: left;
+		font-family: helvetica;
+		color: #666;
+		text-align: center;
+
+
+	}
+
 }
 
 .review {
 	display: flex; 
+	margin-top: 30px;
 }
 
 .review-name {
@@ -166,12 +196,35 @@
 .review-description {
 	width: 50%; 
 	margin-left: -30px; 
-	p {
-		margin-left: -5px;
+
+	h5 {
 		font-size: 14px;
-		text-align: left; 
-		margin-top: 5px;
-		text-align: justify;
+		line-height: 25px;
+		margin-top: -10px;
+		margin-left: -15px !important;
+		margin-right: -25px !important; 
+		margin-bottom: 5px !important;
+		text-align: left;
+		font-family: helvetica;
+		color: #666;
+		text-align: left;
+		font-weight: bold;
+		color: #2F80ED; 
+
+	}
+
+	p {
+		font-size: 14px;
+		line-height: 20px;
+		margin-top: -5px;
+		margin-left: -15px !important;
+		margin-right: -25px !important; 
+		margin-bottom: -20px !important;
+		text-align: left;
+		font-family: helvetica;
+		color: #666;
+		text-align: left;
+
 	}
 	.fa-star {
 		text-align: left; 
@@ -182,7 +235,6 @@
 
 #description-card 
 {		width: 100%;
-	border-top: 1px solid #2F80ED;
 	box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 3px rgba(0,0,0,.2);
 	background-color: white;
 	min-height: calc(100vh - 150px);
@@ -229,42 +281,64 @@
 
 
 .course {
-	width: 80%;
-	margin-left: 2px; 
-	h1 {
-		font-size: 40px;
-		margin-bottom: 20px;
-		font-weight: bold;
-		color: black; 
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: 4px;
+	box-shadow: 30px 30px 100px 0 rgba(46, 61, 73, 0.2);
+	margin-left: 2px;
+	background-color: white;
+	letter-spacing: 0.3px;
+	margin-bottom: 3em;
+	&-top {
+		background-position: center;
+		background-size: cover;
+		padding: 3em;
+		background-color: white;
+		h1, p {
 
+			margin: 0;
+			color: #26292E;
+//			text-shadow: 1px 1px 1px black;
+text-align: center;
+}
+h1 {
+	text-transform: uppercase;
+	border-bottom: 3px solid #2F80ED;
+	font-size: 40px;
+	font-weight: bolder;
+	margin-bottom: 0.1em;
+}	
+}
+&-video {
+	iframe {
+		width: 90%;
+		cursor: pointer;
+		pointer-events: none;
+		height: 100%;
+		margin-left: 26px;
 	}
+	height: 340px;
+}
+&-details {
+	padding: 4em;
+	position: relative;
 	h4 {
+		color: #26292E;
+	}	
+	p {
+		margin-bottom: 3em;
 		font-size: 14px;
-		text-align: left; 
-		margin-left: 10px;
-		margin-top: -13px;
-		text-align: justify;	
+		line-height: 2;
 	}
-
+}
 }
 
 .book-menu {
-	border-top: 1px solid #2F80ED;
 	background-color: #fff;
 	border-radius: 0.375rem;
-	box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+	box-shadow: 30px 30px 100px 0 rgba(46, 61, 73, 0.2);
 	padding: 4px; 
 
 
 }
 .book-class {
-	width: 40%; 
-	margin-left: 20px; 
-	margin-right: -120px !important; 
-
 	p {
 		margin-left: 0px;	
 		color: black;

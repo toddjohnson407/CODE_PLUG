@@ -35,11 +35,27 @@ const styles = [
     }
 ]
 
+var contentString = 'test'
+
 const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
   const markers = JSON.parse(mapElement.dataset.markers);
+  // console.log(markers);
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString,
+    maxWidth: 40
+  });
   map.addMarkers(markers);
+  map.markers.forEach(function(marker){
+    console.log(marker);
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  });
+
+  // map.addMarkers(markers);
   if (markers.length === 0) {
     map.setZoom(2);
   } else if (markers.length === 1) {
@@ -53,11 +69,17 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     mapTypeId: 'map_style'
   });
   map.setStyle('map_style');
+
+
 }
 }
+
+
 
 loadGoogleMap();
 
 document.loadGoogleMap = loadGoogleMap; // makes availabe inside views
+
+
 
 

@@ -27,5 +27,3 @@ changeVideo('sdsddasdasd');
 import '../components/message-form.js';
 import '../components/messages.js';
 
-
-
