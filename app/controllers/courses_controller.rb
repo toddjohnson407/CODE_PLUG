@@ -30,6 +30,13 @@ class CoursesController < ApplicationController
       end
     end
 
+    if request.safe_location.city.empty?
+      #works on production
+      @current_location = "lisboa"
+    else
+      @current_location = request.safe_location
+    end
+
     # DISTANCE to where?
 
     # if params[:distance]
@@ -42,6 +49,7 @@ class CoursesController < ApplicationController
     #   end
     # end
 
+    @filtered_courses = Course.near(@current_location, params[:distance].to_i)
 
 
     # @courses = Course.search_by_city_and_address(params[:subject])
