@@ -139,5 +139,6 @@ class CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:video_url, :video, :vimeo_file, :title, :user_id, :price, :description, :address, :city, :photo, :document_1, :document_1_cache, :requirement, :learning, :subject, :photo_cache, :document_2, :document_2_cache, :document_3, :document_3_cache)
+
   end
 end

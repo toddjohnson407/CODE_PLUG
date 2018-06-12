@@ -1,19 +1,39 @@
-<body style="background-color: black;">
-  <div class="container" style="height: 700px; margin-left: 80px; color: white;">
+<body style="background-color: #f7f7f7;">
+  <div class="container"> <!-- style="height: 700px; /*margin-left: 200px;*/ color: black;"> -->
+
+    <% @bookings.each do |booking| %>
+    <% if booking.user_id == current_user.id %>
+    <% course = booking.course %>
+    <br>
 
 
-<% @bookings.each do |booking| %>
-  <% if booking.user_id == current_user.id %>
-      <% course = booking.course %>
-      <br>
-      <h2>You have booked <%= course.title %> for <%= booking.hours %> hours
-      <br>
-      Total Cost: $ <%= booking.hours * course.price %>
-      <br>
-      <%= link_to "Cancel this Booking",  course_booking_path(:course_id, booking), class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %>
-      <%= link_to "Review this Course",  new_course_review_path(booking.course), class: "btn btn-warning"%>
-  <% end %>
-<% end %>
+    <h2>You have booked <%= course.title %> for <%= booking.hours %> hours</h2>
 
+    <br>
+    <div class="message">
+      <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+      <div class="message-name">
+      </div>
+      <div class="message-body">
+        <p><strong><%= course.user.email %></strong>  | <strong><%= course.title %></strong></p>
+          <p class="price"><%= booking.hours * course.price %> €  |  <%= course.address %>
+        </p>
+      </div>
+      <div class="message-body">
+        <p><%= booking.start_date %> Date </p>
+        <p><%= booking.end_date %> Time</p>
+      </div>
+    </div>
+
+
+    <%= link_to "Cancel this Booking",  course_booking_path(:course_id, booking), class: "btn btn", method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Review this Course",  new_course_review_path(booking.course), class: "btn btn"%>
+
+    <%= course.user.first_name %>
+
+
+
+    <% end %>
+    <% end %>
   </div>
 </body>
