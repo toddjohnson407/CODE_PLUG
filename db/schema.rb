@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2018_06_12_100737) do
     t.bigint "user_id"
     t.bigint "review_id"
     t.integer "hours"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.index ["course_id"], name: "index_bookings_on_course_id"
     t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -119,8 +121,8 @@ ActiveRecord::Schema.define(version: 2018_06_12_100737) do
     t.string "phone_number"
     t.string "location"
     t.string "current_position"
-    t.string "photo"
     t.string "languages"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
