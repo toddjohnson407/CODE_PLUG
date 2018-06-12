@@ -84,6 +84,7 @@ class CoursesController < ApplicationController
   def create
     @subject = Subject.find_by(category: params[:course][:subject])
     @course = Course.new(course_params)
+    @video_url = course_params[:video].split("=").last
     @course.subject = @subject
     @course.user = current_user
 
@@ -120,6 +121,6 @@ class CoursesController < ApplicationController
 
 
   def course_params
-    params.require(:course).permit(:title, :user_id, :price, :description, :address, :city, :photo, :documents, :requirement, :learning)
+    params.require(:course).permit(:video_url, :video, :vimeo_file, :title, :user_id, :price, :description, :address, :city, :photo, :documents, :requirement, :learning)
   end
 end
