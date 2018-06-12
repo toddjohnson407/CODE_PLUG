@@ -10,7 +10,8 @@
       <br>
       Total Cost: $ <%= booking.hours * course.price %>
       <br>
-      <%= link_to "Cancel this booking",  course_booking_path(:course_id, booking), class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to "Cancel this Booking",  course_booking_path(:course_id, booking), class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to "Review this Course",  new_review_path, class: "btn btn-warning"%>
   <% end %>
 <% end %>
 
