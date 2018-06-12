@@ -8,7 +8,7 @@
 <%= link_to chat do %>
   <div class="row chat">
     <% if chat.messages.any? %>
-      <div class="col-md-4">
+      <div class="col-md-4 firstname">
         <%= other_user.first_name %>
         <%= chat.messages.last.message_time %>
       </div>
