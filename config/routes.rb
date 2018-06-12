@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :courses do
     resources :bookings
   end
+  resources :reviews
 
   resources :chats, only: [:show, :index, :create] do
      resources :messages, only: [:index, :create]
