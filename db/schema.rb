@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_11_142826) do
+
+ActiveRecord::Schema.define(version: 2018_06_11_221949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +23,8 @@ ActiveRecord::Schema.define(version: 2018_06_11_142826) do
     t.bigint "user_id"
     t.bigint "review_id"
     t.integer "hours"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.index ["course_id"], name: "index_bookings_on_course_id"
     t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -52,6 +55,8 @@ ActiveRecord::Schema.define(version: 2018_06_11_142826) do
     t.string "learning"
     t.string "requirement"
     t.string "documents"
+    t.string "video"
+    t.string "vimeo_file"
     t.index ["subject_id"], name: "index_courses_on_subject_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
