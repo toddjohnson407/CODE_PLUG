@@ -10,16 +10,16 @@
     <h2>You have booked <%= course.title %> for <%= booking.hours %> hours</h2>
 
     <br>
-    <div class="message">
+    <div class="message1">
       <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
+      <div class="message1-name">
       </div>
-      <div class="message-body">
-        <p><strong><%= course.user.email %></strong>  | <strong><%= course.title %></strong></p>
+      <div class="message1-body">
+        <p><strong><%= "#{course.user.first_name} #{course.user.last_name}" %></strong>  | <strong><%= course.title %></strong></p>
           <p class="price"><%= booking.hours * course.price %> €  |  <%= course.address %>
         </p>
       </div>
-      <div class="message-body">
+      <div class="message1-body">
         <p><%= booking.start_date %> Date </p>
         <p><%= booking.end_date %> Time</p>
       </div>
@@ -28,9 +28,6 @@
 
     <%= link_to "Cancel this Booking",  course_booking_path(:course_id, booking), class: "btn btn", method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to "Review this Course",  new_course_review_path(booking.course), class: "btn btn"%>
-
-    <%= course.user.first_name %>
-
 
 
     <% end %>

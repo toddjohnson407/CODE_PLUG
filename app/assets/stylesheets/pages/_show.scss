@@ -269,7 +269,7 @@
 		margin-bottom: 12px;
 		padding-bottom: 15px;
 		margin-left: 30px;
-	
+
 	}
 	p {
 		font-size: 16px !important;
@@ -286,15 +286,15 @@
 	margin-left: 2px;
 	background-color: white;
 	letter-spacing: 0.3px;
-	margin-bottom: 0em;
 	padding-bottom: 20px;	
 	&-top {
 		background-position: center;
 		background-size: cover;
-		padding: 3em;
+		padding: 4em;
+		margin-bottom: -15px !important;
+
 		background-color: white;
 		h1, p {
-
 			margin: 0;
 			color: #26292E;
 //			text-shadow: 1px 1px 1px black;
@@ -303,9 +303,18 @@ text-align: center;
 h1 {
 	text-transform: uppercase;
 	border-bottom: 3px solid #25292E;
-	font-size: 40px;
+	font-size: 35px;
 	font-weight: bolder;
 	margin-bottom: 0.1em;
+}
+h6 {
+	font-size: 14px;
+	text-align: center;
+	margin-top: 5px !important;
+	text-decoration: none;
+	a{
+		color: #2F80ED
+	}
 }	
 }
 &-video {
@@ -333,9 +342,9 @@ h1 {
 }
 
 .image_tag_2 {
-	width: 80px; 
+	width: 50px; 
 	margin-bottom: 12px;
-	margin-left: 10px;
+	margin-left: -5px;
 }
 
 .book-menu {
@@ -344,14 +353,13 @@ h1 {
 	box-shadow: 30px 30px 100px 0 rgba(46, 61, 73, 0.2);
 	padding: 2em; 
 	h4 {
-		text-align: left; 
-		margin-left: 35px;
-		margin-right: 35px;
+		text-align: center !important; 
 		font-size: 24px;
 		margin-top: 30px;
 		text-align: left;
-		color: #26292E;
+		color: #2F80ED;
 		font-weight: bold;
+
 
 	}
 	h6 {	
@@ -375,8 +383,9 @@ h1 {
 		margin-left: 0px;	
 		color: black;
 		text-align: center;
-		font-weight: bold;
-		font-size: 18px; 	
+		font-size: 14px; 
+		margin-bottom: 0px;
+		text-align: left;	
 	} 
 
 }
@@ -405,7 +414,8 @@ h1 {
 }	
 
 .check_out{
-	margin-top: 10px;
+
+	margin-top: 0px;
 	margin-left: -10px;
 	font-size: 17px; 
 	line-height: 24px; 
@@ -423,4 +433,12 @@ h1 {
 	color: blue;
 }
 
+.resources {
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+.box-shadow {
+	box-shadow: (1px 1px 1px rgba(0,0,0,0.8));
+}
 

@@ -1,4 +1,4 @@
-.message {
+.message1 {
   display: flex;
   align-items: center;
   // padding: 20px;
@@ -6,31 +6,31 @@
   width: 1000px;
   height: 120px;
 }
-.message:last-child {
+.message1:last-child {
   border-bottom: none;
 }
-.message-body {
+.message1-body {
   flex-grow: 1;
 }
-.message-name {
+.message1-name {
   padding-left: 10px;
   min-width: 100px;
 }
-.message-name h3 {
+.message1-name h3 {
   font-size: 13px;
 }
-.message-name p {
+.message1-name p {
   font-size: 13px;
   font-weight: lighter;
   opacity: 0.6;
   // margin-top: 5px;
 }
-.message-body {
+.message1-body {
   padding-left: 10px;
   font-size: 13px;
   color: rgba(0,0,0,0.7);
 }
-.message-body {
+.message1-body {
   padding-left: 20px;
   // color: rgba(0,0,0,0.4);
   border-color: #dbdbdb;
@@ -40,14 +40,14 @@
   color: #4a4a4a;
   padding: 0;
 }
-.message-body strong{
+.message1-body strong{
   color: rgba(0,0,0,0.9);
   color: rgba(0,0,0,0.9);
 }
-.message-body p {
+.message1-body p {
   // margin: 6px 0;
 }
-.message-status {
+.message1-status {
   font-size: 14px;
   font-weight: bold;
 }

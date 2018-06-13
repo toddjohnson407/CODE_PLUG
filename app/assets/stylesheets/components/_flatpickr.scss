@@ -23,6 +23,9 @@
   background: rgba(20,20,20,0.98);
 
 }
+label[for="booking_end_date"] {
+  display: none;
+}
 .flatpickr-calendar.open,
 .flatpickr-calendar.inline {
   opacity: 1;
@@ -671,9 +674,13 @@ span.flatpickr-weekday {
 .flatpickr-time .flatpickr-am-pm:focus {
   background: rgba(109,118,151,0.98);
 }
+.flatpickr-input {
+  font-size: 12px !important;
+}
 .flatpickr-input[readonly] {
   cursor: pointer;
 }
+
 @-webkit-keyframes fpFadeInDown {
   from {
     opacity: 0;
