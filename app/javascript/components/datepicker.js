@@ -1,4 +1,4 @@
-import flatpickr from 'flatpickr'; 
+import flatpickr from 'flatpickr';
 
 function updateBookingTotals(time) {
   const totalHours = document.getElementById("total-hours");
@@ -38,18 +38,18 @@ const initDatePicker = function() {
       dateFormat: 'd-m-Y H:i',
       time_24hr: true,
       minuteIncrement: 60,
-      onChange: function(_, selectedDate) { 
-        console.log(startTime) 
+      onChange: function(_, selectedDate) {
+        console.log(startTime)
         endTime = parseInt(selectedDate.split(" ")[1].split(":")[0])
-        
+
         totalTime = endTime - startTime
         updateBookingTotals(totalTime)
         bookingTotals.style.display = 'block';
-      }      
+      }
     });
   }
 };
 
-export default initDatePicker;
+export { initDatePicker };
 initDatePicker();
 
