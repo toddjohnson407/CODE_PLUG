@@ -15,7 +15,7 @@
       <div class="message-name">
       </div>
       <div class="message-body">
-        <p><strong><%= course.user.email %></strong>  | <strong><%= course.title %></strong></p>
+        <p><strong><%= "#{course.user.first_name} #{course.user.last_name}" %></strong>  | <strong><%= course.title %></strong></p>
           <p class="price"><%= booking.hours * course.price %> €  |  <%= course.address %>
         </p>
       </div>
@@ -28,9 +28,6 @@
 
     <%= link_to "Cancel this Booking",  course_booking_path(:course_id, booking), class: "btn btn", method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to "Review this Course",  new_course_review_path(booking.course), class: "btn btn"%>
-
-    <%= course.user.first_name %>
-
 
 
     <% end %>
