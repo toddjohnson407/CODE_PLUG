@@ -42,23 +42,27 @@ end
 User.all.each do |user|
   if user.teacher?
     puts user.id
-    course = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "JavaScript for Beginners", title: "Javascript Beginners", price: 21,
+    course = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "JavaScript for Beginners", title: "Javascript Beginners", price: 23,
       description: "Come learn the basics and essentials of JavaScript. This tutorial is an introduction to programming in general, through the medium of JavaScript. We’ll get into interacting with web pages in the Intermediate section. Look at my other courses for more information",
-      address: "R. da Rosa 2611200-119 Lisboa")
+      address: "R. da Rosa 2611200-119 Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1527849942/goran-ivos-343495-unsplash.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"BEJ3d6IgmVk")
+
 
     course1 = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "Basics of JavaScript are required. For more informations just send me a message.", learning: "DOM, Events & Callbacks, AJAX, JSON and jQuery", title: "Intermediate level: JavaScript", price: 32,
       description: "The DOM: The DOM as a tree of elements. Parents and children. Events and Callbacks: Event-driven programming. Listening for events, and acting on them with callback functions. AJAX: Asynchronous JavaScript And XML? What? Why? JSON: JavaScript Object Notation. And the Argonauts. Scope: What scope is and how JavaScript, yet again, does it differently. jQuery: What’s a DOM library for and why would you choose jQuery?",
-      address: "R. Moeda 7, 1200-109 Lisboa")
+      address: "R. Moeda 7, 1200-109 Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1528708271/di60k5pb5npno84vfphr.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"zPHerhks2Vg")
+
 
     course2 = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "DEEP understanding of DOM, Events & Callbacks, AJAX, JSON and jQuery. Junior Developer Level required.", learning: "specifical problemsolving with JavaScript, custom made depending on what you know and don't know and in which direction you want to go.", title: "JavaScript: Advanced", price: 52,
       description: "JavaScript is huge. Like, really big. Like a bus. For elephants. Injected with growth hormones. In this guide we’ll look at some of the numerous more advanced aspects of programming with the language. This will be slow hard problemsolving but it will be absolutely necessary to take your skills to an unpresent level. Welcome to the dark side hehe.",
-      address:"1249-079, R. Santos-O-Velho 5, 1200-109 Lisboa")
+      address:"1249-079, R. Santos-O-Velho 5, 1200-109 Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1527849962/rawpixel-550994-unsplash.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"HcW5-P2SNec")
 
-    course3 = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Web Dev with Javascript.", title: "Intro to Web Development", price: 20,
+
+    course3 = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Web Development with Javascript.", title: "Intro to Web Dev", price: 20,
       description: "Come learn the essentials of simple application and web development through JavaScript and all the benefits that comes with it.",
-      address:"Rua dos Bacalhoeiros, 1100-135 Lisboa")
+      address:"Rua dos Bacalhoeiros, 1100-135 Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1528218488/clark-tibbs-367075-unsplash.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"BEJ3d6IgmVk")
 
     # 3.times do
+
     #   review = Review.create!()
     # end
 
