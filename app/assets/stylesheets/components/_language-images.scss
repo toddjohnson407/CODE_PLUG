@@ -14,7 +14,7 @@ these make the slideshow work
 }
 
 .slide{
-    margin-left: 5px; 
+    margin-left: 5px;
     position: absolute;
     left: 0px;
     top: -10px;
@@ -22,7 +22,7 @@ these make the slideshow work
     height: 100%;
     opacity: 0;
     z-index: 1;
-    background-size: cover; 
+    background-size: cover;
 
     -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;

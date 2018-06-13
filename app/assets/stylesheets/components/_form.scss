@@ -48,9 +48,12 @@ h2:before{content: ""; position: absolute; left: 50%; bottom: 0; width: 100px; h
 :focus{outline: none;}
 
 .col-3{float: left; width: 27.33%; margin: 40px 3%; position: relative;} /* necessary to give position: relative to parent. */
-input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+input[type="text"]{font: 28px/24px "Lato", Arial, sans-serif; color: #333; width: 50%; box-sizing: border-box; letter-spacing: 1px;}
 
-
+#search-text {
+  padding-left: 40px;
+  color: #FFF;
+}
 
 .effect-4{
   border: 0; padding: 5px 0 7px; border: 1px solid transparent; border-bottom-color: #ccc; transition: 0.4s;
