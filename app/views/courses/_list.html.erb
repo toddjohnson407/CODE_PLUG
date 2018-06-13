@@ -5,7 +5,7 @@
     <div class="col-xs-12 col-sm-6 col-md-6">
       <div class="card">
         <div class="front">
-          <img src=<%= !course.photo.url.nil? ? cl_image_path(course.photo) : 'http://res.cloudinary.com/arthurpfister/image/upload/v1528218508/max-nelson-492729-unsplash.jpg' %>>
+          <img src=<%= !course.photo.url.nil? ? cl_image_tag(course.photo) : 'http://res.cloudinary.com/arthurpfister/image/upload/v1528218508/max-nelson-492729-unsplash.jpg' %>>
           <div class="caption">
            <h2><%=course.title %></h2>
            <h6><%=course.price%>€    per hour</h6><br>
