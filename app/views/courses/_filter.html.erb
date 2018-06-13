@@ -13,7 +13,7 @@
         <div class="flex-item">
           <%= form_tag(courses_path, remote: true, method: :get) do %>
 
-            <%= select_tag "subject_id", options_from_collection_for_select(@subjects, "id", "category")%>
+            <%= select_tag "subject_id", options_from_collection_for_select(@subjects, "id", "category", params[:subject_id]) %>
 
             <%= select_tag "price", options_for_select([["Any", nil], ["0-20€", 1], ["21-50€", 2], ["51€<", 3] ])%>
 
