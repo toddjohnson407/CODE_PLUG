@@ -252,15 +252,15 @@
 }
 
 
-.course-description {
-	width: 100%;
-	.video-container {
-		cursor: pointer;
-		#video-frame {
-			pointer-events: none;
-		}
-	}	
-}
+// .course-description {
+// 	width: 100%;
+// 	.video-container {
+// 		cursor: pointer;
+// 		#video-frame {
+// 			pointer-events: none;
+// 		}
+// 	}	
+// }
 
 
 .course-information {
@@ -296,7 +296,8 @@
 	margin-left: 2px;
 	background-color: white;
 	letter-spacing: 0.3px;
-	margin-bottom: 3em;
+	margin-bottom: 0em;
+	padding-bottom: 20px;	
 	&-top {
 		background-position: center;
 		background-size: cover;
@@ -320,8 +321,8 @@ h1 {
 &-video {
 	iframe {
 		width: 90%;
-		cursor: pointer;
-		pointer-events: none;
+		//cursor: pointer;
+		//pointer-events: none;
 		height: 100%;
 		margin-left: 45px;
 	}
@@ -339,6 +340,12 @@ h1 {
 		line-height: 2;
 	}
 }
+}
+
+.image_tag_2 {
+	width: 80px; 
+	margin-bottom: 12px;
+	margin-left: 10px;
 }
 
 .book-menu {
@@ -418,3 +425,5 @@ h1 {
 		width:100%;
 	}
 }
+
+
