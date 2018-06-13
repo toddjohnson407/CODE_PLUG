@@ -12,6 +12,11 @@ class CoursesController < ApplicationController
     # @courses = policy_scope(Course).limit(1)
     @courses = @courses.where.not(latitude: nil, longitude: nil)
 
+    if params[:search]
+      subject_from_search = Subject.where('lower(category) = ?', params[:search].downcase).first
+      params[:subject_id] = subject_from_search.id if subject_from_search
+    end
+
     if params[:subject_id]
       @courses = @courses.where(subject_id: params[:subject_id])
     end
@@ -89,7 +94,7 @@ class CoursesController < ApplicationController
     @subject = Subject.find_by(category: params[:course][:subject])
     @video = course_params[:video].split("=").last
     @course = Course.new(
-      subject: @subject,
+      subject_id: @subject.id,
       video: @video,
       user: current_user,
       title: course_params[:title],
@@ -102,6 +107,9 @@ class CoursesController < ApplicationController
       learning: course_params[:learning],
       requirement: course_params[:requirement],
       vimeo_file: course_params[:vimeo_file],
+      document_1: course_params[:document_1],
+      document_2: course_params[:document_2],
+      document_3: course_params[:document_3]
     )
 
     if @course.save

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'documents/create'
   get 'documents/destroy'
   devise_for :users
+  resources :users, only: [:show]
+  
   mount ActionCable.server => '/cable'
 
   root to: 'pages#home'

@@ -90,98 +90,103 @@
 
 
 		<div class="talk-teacher">
-			<button type="button" class="button_2">More reviews</button> </div>	
+			<%= link_to "More reviews", user_path(@course.user), class: "button_2" %> </div>	
 
-		<div class="talk-teacher-2">
-			<%= link_to "Chat Here", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_3", type: "button" %>
-		</div>	
+			<div class="talk-teacher-2">
+				<%= link_to "Chat Here", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_3", type: "button" %>
+			</div>	
 
-	</div>
-</div>
-
-
-<div class="col-xs-12 col-sm-6" style="display: flex">
-	<div class="course">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="course-top" >
-					<h1><%= @course.title %></h1>
-					<p><%= @course.address %> - <%= @course.city %></p>			
-				</div> 
-			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="course-video">
-					<iframe src="https://www.youtube.com/embed/<%= @course.video %>" height="auto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>				
+	</div>
+
+
+	<div class="col-xs-12 col-sm-6" style="display: flex">
+		<div class="course">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="course-top" >
+						<h1><%= @course.title %>
+						<%= image_tag @course.subject.category.downcase.split("/")[0], class:"image_tag_2"%></h1> 
+						<p><%= @course.address %> - <%= @course.city %></p>			
+					</div> 
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="course-details">
-					<h4>Course Description</h4>
-					<p><%= @course.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias voluptas laudantium a vero esse, porro voluptate commodi in dolores necessitatibus temporibus deleniti cum quod accusantium numquam id quo magni consectetur!</p>
-					<h4>What will you learn?</h4>
-					<p> <%= @course.learning %></p>
-					<h4>Requirements</h4>
-					<p><%= @course.requirement %></p>
-					<h4>Resources</h4>
-					<div class="row">
-						<div class="col-xs-12 col-md-4">
-							<a href="<%= @course.document_1.url %>">
-								<%= cl_image_tag(@course.document_1, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
-							</a>					
-						</div>
-						<div class="col-xs-12 col-md-4">
-							<a href="<%= @course.document_2.url %>">
-								<%= cl_image_tag(@course.document_2, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
-							</a>					
-						</div>
-						<div class="col-xs-12 col-md-4">
-							<a href="<%= @course.document_3.url %>">
-								<%= cl_image_tag(@course.document_3, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
-							</a>					
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="course-video">
+						<iframe src="https://www.youtube.com/embed/<%= @course.video %>" height="auto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>				
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="course-details">
+						<h4>Course Description</h4>
+						<p><%= @course.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias voluptas laudantium a vero esse, porro voluptate commodi in dolores necessitatibus temporibus deleniti cum quod accusantium numquam id quo magni consectetur!</p>
+						<h4>What will you learn?</h4>
+						<p> <%= @course.learning %></p>
+						<h4>Requirements</h4>
+						<p><%= @course.requirement %></p>
+						<h4>Resources</h4>
+						<div class="row" style="margin-bottom:30px">
+							<div class="col-xs-12 col-md-4">
+								<a href="<%= @course.document_1.url %>">
+									<%= cl_image_tag(@course.document_1, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
+								</a>					
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<a href="<%= @course.document_2.url %>">
+									<%= cl_image_tag(@course.document_2, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
+								</a>					
+							</div>
+							<div class="col-xs-12 col-md-4">
+								<a href="<%= @course.document_3.url %>">
+									<%= cl_image_tag(@course.document_3, :width => 200, :height => 250, :crop => :fill, format: "png")  %>						
+								</a>					
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<%# cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
+
 	</div>
 
-	<%# cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
+	<div class="col-xs-12 col-md-3">
 
-</div>
-
-<div class="col-xs-12 col-md-3">
-	
-	<div class="book-class">
-		<div class="book-menu">
-			<h4>Book a class now!</h4>
-			<h6>Choose your dates:</h6>
-			<div class="dates">
-				<%= simple_form_for [@course, @booking] do |f| %>
-				<div class="col-md-6">
-					<div class="courses-booking-form">
-						<p>Start Date</p>
-						<div class="check_in">
+		<div class="book-class">
+			<div class="book-menu">
+				<h4>Book a class now!</h4>
+				<p>€<span id="course-price"><%= @course.price %></span> per hour</p>
+				<h6>Choose your dates:</h6>
+				<div class="dates">
+					<%= simple_form_for [@course, @booking] do |f| %>
+					<div class="col-md-6">
+						<div class="courses-booking-form">
+							<p>Start Date</p>
+							<div class="check_in">
+								<p>
+									<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<p>End Date</p>
+						<div class="check_out">
 							<p>
-								<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
+								<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
 							</p>
+
 						</div>
 					</div>
-				</div>
-				<div class="col-md-6">
-					<p>End Date</p>
-					<div class="check_out">
-						<p>
-							<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
-						</p>
-					</div>
 
-				</div>
-				<p>€<%= @course.price %> per hour</p>
-
+						<div  id="booking-totals" style="display: none;" >
+							<p>Total Hours Booked: <span id="total-hours"></span> hours</p>
+							<p>Total Price: <span id="total-price"></span> €</p> 
+						</div>
 	<!-- 						<% end %>
 
 
