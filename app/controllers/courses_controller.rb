@@ -12,6 +12,11 @@ class CoursesController < ApplicationController
     # @courses = policy_scope(Course).limit(1)
     @courses = @courses.where.not(latitude: nil, longitude: nil)
 
+    if params[:search]
+      subject_from_search = Subject.where('lower(category) = ?', params[:search].downcase).first
+      params[:subject_id] = subject_from_search.id if subject_from_search
+    end
+
     if params[:subject_id]
       @courses = @courses.where(subject_id: params[:subject_id])
     end
