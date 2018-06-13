@@ -10,16 +10,16 @@
     <h2>You have booked <%= course.title %> for <%= booking.hours %> hours</h2>
 
     <br>
-    <div class="message">
+    <div class="message1">
       <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
+      <div class="message1-name">
       </div>
-      <div class="message-body">
+      <div class="message1-body">
         <p><strong><%= "#{course.user.first_name} #{course.user.last_name}" %></strong>  | <strong><%= course.title %></strong></p>
           <p class="price"><%= booking.hours * course.price %> €  |  <%= course.address %>
         </p>
       </div>
-      <div class="message-body">
+      <div class="message1-body">
         <p><%= booking.start_date %> Date </p>
         <p><%= booking.end_date %> Time</p>
       </div>
