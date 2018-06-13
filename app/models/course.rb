@@ -9,7 +9,9 @@ class Course < ApplicationRecord
   validates :address, presence: true
 
   mount_uploader :photo, PhotoUploader
-  mount_uploader :documents, AttachmentUploader #document uploader in list a new course
+  mount_uploader :document_1, AttachmentUploader #document uploader in list a new course
+  mount_uploader :document_2, AttachmentUploader #document uploader in list a new course
+  mount_uploader :document_3, AttachmentUploader #document uploader in list a new course
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
