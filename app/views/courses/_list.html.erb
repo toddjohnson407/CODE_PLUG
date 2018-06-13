@@ -1,19 +1,25 @@
 <% if @courses.empty? %>
-  <h2>We're sorry, but CODE:PLUG does not currently offer any classes in this language.</h2>
+<h2>We're sorry, but CODE:PLUG does not currently offer any classes in this language.</h2>
 <% else %>
-  <% @courses.each do |course| %>
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <div class="card">
-        <div class="front">
-          <img src="" alt="">
-          <div class="caption">
-           <h2><%=course.title %></h2>
-           <h6><%=course.price%>€    per hour</h6><br>
-           <p><%= course.description[0,230] %>...</p>
-           <%= link_to "", course_path(course) %>
-         </div>
-       </div>
-     </div>
-   </div>
-  <% end %>
+<% @courses.each do |course| %>
+<div class="col-xs-12 col-sm-6 col-md-6">
+
+  <div class="card">
+    <div class="caption-left">
+      <%= cl_image_tag current_user.photo, id: "avatar" %>
+      <p><i class="fas fa-star"></i></p>
+      <p>Ruby</p>
+      <p>JavaScript</p>
+      <br>
+    </div>
+    <div class="caption-rigth">
+      <h2><%=course.title %></h2>
+      <p><%= course.description[0,230] %>...</p>
+      <h6><%=course.price%>€ per hour</h6>    
+      <%= link_to "", course_path(course) %>
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
 <% end %>
