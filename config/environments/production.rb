@@ -1,7 +1,7 @@
 Rails.application.configure do
-  config.action_cable.url = "wss://codeplug0.herokuapp.com/cable"
+  config.action_cable.url = "wss://codeplug.co/cable"
 
-  config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
+  config.action_mailer.default_url_options = { host: "http://codeplug.co" }
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
@@ -49,7 +49,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ 'https://codeplug0.herokuapp.com' ]
+  config.action_cable.allowed_request_origins = [ 'https://codeplug.co' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true

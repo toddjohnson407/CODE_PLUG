@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <%= favicon_link_tag %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CODE:PLUG</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
+    <title>CODE:PLUG - learn how to code, with your personal teacher.</title>
+    <meta name="description" content="THIS IS THE Description">
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="codeplug.co | Learn how to code with your personal teacher" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= image_url('cover.png') %>" />
+    <meta property="og:description" content="THIS IS THE Description" />
+    <meta property="og:site_name" content="Course Plug" />
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= action_cable_meta_tag %>
+
     <%= csrf_meta_tags %>
-  </head>
-  <body>
+</head>
+<body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
 
     <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag "map" %>
     <%= javascript_pack_tag 'application' %>
     <%= yield :after_js %>
-  </body>
+
+    <%= render 'shared/footer' %>
+
+    </body>
+
 </html>

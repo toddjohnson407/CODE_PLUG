@@ -24,7 +24,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.course = @course
-    @hours = @booking.end_date - @booking.start_date
     if @booking.save
       redirect_to bookings_current_index_path, notice: 'You have booked this course.'
     else

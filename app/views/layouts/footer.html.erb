@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CODE:PLUG</title>
+    <title>CODE:PLUG - learn how to code, with your personal teacher.</title>
+    <meta name="description" content="THIS IS THE Description">
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="codeplug.co | Learn how to code with your personal teacher" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= image_url('cover.png') %>" />
+    <meta property="og:description" content="THIS IS THE Description" />
+    <meta property="og:site_name" content="Course Plug" />
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>

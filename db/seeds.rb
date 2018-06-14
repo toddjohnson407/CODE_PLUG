@@ -22,7 +22,7 @@ Subject.create(category: 'Perl')
 Subject.create(category: 'Assembly')
 
 
-20.times do
+2.times do
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.first_name , email: Faker::Internet.email, password:"123456", phone_number: Faker::PhoneNumber.cell_phone)
   puts "student created"
 end
@@ -33,7 +33,7 @@ category = ["Assembly", "Ruby", "JavaScript", "Python", "HTML/CSS", "C++", "Swif
 amount = (10..100).to_a
 num = (1..8).to_a
 
-10.times do
+3.times do
   User.create(location: places[up], current_position: "Fullstack Developer", languages: "JavaScript, Python, and Ruby", teacher: true, description: "I am a fullstack web developer that has a passion for teaching and would be happy to teach anyone how to program.", first_name: Faker::Name.first_name, last_name: Faker::Name.first_name , email: Faker::Internet.email, password:"123456", phone_number: Faker::PhoneNumber.cell_phone)
   up += 1
   puts "teacher created"
