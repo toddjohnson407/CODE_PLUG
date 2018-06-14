@@ -2,18 +2,27 @@
   <h2>We're sorry, but CODE:PLUG does not currently offer any classes in this language.</h2>
 <% else %>
   <% @courses.each do |course| %>
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <div class="card">
-        <div class="front">
-          <img src=<%= !course.photo.url.nil? ? cl_image_tag(course.photo) : 'http://res.cloudinary.com/arthurpfister/image/upload/v1528218508/max-nelson-492729-unsplash.jpg' %>>
-          <div class="caption">
-           <h2><%=course.title %></h2>
-           <h6><%=course.price%>€    per hour</h6><br>
-           <p><%= course.description[0,230] %>...</p>
-           <%= link_to "", course_path(course) %>
-         </div>
-       </div>
-     </div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="lesson-card">
+      <%= link_to '', course_path(course), class: 'lesson-card-link' %>
+
+        <div class="lesson-card-left">
+          <img class="lesson-card-avatar" src=<%= !course.photo.url.nil? ? cl_image_path(course.photo) : 'http://res.cloudinary.com/arthurpfister/image/upload/v1528218508/max-nelson-492729-unsplash.jpg' %>>
+          <p class="lesson-card-teacher"><%= "#{course.user.first_name} #{course.user.last_name.first}." %></p>
+          <p class="lesson-card-rating"><%= '★' * (1..5).to_a.sample %></p>
+        </div>
+
+        <div class="lesson-card-right">
+          <h5 class="lesson-card-title"><%=course.title %></h5>
+          <%= image_tag ApplicationHelper.get_image_name_from_subject(course.subject.category.downcase), class:"lesson-card-badge"%>
+          <p class="lesson-card-address"><%= course.address %></p>
+          <p class="lesson-card-description"><%= course.description[0,120] %>.. <%= link_to '(Read more)','#', style: 'font-size: 13px' %></p>
+          <h6 class="lesson-card-price"><%=course.price%>€/h</h6>
+        </div>
+
+      </div>
    </div>
   <% end %>
 <% end %>
+
+
