@@ -1,0 +1,5 @@
+meta_product_name: "Code_Plug"
+meta_title: "Code_Plug - Learn to code different languages"
+meta_description: "Learn to code"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+
