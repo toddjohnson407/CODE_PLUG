@@ -43,10 +43,10 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const markers = JSON.parse(mapElement.dataset.markers);
   // console.log(markers);
 
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString,
-    maxWidth: 40
-  });
+  // var infowindow = new google.maps.InfoWindow({
+  //   content: contentString,
+  //   maxWidth: 40
+  // });
   map.addMarkers(markers);
   map.markers.forEach(function(marker){
     console.log(marker);
