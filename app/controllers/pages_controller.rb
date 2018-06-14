@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :teacher]
   protect_from_forgery :except => [:user_location]
+  layout 'footer'
 
   def home
     session[:teacher] = false
