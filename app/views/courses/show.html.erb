@@ -27,6 +27,9 @@
 				<p class="break-word"> <i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
 				<p class="break-word"><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
 				<p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+              <div class="talk-teacher-2">
+        <%= link_to "Get in touch", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_2 btn-block" %>
+      </div>
 			</div>
 		</div>
 
@@ -97,11 +100,9 @@
 		</div>
 
     <div class="talk-teacher">
-			<%= link_to "More reviews", user_path(@course.user), class: "button_2" %> </div>
+			<%= link_to "More reviews", user_path(@course.user), class: "button_3 btn-block" %> </div>
 
-			<div class="talk-teacher-2">
-				<%= link_to "Get in touch", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_2" %>
-			</div>
+
 		</div>
 	</div>
 
@@ -203,7 +204,7 @@
   							<p> Hours booked: <span id="total-hours"></span> hours</p>
   							<p>Total price: <span id="total-price"></span> €</p>
   						</div>
-              <%= f.button :submit, class: "button_4" %>
+              <%= f.button :submit, class: "button_4 btn-block" %>
 	<!-- 			<% end %>
 
 
