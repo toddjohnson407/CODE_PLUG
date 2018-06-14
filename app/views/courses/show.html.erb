@@ -40,7 +40,7 @@
 			<h4>Coding languages</h4>
 			<p>   <%= @course.user.languages %> </p>
 		</div>
-    
+
     <div class="feedback">
 		<h4>Teacher feedback</h4>
 		<p>(150 reviews)</p>
@@ -95,7 +95,7 @@
 				</div>
 			</div>
 		</div>
-    
+
     <div class="talk-teacher">
 			<%= link_to "More reviews", user_path(@course.user), class: "button_2" %> </div>
 
@@ -182,7 +182,7 @@
   								<p>Start Date</p>
   								<div class="check_in">
   									<p>
-  										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
+  										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' } %>
   									</p>
   								</div>
   							</div>
