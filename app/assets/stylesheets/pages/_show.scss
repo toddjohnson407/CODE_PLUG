@@ -234,14 +234,14 @@
 }
 
 .talk-teacher {
-	margin-left: 63px;
+	margin-left: 14px;
 	margin-top: 20px;
 }
 
 
 
 .talk-teacher-2 {
-	margin-left: 65px;
+	margin-left: 14px;
 	margin-top: 20px;
 }
 
@@ -358,21 +358,10 @@ h6 {
 		margin-top: 30px;
 		text-align: left;
 		color: #2F80ED;
+		border-bottom: 2px solid #2F80ED;
 		font-weight: bold;
-
-
-	}
-	h6 {	
-		font-size: 20px;
-		line-height: 25px;
-		margin-left: 35px;
-		margin-right: 35px;
-		margin-top: 1em; 
-		margin-bottom: 1em;
-		text-align: left;
-		font-family: helvetica;
-		color: #666;
-		border-bottom: 1px solid #2F80ED
+		margin-left: 20px;
+		margin-right: 20px;
 
 	}
 
@@ -414,7 +403,6 @@ h6 {
 }	
 
 .check_out{
-
 	margin-top: 0px;
 	margin-left: -10px;
 	font-size: 17px; 
@@ -425,12 +413,34 @@ h6 {
 		width:100%;
 	}
 }
-
+#booking-totals {
+	background-color: white;
+	min-height: 90px;
+	margin-left: 13px;
+}
 #booking-totals p:first-child {
-	color: red;
+	color: black;
+	font-size: 20px;
+	line-height: 25px;
+	text-align: center !important;
+	margin-top: 1em; 
+	padding-top: 30px;
+	text-align: left;
+	font-family: helvetica;
+	text-align: left !important;
+
 }
 #booking-totals p:last-child {
-	color: blue;
+	color: black;
+	font-size: 20px;
+	line-height: 25px;
+	text-align: center !important;
+	margin-top: 1em; 
+	margin-bottom: 2em;
+	padding-bottom: 30px;
+	text-align: left;
+	font-family: helvetica;
+	text-align: left !important;
 }
 
 .resources {
@@ -440,5 +450,11 @@ h6 {
 
 .box-shadow {
 	box-shadow: (1px 1px 1px rgba(0,0,0,0.8));
+}
+
+#course-price {
+margin-left: 50px;
+font-size: 20px;
+font-weight: bold;
 }
 
