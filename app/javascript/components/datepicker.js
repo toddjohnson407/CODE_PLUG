@@ -13,7 +13,7 @@ const initDatePicker = function() {
   const startDateinput = document.getElementById("booking_start_date");
   const endDateinput = document.getElementById('booking_end_date');
   const bookingTotals = document.getElementById('booking-totals');
-
+  const bookingHoursInput = document.getElementById('booking_hours')
   if (startDateinput && endDateinput) {
     let startTime, endTime, totalTime
     flatpickr(startDateinput, {
@@ -32,6 +32,7 @@ const initDatePicker = function() {
         endDateinput.disabled = false;
       }
     });
+
     const endDateCalendar =
     flatpickr(endDateinput, {
       enableTime: true,
@@ -39,10 +40,10 @@ const initDatePicker = function() {
       time_24hr: true,
       minuteIncrement: 60,
       onChange: function(_, selectedDate) {
-        console.log(startTime)
+        if (selectedDate === '') return ''
         endTime = parseInt(selectedDate.split(" ")[1].split(":")[0])
-
         totalTime = endTime - startTime
+        bookingHoursInput.value = totalTime
         updateBookingTotals(totalTime)
         bookingTotals.style.display = 'block';
       }
@@ -51,5 +52,4 @@ const initDatePicker = function() {
 };
 
 export { initDatePicker };
-initDatePicker();
 

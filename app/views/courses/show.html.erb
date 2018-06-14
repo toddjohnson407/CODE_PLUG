@@ -40,7 +40,7 @@
 			<h4>Coding languages</h4>
 			<p>   <%= @course.user.languages %> </p>
 		</div>
-
+    
     <div class="feedback">
 		<h4>Teacher feedback</h4>
 		<p>(150 reviews)</p>
@@ -95,7 +95,7 @@
 				</div>
 			</div>
 		</div>
-
+    
     <div class="talk-teacher">
 			<%= link_to "More reviews", user_path(@course.user), class: "button_2" %> </div>
 
@@ -138,17 +138,23 @@
 							<div class="row" style="margin-bottom:30px">
 								<div class="resources">
 								<div class="col-xs-12 col-md-4">
-									<a href="<%= @course.document_1.url %>">
+
+									<a href="<%= @course.document_1.url %>" target="_blank">
+
 										<%= cl_image_tag(@course.document_1, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow") %>
 									</a>
 								</div>
 								<div class="col-xs-12 col-md-4">
-									<a href="<%= @course.document_2.url %>">
+
+									<a href="<%= @course.document_2.url %>" target="_blank">
+
 										<%= cl_image_tag(@course.document_2, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow")  %>
 									</a>
 								</div>
 								<div class="col-xs-12 col-md-4">
-									<a href="<%= @course.document_3.url %>">
+
+									<a href="<%= @course.document_3.url %>" target="_blank">
+
 										<%= cl_image_tag(@course.document_3, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow") %>
 									</a>
 									</div>
@@ -170,32 +176,36 @@
 					<h4>Book a class now!</h4>
 					<div class="dates">
 						<%= simple_form_for [@course, @booking] do |f| %>
-						<div class="col-md-6">
-							<div class="courses-booking-form">
-								<p>Start Date</p>
-								<div class="check_in">
-									<p>
-										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6" style="padding-right: 0px !important">
-							<p>End Date</p>
-							<div class="check_out">
-								<p>
-									<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
-								</p>
 
-							</div>
-						</div>
-					<p id="course-price"> € <span>
-						<%= @course.price %></span> per hour</p>
-						<div  id="booking-totals" style="display: none;" >
-							<p> Hours booked: <span id="total-hours"></span> hours</p>
-							<p>Total price: <span id="total-price"></span> €</p>
-						</div>
-	<!-- 						<% end %>
+  						<div class="col-md-6">
+  							<div class="courses-booking-form">
+  								<p>Start Date</p>
+  								<div class="check_in">
+  									<p>
+  										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
+  									</p>
+  								</div>
+  							</div>
+  						</div>
+  						<div class="col-md-6">
+  							<p>End Date</p>
+  							<div class="check_out">
+  								<p>
+  									<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
+  								</p>
+
+  							</div>
+  						</div>
+              <%= f.input :hours, as: :hidden %>
+  					<p> € <span id="course-price">
+  						<%= @course.price %></span> per hour</p>
+  						<div  id="booking-totals" style="display: none;" >
+  							<p> Hours booked: <span id="total-hours"></span> hours</p>
+  							<p>Total price: <span id="total-price"></span> €</p>
+  						</div>
+              <%= f.button :submit, class: "button_4" %>
+	<!-- 			<% end %>
+
 
 
 									<div id="calendar">
@@ -231,10 +241,6 @@
 									</div>
 								</div> -->
 
-								<% unless @course.user_id == current_user.id %>
-								<%= link_to "Book this Course", new_course_booking_path(@course), class: "button_4", data: { toggle: "modal", target: "#bookingModal" } %>
-								<% end %>
-
 							</div>
 						</div>
 
@@ -261,24 +267,7 @@
 
 </div>
 
-<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Book this Course</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<%= render 'bookings/form', booking: @booking, course: @course  %>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
+
 
 
 <%= content_for :after_js do %>
