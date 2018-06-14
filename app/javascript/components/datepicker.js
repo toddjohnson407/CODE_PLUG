@@ -4,7 +4,9 @@ function updateBookingTotals(time) {
   const totalHours = document.getElementById("total-hours");
   const totalPrice = document.getElementById("total-price");
   const coursePrice = document.getElementById("course-price");
-  const perHour = parseInt(coursePrice.innerHTML);
+  var price = coursePrice.innerHTML;
+  price = price.replace('€', '');
+  const perHour = parseInt(price);
   totalHours.innerHTML = time;
   totalPrice.innerHTML = time * perHour;
 }

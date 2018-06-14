@@ -191,8 +191,8 @@ x								</div>
   							</div>
   						</div>
               <%= f.input :hours, as: :hidden %>
-  					<p> € <span id="course-price">
-  						<%= @course.price %></span> per hour</p>
+  					<p>  <span id="course-price">
+  						€<%= @course.price %></span> per hour</p>
   						<div  id="booking-totals" style="display: none;" >
   							<p> Hours booked: <span id="total-hours"></span> hours</p>
   							<p>Total price: <span id="total-price"></span> €</p>
@@ -265,8 +265,8 @@ x								</div>
 
 
 <%= content_for :after_js do %>
-<%= javascript_tag do %>
-document.app.days();
-<% end %>
+  <%= javascript_tag do %>
+    document.app.days();
+  <% end %>
 <% end %>
 
