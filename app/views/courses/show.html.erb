@@ -26,32 +26,68 @@
 				<h1 class="break-word"><%= @course.user.first_name %> <%= @course.user.last_name %> </h1>
 				<p class="break-word"> <i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
 				<p class="break-word"><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
-				<p><i class="fas fa-star"></i></p>
+				<p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
 			</div>
 		</div>
 
 		<div class="teacher-about-me">
-			<h4 class="break-word">Lalalalal<%=@course.user.current_position %></h4>
+			<h4 class="break-word"><%=@course.user.current_position %></h4>
 			<p><%=@course.user.description %></p>
 		</div>
 
 
 		<div class="teacher-skills">
 			<h4>Coding languages</h4>
-			<p>  teacher was not that good, I had some difficulties understandi <%= @course.user.languages %> </p>
+			<p>   <%= @course.user.languages %> </p>
 		</div>
 
+    <div class="feedback">
+		<h4>Teacher feedback</h4>
+		<p>(150 reviews)</p>
+		<p> Average: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+  </div>
 
-		<div class="feedback">
 
-			<h4>Teacher feedback </h4>
-			<p>(150 reviews)</p> 
-			<p> Average: <i class="fas fa-star"></i></p>
+    <div class="feedback">
+      <div class="review">
+        <div class="review-name">
+          <img class="avatar-small avatar-1" src="https://kitt.lewagon.com/placeholder/users/random">
+          <div class="avatar-tooltip tooltip-1">
+            <h6 style="font-size: 12px font-weight:bolder margin-bottom:2px;">Marta</h1>
+            <p>1 month ago</p>
+          </div>
+        </div>
+        <div class="review-description">
+          <h5>Great teacher!</h5>
+          <p>The teacher was not that good, I had some difficulties understanding it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback">
+      <div class="review">
+        <div class="review-name">
+          <img class="avatar-small avatar-2" src="https://kitt.lewagon.com/placeholder/users/random">
+          <div class="avatar-tooltip tooltip-2">
+            <h6 style="font-size: 12px font-weight:bolder margin-bottom:2px;">Marta</h1>
+            <p>1 month ago</p>
+          </div>
+        </div>
+        <div class="review-description">
+          <h5>Great teacher!</h5>
+          <p>The teacher was not that good, I had some difficulties understanding it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback">
 			<div class="review">
 				<div class="review-name">
-					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
-					<h1>Marta</h1>
-					<p>1 month ago</p>
+					<img class="avatar-small avatar-3" src="https://kitt.lewagon.com/placeholder/users/random">
+          <div class="avatar-tooltip tooltip-3">
+  					<h6 style="font-size: 12px font-weight:bolder margin-bottom:2px;">Marta</h1>
+  					<p>1 month ago</p>
+          </div>
 				</div>
 				<div class="review-description">
 					<h5>Great teacher!</h5>
@@ -60,42 +96,12 @@
 			</div>
 		</div>
 
-		<div class="feedback">
-			<div class="review">
-				<div class="review-name">
-					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
-					<h1>Arthur</h1>
-					<p>1 month ago</p>
-				</div>
-				<div class="review-description">
-					<h5>Great teacher!</h5>
-					<p>The teacher was not that good, I had some difficulties understanding it.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="feedback">
-			<div class="review">
-				<div class="review-name">
-					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
-					<h1>Alex</h1>
-					<p>1 month ago</p>
-				</div>
-				<div class="review-description">
-					<h5>Great teacher!</h5>
-					<p>The teacher was not that good, I had some difficulties understanding it.</p>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="talk-teacher">
-			<%= link_to "More reviews", user_path(@course.user), class: "button_2" %> </div>	
+    <div class="talk-teacher">
+			<%= link_to "More reviews", user_path(@course.user), class: "button_2" %> </div>
 
 			<div class="talk-teacher-2">
-				<%= link_to "Talk to teacher", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_2" %>
-			</div>	
-
+				<%= link_to "Get in touch", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_2" %>
+			</div>
 		</div>
 	</div>
 
@@ -106,16 +112,16 @@
 				<div class="col-xs-12">
 					<div class="course-top" >
 						<h1><%= @course.title %>
-							<%= image_tag ApplicationHelper.get_image_name_from_subject(@course.subject.category.downcase), class:"image_tag_2"%></h1> 
+							<%= image_tag ApplicationHelper.get_image_name_from_subject(@course.subject.category.downcase), class:"image_tag_2"%></h1>
 							<p><%= @course.address %> - <%= @course.city %>	</p>
 								<h6><%= link_to "(View on google maps)", "https://www.google.com/maps/?q=#{@course.latitude},#{@course.longitude}", target: "_blank" %> </h6>
-						</div> 
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="course-video">
-							<iframe src="https://www.youtube.com/embed/<%= @course.video %>" height="auto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>				
+							<iframe src="https://www.youtube.com/embed/<%= @course.video %>" height="auto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>
@@ -123,9 +129,7 @@
 					<div class="col-xs-12">
 						<div class="course-details">
 							<h4>Course Description</h4>
-							<p><%= @course.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias voluptas laudantium a vero esse, porro voluptate commodi in dolores necessitatibus temporibus deleniti cum quod accusantium numquam id quo magni consectetur!
-								ipsum dolor sit amet, consectetur adipisicing elit. Molestias voluptas laudantium a vero esse, porro voluptate commodi in dolores necessitatibus temporibus deleniti cum quod accusantium numquam id quo magni consectetur!
-							ipsum dolor sit amet, consectetur adipisicing elit. Molestias voluptas laudantium a vero esse, porro voluptate commodi in dolores necessitatibus temporibus deleniti cum quod accusantium numquam id quo magni consectetur!</p>
+							<p><%= @course.description %></p>
 							<h4>What will you learn?</h4>
 							<p> <%= @course.learning %></p>
 							<h4>Requirements</h4>
@@ -135,19 +139,19 @@
 								<div class="resources">
 								<div class="col-xs-12 col-md-4">
 									<a href="<%= @course.document_1.url %>">
-										<%= cl_image_tag(@course.document_1, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow") %>						
-									</a>					
+										<%= cl_image_tag(@course.document_1, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow") %>
+									</a>
 								</div>
 								<div class="col-xs-12 col-md-4">
 									<a href="<%= @course.document_2.url %>">
-										<%= cl_image_tag(@course.document_2, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow")  %>						
-									</a>					
+										<%= cl_image_tag(@course.document_2, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow")  %>
+									</a>
 								</div>
 								<div class="col-xs-12 col-md-4">
 									<a href="<%= @course.document_3.url %>">
-										<%= cl_image_tag(@course.document_3, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow") %>						
+										<%= cl_image_tag(@course.document_3, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow") %>
 									</a>
-									</div>					
+									</div>
 								</div>
 							</div>
 						</div>
@@ -176,7 +180,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6" style="padding-right: 0px !important">
 							<p>End Date</p>
 							<div class="check_out">
 								<p>
@@ -189,7 +193,7 @@
 						<%= @course.price %></span> per hour</p>
 						<div  id="booking-totals" style="display: none;" >
 							<p> Hours booked: <span id="total-hours"></span> hours</p>
-							<p>Total price: <span id="total-price"></span> €</p> 
+							<p>Total price: <span id="total-price"></span> €</p>
 						</div>
 	<!-- 						<% end %>
 
