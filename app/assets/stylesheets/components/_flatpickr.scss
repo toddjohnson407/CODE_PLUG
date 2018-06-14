@@ -26,6 +26,11 @@
 label[for="booking_end_date"] {
   display: none;
 }
+
+label[name="booking[start_date]"] {
+  width:108%;
+}
+
 .flatpickr-calendar.open,
 .flatpickr-calendar.inline {
   opacity: 1;
@@ -213,7 +218,7 @@ label[for="booking_end_date"] {
   display: inline-block;
 }
 .numInputWrapper input {
-  width: 100%;
+  width: 103%;
 }
 .numInputWrapper input::-ms-clear {
   display: none;
