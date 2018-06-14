@@ -8,5 +8,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV["REDISCLOUD_URL"] %>
+  url: <%= ENV["REDIS_URL"] %>
   channel_prefix: CODE_PLUG_production
