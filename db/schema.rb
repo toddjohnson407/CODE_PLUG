@@ -123,8 +123,8 @@ ActiveRecord::Schema.define(version: 2018_06_12_172510) do
     t.string "phone_number"
     t.string "location"
     t.string "current_position"
-    t.string "languages"
     t.string "photo"
+    t.string "languages"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
