@@ -25,7 +25,6 @@
 			<div class="user-card-right">
 				<h1 class="break-word"><%= @course.user.first_name %> <%= @course.user.last_name %> </h1>
 				<p class="break-word"> <i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
-				<p class="break-word"><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
 				<p><%= raw '<i class="fas fa-star"></i>' * @course.rate.to_i %></p>
               <div class="talk-teacher-2">
         <%= link_to "Get in touch", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_2 btn-block" %>
