@@ -11,7 +11,7 @@ function sendCurrentLocation (data) {
    credentials: 'same-origin',
    body: JSON.stringify(data)
  })
- .then(response => response.json())
+ //.then(response => response.json())
  .then((data) => {
    console.log(data); // Look at local_names.default
  });
