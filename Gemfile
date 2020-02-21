@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+gem 'faker'
 gem 'attach'
 gem 'pundit'
 gem 'carrierwave', '~> 1.2'
@@ -23,7 +24,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-
+gem 'mime-types'
+gem 'mini_magick'
+gem 'carrierwave-video'
+gem 'carrierwave-video-thumbnailer'
+gem 'carrierwave-ffmpeg'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

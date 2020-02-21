@@ -8,9 +8,14 @@ class CoursesController < ApplicationController
   def index
     # byebug
     @subjects = Subject.all
-     @courses = policy_scope(Course)
+    @courses = policy_scope(Course)
     # @courses = policy_scope(Course).limit(1)
     @courses = @courses.where.not(latitude: nil, longitude: nil)
+
+    if params[:search]
+      subject_from_search = Subject.where('lower(category) = ?', params[:search].downcase).first
+      params[:subject_id] = subject_from_search.id if subject_from_search
+    end
 
     if params[:subject_id]
       @courses = @courses.where(subject_id: params[:subject_id])
@@ -30,6 +35,17 @@ class CoursesController < ApplicationController
       end
     end
 
+    unless current_user.location.nil?
+     coords = current_user.location.split("-")
+     loc = []
+     coords.each do |coord|
+      coord = coord.to_f
+      loc<< coord
+     end
+    end
+
+
+
     # DISTANCE to where?
 
     # if params[:distance]
@@ -42,6 +58,7 @@ class CoursesController < ApplicationController
     #   end
     # end
 
+    @filtered_courses = Course.near(loc, params[:distance].to_i)
 
 
     # @courses = Course.search_by_city_and_address(params[:subject])
@@ -75,13 +92,30 @@ class CoursesController < ApplicationController
 
   def create
     @subject = Subject.find_by(category: params[:course][:subject])
-    @course = Course.new(course_params)
-    @course.subject = @subject
-    @course.user = current_user
+    @video = course_params[:video].split("=").last
+    @course = Course.new(
+      subject_id: @subject.id,
+      video: @video,
+      user: current_user,
+      title: course_params[:title],
+      price: course_params[:price],
+      rate: course_params[:rate],
+      description: course_params[:description],
+      address: course_params[:address],
+      city: course_params[:city],
+      photo: course_params[:photo],
+      learning: course_params[:learning],
+      requirement: course_params[:requirement],
+      vimeo_file: course_params[:vimeo_file],
+      document_1: course_params[:document_1],
+      document_2: course_params[:document_2],
+      document_3: course_params[:document_3]
+    )
 
     if @course.save
       redirect_to course_path(@course)
     else
+      raise
       render :new
     end
   end
@@ -112,6 +146,7 @@ class CoursesController < ApplicationController
 
 
   def course_params
-    params.require(:course).permit(:title, :user_id, :price, :description, :address, :city, :photo, :documents, :requirement, :learning)
+    params.require(:course).permit(:video_url, :video, :vimeo_file, :title, :user_id, :price, :description, :address, :city, :photo, :document_1, :document_1_cache, :requirement, :learning, :subject, :photo_cache, :document_2, :document_2_cache, :document_3, :document_3_cache)
+
   end
 end

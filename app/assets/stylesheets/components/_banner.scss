@@ -1,7 +1,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 90vh !important;
+  height: 70vh !important;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: top;
@@ -10,10 +10,31 @@
   justify-content: center;
   position:relative;
 }
-.banner h1 {
-  font-size: 50px;
+
+.banner-teacher {
+  color: white;
+  text-align: center;
+  height: 81vh !important;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-position: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+}
+
+.banner-teacher h1{
+  font-size: 80px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.banner h1 {
+  font-size: 80px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+
 }
 .banner p {
   font-size: 25px;
@@ -21,6 +42,10 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+.middlesection {
+  height: 200px;
 }
 
 .container h2 {
@@ -35,9 +60,11 @@
 .container p {
   font-size: 18px;
   text-align: left;
-    margin-left: 8px;
 
+  margin-left: 8px;
+  // color: white;
   font-family: "Raleway", "Helvetica", "sans-serif";
+
 }
 
 .container-card {
@@ -76,7 +103,7 @@
   color: white;
   transition: 300ms;
   box-shadow: none;
-  font-size: 26px;
+  font-size: 36px;
   &:focus {
     outline: none;
     box-shadow: none;
@@ -92,5 +119,30 @@
 .searchbutton {
  display:none;
  color: white;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.icon-teacher-page {
+  height:50px;
+  margin-right: 10px;
+}
+.section-title {
+  color: white;
+  font-size: 22px;
+}
+.section-paragraph {
+  color: #EEE;
+}
+
+.search-icon {
+  height: 28px;
+  position: relative;
+  left: 35px;
+  top: -8px;
 }
 

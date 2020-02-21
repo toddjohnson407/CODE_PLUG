@@ -23,6 +23,14 @@
   background: rgba(20,20,20,0.98);
 
 }
+label[for="booking_end_date"] {
+  display: none;
+}
+
+label[name="booking[start_date]"] {
+  width:108%;
+}
+
 .flatpickr-calendar.open,
 .flatpickr-calendar.inline {
   opacity: 1;
@@ -210,7 +218,7 @@
   display: inline-block;
 }
 .numInputWrapper input {
-  width: 100%;
+  width: 103%;
 }
 .numInputWrapper input::-ms-clear {
   display: none;
@@ -671,9 +679,13 @@ span.flatpickr-weekday {
 .flatpickr-time .flatpickr-am-pm:focus {
   background: rgba(109,118,151,0.98);
 }
+.flatpickr-input {
+  font-size: 12px !important;
+}
 .flatpickr-input[readonly] {
   cursor: pointer;
 }
+
 @-webkit-keyframes fpFadeInDown {
   from {
     opacity: 0;

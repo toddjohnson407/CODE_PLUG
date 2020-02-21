@@ -8,7 +8,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'bulma/css/bulma.css';
+@import "bulma/css/bulma.css";
 
 // Your CSS partials
 @import "layouts/index";
@@ -17,4 +17,15 @@
 @import "bookings/index";
 
 
-
+=======
+// General rules
+.container {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.break-word {
+	word-wrap: break-word;
+}
+*:focus {
+  outline: none !important;
+}

@@ -20,19 +20,20 @@
 .container_frase {
 	text-align: center;
 	vertical-align: center;
-	margin-bottom: 10px;
-	margin-top: -30px;
+	// margin-bottom: 10px;
+	// margin-top: -30px;
 
 	h1 {
 
-    font-size: 30px;
-    font-weight: normal;
-    color: white;
-    margin-top: 0px;
-    font-family: helvetica;
+    font-size: 40px;
+    font-weight: bold;
+    color: #25292E;
+    // margin-top: 5px;
+    font-family: "Raleway", "Helvetica", "sans-serif";
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 200px;
 	}
 }
 
@@ -60,7 +61,8 @@
 .container.home p {
   font-family: "Raleway", "Helvetica", "sans-serif";
   margin-right: 50px;
-  font-size: 16px;
+  font-size: 18px;
+  color: black;
 }
 
 .container.home .icon-teacher-page {
@@ -98,6 +100,7 @@ hr {
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+    margin: 20px 0px;
 }
 
 .icon-header {
@@ -118,6 +121,7 @@ hr {
   color: #25292E;
   font-size: 50px;
   font-weight: bold;
+  padding: 20px 0px;
 }
 
 

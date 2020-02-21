@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
+
+
   get 'documents/index'
   get 'documents/new'
   get 'documents/create'
   get 'documents/destroy'
   devise_for :users
-  mount ActionCable.server => '/cable'
+  resources :users, only: [:show]
+
+  # mount ActionCable.server => '/cable'
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :courses do
     resources :bookings
+    resources :reviews
   end
 
   resources :chats, only: [:show, :index, :create] do
@@ -21,4 +26,7 @@ Rails.application.routes.draw do
   get "/bookings/current_index", to: "bookings#current_index"
   get "/teacher", to: "pages#teacher"
   get "/profile", to: "pages#profile"
+
+
+  post "/current_locations", to: "pages#user_location"
 end

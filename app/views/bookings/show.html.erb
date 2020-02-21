@@ -1,5 +1,5 @@
 <body style="background-color: black;">
-  <div class="container" style="height: 700px; margin-left: 80px; color: white;">
+  <div class="container" style="height: 700px; margin-left: 80px; color: white; min-height: calc(100vh - 165px)">
       <% course = Course.find_by(params[:user_id]) %>
   <br>
       <h2>You have booked <%= course.title %> for <%= @booking.hours %> hours

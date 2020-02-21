@@ -1,3 +1,13 @@
+.filter-container {
+  padding: 10px 0;
+}
+
+select#subject_id, select#price, select#distance {
+  height: 33px;
+  min-width: 100px;
+  margin-right: 5px;
+}
+
 .container {
   padding: 10px 0px;
   h3 {
@@ -12,141 +22,242 @@
   padding: 0px;
   margin: 0px;
 }
-.card{
-  position: relative;
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  background:#585959;
-  color: #fff;
-  overflow: hidden;
-  margin-bottom: 30px;
 
-  top: 0;
-  left: 0;
-  width: 100%;
-  // height: 200px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.9);
-}
-
-.card img{
-  position: relative;
-  display: block;
-  min-height: 100%;
-  width: 100%;
-  opacity: 0.7;
-  opacity: 0.3;
+.lesson-card {
+  display: flex;
   height: 215px;
-  display: block;
+  background: white;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 22px 0 rgba(46, 61, 73, 0.2);
+  padding: 15px 20px;
+  .lesson-card-link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .lesson-card-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    width: 25%;
+    margin-right: 10px;
+    .lesson-card-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 75%;
+      margin: 15px 0 10px 0;
+      box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+      transition: all 200ms;
+      &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+      }
+    }
+    .lesson-card-teacher {
+      font-weight: bolder;
+      margin-bottom: 3px;
+    }
+    .lesson-card-rating {
+      color: #FFD100;
+      font-size: 15px;
+    }
+  }
+
+  .lesson-card-right {
+    display: inline-block;
+    float: right;
+    width: 75%;
+    .lesson-card-title {
+      display: inline-block;
+      font-weight: bolder;
+      margin-bottom: 4px;
+      font-size: 22px;
+    }
+    .lesson-card-badge {
+      width: 40px;
+      position: absolute;
+      right: 25px;
+      top: 23px;
+    }
+    .lesson-card-address {
+      font-size: 11px;
+    }
+    .lesson-card-description {
+      font-size: 15px;
+      padding-right: 10px;
+    }
+    .lesson-card-price {
+      text-align: right;
+      font-size: 23px;
+      color: #469AE0;
+      font-weight: bolder;
+    }
+  }
 }
 
-.card .caption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-transform: uppercase;
-  padding: 2em;
+.course-title {
+  font-size: 22px;
+  font-family: "Raleway", "Helvetica", "sans-serif";
 }
 
-.front .caption:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(170, 167, 167, 0) 0%, rgba(170, 167, 167, 0.5) 75%);
-  content: '';
-  opacity: 0;
-  transform: translate3d(0,50%,0);
-  transition: opacity 0.35s, transform 0.35s;
-}
-
-.front:hover .caption:before{
-  opacity: 1;
-  transform: translate3d(0,0,0);
-}
-
-.front h2{
-  word-spacing: -0.15em;
-  font-weight: 400;
-  font-size: 1.4em;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  color: #e5eae8;
-  transition: transform 0.35s, color 0.35s;
-  transform: translate3d(0,-50%,0);
-  text-align: center;
-  word-spacing: 3.0px;
-}
-.front h6{
-  color: rgba(17, 185, 131, 1);
+.course-price {
+  padding-left: 50px;
   font-size: 20px;
-  font-weight: 700;
+  font-family: "Raleway", "Helvetica", "sans-serif";
 }
 
-.front h2 span {
-  font-weight: bold;
-}
 
-.front h2:after{
-  position: absolute;
-  bottom: -10px;
-  left: 70px;
-  right: 70px;
-  height: 2px;
-  // background: #fff;
-  content: '';
-  transition: transform 0.35s;
-  transform: translate3d(-130%,0,0);
-}
 
-.front:hover h2 {
-  color: #fff;
-  -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
-  transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
-}
 
-.front:hover h2:after {
-  transform: translate3d(0,0,0);
-}
 
-h2:before {
-  background-color: transparent;
-}
 
-.front p {
-  letter-spacing: 1.0px;
-  font-size: 71.5%;
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  padding: 2em;
-  width: 100%;
-  opacity: 0;
-  transform: translate3d(0,10px,0);
-  transition: opacity 0.35s, transform 0.35s;
-  text-align: center;
-  word-spacing: 1.0px;
-}
 
-.front:hover p {
-  opacity: 1;
-  transform: translate3d(0,0,0);
-}
 
-.card a {
-  font-size: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+
+
+
+
+// .card{
+//   position: relative;
+//   transition: 0.6s;
+//   transform-style: preserve-3d;
+//   background:#585959;
+//   color: #fff;
+//   overflow: hidden;
+//   margin-bottom: 30px;
+
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   // height: 200px;
+//   text-align: center;
+//   cursor: pointer;
+//   transition: 0.6s;
+//   transform-style: preserve-3d;
+//   box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+// }
+
+// .card img{
+//   position: relative;
+//   display: block;
+//   min-height: 100%;
+//   width: 100%;
+//   opacity: 0.7;
+//   opacity: 0.3;
+//   height: 215px;
+//   display: block;
+// }
+
+// .card .caption {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   text-transform: uppercase;
+//   padding: 2em;
+// }
+
+// .front .caption:before {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(rgba(170, 167, 167, 0) 0%, rgba(170, 167, 167, 0.5) 75%);
+//   content: '';
+//   opacity: 0;
+//   transform: translate3d(0,50%,0);
+//   transition: opacity 0.35s, transform 0.35s;
+// }
+
+// .front:hover .caption:before{
+//   opacity: 1;
+//   transform: translate3d(0,0,0);
+// }
+
+// .front h2{
+//   word-spacing: -0.15em;
+//   font-weight: 400;
+//   font-size: 1.4em;
+//   position: absolute;
+//   top: 50%;
+//   left: 0;
+//   width: 100%;
+//   color: #e5eae8;
+//   transition: transform 0.35s, color 0.35s;
+//   transform: translate3d(0,-50%,0);
+//   text-align: center;
+//   word-spacing: 3.0px;
+// }
+// .front h6{
+//   color: rgba(17, 185, 131, 1);
+//   font-size: 20px;
+//   font-weight: 700;
+// }
+
+// .front h2 span {
+//   font-weight: bold;
+// }
+
+// .front h2:after{
+//   position: absolute;
+//   bottom: -10px;
+//   left: 70px;
+//   right: 70px;
+//   height: 2px;
+//   // background: #fff;
+//   content: '';
+//   transition: transform 0.35s;
+//   transform: translate3d(-130%,0,0);
+// }
+
+// .front:hover h2 {
+//   color: #fff;
+//   -webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+//   transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
+// }
+
+// .front:hover h2:after {
+//   transform: translate3d(0,0,0);
+// }
+
+// h2:before {
+//   background-color: transparent;
+// }
+
+// .front p {
+//   letter-spacing: 1.0px;
+//   font-size: 71.5%;
+//   position: absolute;
+//   bottom: 5px;
+//   left: 0;
+//   padding: 2em;
+//   width: 100%;
+//   opacity: 0;
+//   transform: translate3d(0,10px,0);
+//   transition: opacity 0.35s, transform 0.35s;
+//   text-align: center;
+//   word-spacing: 1.0px;
+// }
+
+// .front:hover p {
+//   opacity: 1;
+//   transform: translate3d(0,0,0);
+// }
+
+// .card a {
+//   font-size: 0;
+//   opacity: 0;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+
+

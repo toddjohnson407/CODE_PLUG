@@ -5,8 +5,8 @@
 </style>
 
 
-<div class="wrapper" style="background-color: #eef0f2">
-	<div class="container">
+<div class="wrapper">
+	<div class="container show-container" style="margin-top: 30px !important">
 		<div class="row">
 
 <!-- <marquee behavior="" direction="up" bgcolor="turquoise"><h1>My A$$ Fuck</h1></marquee>
@@ -17,133 +17,188 @@
 </marquee> -->
 <div class="col-sm-3">
 	<div class="profile-line">
-		<div class="user-card">	
+		<div class="user-card">
 			<div class="user-card-left">
-				<img id="avatar" src="https://kitt.lewagon.com/placeholder/users/random">
-
+				<%= cl_image_tag @course.photo, id: "avatar" %>
 			</div>
-			<div class="user-card-right">
-				<h1> <%= @course.user.first_name %><%= @course.user.last_name %> </h1>
-				<p><i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
-				<p><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
-				<p><i class="fas fa-star"></i></p>
 
+			<div class="user-card-right">
+				<h1 class="break-word"><%= @course.user.first_name %> <%= @course.user.last_name %> </h1>
+				<p class="break-word"> <i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
+				<p><%= raw '<i class="fas fa-star"></i>' * @course.rate.to_i %></p>
+              <div class="talk-teacher-2">
+        <%= link_to "Get in touch", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_2 btn-block" %>
+      </div>
 			</div>
 		</div>
+
 		<div class="teacher-about-me">
-			<h1><%=@course.user.current_position %></h1>
+			<h4 class="break-word"><%=@course.user.current_position %></h4>
 			<p><%=@course.user.description %></p>
 		</div>
 
 
 		<div class="teacher-skills">
-			<h1>Coding languages</h1>
-			<p> <%= @course.user.languages %> </p>
+			<h4>Coding languages</h4>
+			<p>   <%= @course.user.languages %> </p>
 		</div>
 
+    <div class="feedback">
+		<h4>Teacher feedback</h4>
+		<p>(150 reviews)</p>
+		<p> Average: <%= '★' * @course.rate.to_i %></p>
+  </div>
 
-		<div class="feedback">
-			<h1>Teacher feedback (150 reviews) <br> Average: <i class="fas fa-star"></i></h1> 
+
+    <div class="feedback">
+      <div class="review">
+        <div class="review-name">
+          <img class="avatar-small avatar-1" src="https://kitt.lewagon.com/placeholder/users/random">
+          <div class="avatar-tooltip tooltip-1">
+            <h6 style="font-size: 12px font-weight:bolder margin-bottom:2px;">Marta</h1>
+            <p>1 month ago</p>
+          </div>
+        </div>
+        <div class="review-description">
+          <h5>Great teacher!</h5>
+          <p>The teacher was amazing! He was always available to answer my questions and we worked a lot online as well. The materials and the way he structured the lectures were great.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback">
+      <div class="review">
+        <div class="review-name">
+          <img class="avatar-small avatar-2" src="https://kitt.lewagon.com/placeholder/users/random">
+          <div class="avatar-tooltip tooltip-2">
+            <h6 style="font-size: 12px font-weight:bolder margin-bottom:2px;">John</h1>
+            <p>1 month ago</p>
+          </div>
+        </div>
+        <div class="review-description">
+          <h5>Good Experience!</h5>
+          <p>One of the best teachers I have ever had! Always available to help me even outside the schedule time! He provides great materials.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback">
 			<div class="review">
 				<div class="review-name">
-					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
-					<h1>Marta</h1>
-					<p>1 month ago</p>
+					<img class="avatar-small avatar-3" src="https://kitt.lewagon.com/placeholder/users/random">
+          <div class="avatar-tooltip tooltip-3">
+  					<h6 style="font-size: 12px font-weight:bolder margin-bottom:2px;">Peter</h1>
+  					<p>1 month ago</p>
+          </div>
 				</div>
 				<div class="review-description">
-					<p>The teacher was not that good, I had some difficulties understanding it.</p>
+					<h5>Changed my life!</h5>
+					<p>The teacher was really good. I found it really easy to meet his availability and the flexibility he showed was great. I feel like I know a lot about Javascript now!</p>
 				</div>
 			</div>
 		</div>
-		<div class="feedback">
-			<div class="review">
-				<div class="review-name">
-					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
-					<h1>Arthur</h1>
-					<p>1 month ago</p>
-				</div>
-				<div class="review-description">
-					<p>The teacher was not that good, I had some difficulties understanding it.</p>
-				</div>
-			</div>
+
+    <div class="talk-teacher">
+			<%= link_to "More reviews", user_path(@course.user), class: "button_3 btn-block" %> </div>
+
+
 		</div>
-		<div class="feedback">
-			<div class="review">
-				<div class="review-name">
-					<img id="avatar-small" src="https://kitt.lewagon.com/placeholder/users/random">
-					<h1>Alex</h1>
-					<p>1 month ago</p>
-				</div>
-				<div class="review-description">
-					<p>The teacher was not that good, I had some difficulties understanding it.</p>
-				</div>
-			</div>
-			<div class="review">
-			</div>
-		</div>
-		<button type="button" class="btn btn-default">More reviews</button>
 	</div>
-</div>
 
 
-<div class="col-xs-12 col-sm-9">
-	<div class="course">
+	<div class="col-xs-12 col-sm-6" style="display: flex">
+		<div class="course">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="course-top" >
+						<h1><%= @course.title %>
+							<%= image_tag ApplicationHelper.get_image_name_from_subject(@course.subject.category.downcase), class:"image_tag_2"%></h1>
+							<p><%= @course.address %> - <%= @course.city %>	</p>
+								<h6><%= link_to "(View on google maps)", "https://www.google.com/maps/?q=#{@course.latitude},#{@course.longitude}", target: "_blank" %> </h6>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="course-video">
+							<iframe src="https://www.youtube.com/embed/<%= @course.video %>" height="auto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="course-details">
+							<h4>Course Description</h4>
+							<p><%= @course.description %></p>
+							<h4>What will you learn?</h4>
+							<p> <%= @course.learning %></p>
+							<h4>Requirements</h4>
+							<p><%= @course.requirement %></p>
+							<h4>Resources</h4>
+							<div class="row" style="margin-bottom:30px">
+								<div class="resources">
+								<div class="col-xs-12 col-md-4">
 
-		<div class="course-information">
-			<div class="course-description">
-				<div id="description-card">
-					<h1><%= @course.title %> </h1>
-					<h4><%= @course.address %> - <%= @course.city %></h4>
+									<a href="<%= @course.document_1.url %>" target="_blank">
 
-					<div class="video-container">
-						<a onclick="changeVideo('GY7Ps8fqGdc')">Video 1</a>
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-body">
-										<iframe id="iframeYoutube" width="250" src="https://www.youtube.com/embed/GY7Ps8fqGdc" frameborder="0" allowfullscreen ></iframe>
-									</div>
+										<%= cl_image_tag(@course.document_1, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow") %>
+									</a>
 								</div>
+								<div class="col-xs-12 col-md-4">
+
+									<a href="<%= @course.document_2.url %>" target="_blank">
+
+										<%= cl_image_tag(@course.document_2, :width => 200, :height => 250, :crop => :fill, format: "png", class:"box-shadow")  %>
+									</a>
+								</div>
+x								</div>
 							</div>
 						</div>
-						<h3>Course Description</h3>
-						<p><%= @course.description %></p>
-						<h3>What will you learn?</h3>
-						<p> <%= @course.learning %></p>
-						<h3>Requirements</h3>
-						<p> <%= @course.requirement%></p>
 					</div>
 				</div>
 			</div>
 
+			<%# cl_image_tag @course.photo, height: 250, width: 250, crop: :fill %>
+
+		</div>
+
+		<div class="col-xs-12 col-md-3" style="position: sticky; top: 10px;">
 
 			<div class="book-class">
 				<div class="book-menu">
-					<p>Choose your dates:</p>
+					<h4>Book a class now!</h4>
 					<div class="dates">
 						<%= simple_form_for [@course, @booking] do |f| %>
-						<div class="col-md-6">
-							<div class="courses-booking-form">
-								<p>Start Date</p>
-								<div class="check_in">
-									<p>
-										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' }%>
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<p>End Date</p>
-							<div class="check_out">
-								<p>
-									<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
-								</p>
-							</div>	
 
-						</div>
-						<p>€<%= @course.price %> per hour</p>
+  						<div class="col-md-6">
+  							<div class="courses-booking-form">
+  								<p>Start Date</p>
+  								<div class="check_in">
+  									<p>
+  										<%= f.input :start_date, as: :string, id:'booking_start_date', input_html: { class: 'flatpickr-input' } %>
+  									</p>
+  								</div>
+  							</div>
+  						</div>
+  						<div class="col-md-6">
+  							<p>End Date</p>
+  							<div class="check_out">
+  								<p>
+  									<%= f.input :end_date, as: :string, id:"booking_end_date", input_html: { class: 'flatpickr-input' }  %>
+  								</p>
 
-	<!-- 						<% end %>
+  							</div>
+  						</div>
+              <%= f.input :hours, as: :hidden %>
+  					<p>  <span id="course-price">
+  						€<%= @course.price %></span> per hour</p>
+  						<div  id="booking-totals" style="display: none;" >
+  							<p> Hours booked: <span id="total-hours"></span> hours</p>
+  							<p>Total price: <span id="total-price"></span> €</p>
+  						</div>
+              <%= f.button :submit, value="Book now", class: "button_4 btn-block" %>
+	<!-- 			<% end %>
+
 
 
 									<div id="calendar">
@@ -179,33 +234,25 @@
 									</div>
 								</div> -->
 
-								<% unless @course.user_id == current_user.id %>
-								<%= link_to "Book this Course", new_course_booking_path(@course), class: " btn btn-success", data: { toggle: "modal", target: "#bookingModal" } %>
-								<% end %>
-
 							</div>
 						</div>
+
 					</div>
-
 				</div>
-
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 
-</div>
 </div>
 </div>
 
 <div class="text-center" style="margin-top: 6vh;">
 
 	<% if policy(@course).destroy? %>
-	<%= link_to "Remove this Course", @course, class: " btn btn-success", method: :delete, data: { confirm: 'Are you sure?' } %>
+	<%= link_to "Remove this Course", @course, class: "button_2", method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>
 	<% if policy(@course).edit? %>
-	<%= link_to "Edit this Course", edit_course_path(@course), class: " btn btn-success" %>
+	<%= link_to "Edit this Course", edit_course_path(@course), class: "button_2" %>
 	<% end %>
 	<br>
 	<br>
@@ -213,29 +260,12 @@
 
 </div>
 
-<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Book this Course</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<%= render 'bookings/form', booking: @booking, course: @course  %>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
+
 
 
 <%= content_for :after_js do %>
-<%= javascript_tag do %>
-document.app.days();
-<% end %>
+  <%= javascript_tag do %>
+    document.app.days();
+  <% end %>
 <% end %>
 
