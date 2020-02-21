@@ -15,9 +15,9 @@
 
             <%= select_tag "subject_id", options_from_collection_for_select(@subjects, "id", "category", params[:subject_id]) %>
 
-            <%= select_tag "price", options_for_select([["Any", nil], ["0-20€", 1], ["21-50€", 2], ["51€<", 3] ])%>
+            <%= select_tag "price", options_for_select([["Any", nil], ["0-20€", 1], ["21-50€", 2], ["51€<", 3] ], params[:price])%>
 
-            <%= select_tag "distance", options_for_select([["Any", nil], ["0-5km", 5], ["6-10km", 10], ["10km<", 15] ])%>
+            <%= select_tag "distance", options_for_select([["Any", nil], ["0-5km", 5], ["6-10km", 10], ["10km<", 15] ], params[:distance])%>
 
             <%= submit_tag :submit, class: "btn-filter", value:"Search" %>
           <% end %>

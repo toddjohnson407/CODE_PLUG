@@ -8,13 +8,16 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'bulma/css/bulma.css';
+@import "bulma/css/bulma.css";
 
 // Your CSS partials
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+@import "bookings/index";
 
+
+=======
 // General rules
 .container {
 	padding-left: 0 !important;

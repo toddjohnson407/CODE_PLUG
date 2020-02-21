@@ -21,8 +21,8 @@ initDatePicker();
 
 showToolTip();import { showToolTip } from '../components/banner';
 
-import { changeVideo } from '../components/video';
-changeVideo('sdsddasdasd');
+//import { changeVideo } from '../components/video';
+//changeVideo('sdsddasdasd');
 
 import '../components/message-form.js';
 import '../components/messages.js';

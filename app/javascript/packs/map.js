@@ -49,7 +49,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   // });
   map.addMarkers(markers);
   map.markers.forEach(function(marker){
-    console.log(marker);
+    //console.log(marker);
     marker.addListener('click', function() {
       infowindow.open(map, marker);
     });

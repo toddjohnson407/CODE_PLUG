@@ -19,14 +19,13 @@
 	<div class="profile-line">
 		<div class="user-card">
 			<div class="user-card-left">
-				<%= cl_image_tag current_user.photo, id: "avatar" %>
+				<%= cl_image_tag @course.photo, id: "avatar" %>
 			</div>
 
 			<div class="user-card-right">
 				<h1 class="break-word"><%= @course.user.first_name %> <%= @course.user.last_name %> </h1>
 				<p class="break-word"> <i class="fas fa-phone"></i><%= @course.user.phone_number%></p>
-				<p class="break-word"><i class="fas fa-map-marker"></i><%=@course.user.location %></p>
-				<p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+				<p><%= raw '<i class="fas fa-star"></i>' * @course.rate.to_i %></p>
               <div class="talk-teacher-2">
         <%= link_to "Get in touch", chats_path(sender_id: current_user.id, recipient_id: @course.user.id), method: :post, class: "button_2 btn-block" %>
       </div>
@@ -47,7 +46,7 @@
     <div class="feedback">
 		<h4>Teacher feedback</h4>
 		<p>(150 reviews)</p>
-		<p> Average: <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+		<p> Average: <%= '★' * @course.rate.to_i %></p>
   </div>
 
 
@@ -77,7 +76,7 @@
           </div>
         </div>
         <div class="review-description">
-          <h5>Great teacher!</h5>
+          <h5>Good Experience!</h5>
           <p>One of the best teachers I have ever had! Always available to help me even outside the schedule time! He provides great materials.</p>
         </div>
       </div>
@@ -93,7 +92,7 @@
           </div>
 				</div>
 				<div class="review-description">
-					<h5>Good teacher!</h5>
+					<h5>Changed my life!</h5>
 					<p>The teacher was really good. I found it really easy to meet his availability and the flexibility he showed was great. I feel like I know a lot about Javascript now!</p>
 				</div>
 			</div>
@@ -191,8 +190,8 @@ x								</div>
   							</div>
   						</div>
               <%= f.input :hours, as: :hidden %>
-  					<p> € <span id="course-price">
-  						<%= @course.price %></span> per hour</p>
+  					<p>  <span id="course-price">
+  						€<%= @course.price %></span> per hour</p>
   						<div  id="booking-totals" style="display: none;" >
   							<p> Hours booked: <span id="total-hours"></span> hours</p>
   							<p>Total price: <span id="total-price"></span> €</p>
@@ -265,8 +264,8 @@ x								</div>
 
 
 <%= content_for :after_js do %>
-<%= javascript_tag do %>
-document.app.days();
-<% end %>
+  <%= javascript_tag do %>
+    document.app.days();
+  <% end %>
 <% end %>
 

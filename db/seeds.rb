@@ -52,7 +52,7 @@ User.all.each do |user|
       address: "R. Moeda 7, 1200-109 Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1528708271/di60k5pb5npno84vfphr.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"zPHerhks2Vg")
 
 
-    course2 = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "DEEP understanding of DOM, Events & Callbacks, AJAX, JSON and jQuery. Junior Developer Level required.", learning: "specifical problemsolving with JavaScript, custom made depending on what you know and don't know and in which direction you want to go.", title: "JavaScript: Advanced", price: 52,
+    course2 = Course.create!(subject: Subject.all[1], user: user, city: "Lisbon", requirement: "DEEP understanding of DOM, Events & Callbacks, AJAX, JSON and jQuery. Junior Developer Level required.", learning: "specifical problem solving with JavaScript, custom made depending on what you know and don't know and in which direction you want to go.", title: "JavaScript: Advanced", price: 52,
       description: "JavaScript is huge. Like, really big. Like a bus. For elephants. Injected with growth hormones. In this guide we’ll look at some of the numerous more advanced aspects of programming with the language. This will be slow hard problemsolving but it will be absolutely necessary to take your skills to an unpresent level. Welcome to the dark side hehe.",
       address:"1249-079, R. Santos-O-Velho 5, 1200-109 Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1527849962/rawpixel-550994-unsplash.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"HcW5-P2SNec")
 
@@ -101,6 +101,14 @@ User.all.each do |user|
     course11 = Course.create!(subject: Subject.all[2], user: user, city: "Lisbon", requirement: "Basics of Python absolutely necessary to complete this course. Short introduction in general Data Science included.", learning: "Data Science with Python", title: "Python & Data", price: 51,
       description: "Come learn the essentials of simple application and web development.",
       address: "R. de Borges Carneiro 38A, 1200-661 Lisboa")
+
+
+    # # course11 = Course.create!(subject: Subject.all[2], user: user, city: "Lisbon", requirement: "Basics of Python absolutely necessary to complete this course. Short introduction in general Data Science included.", learning: "Data Science with Python", title: "Python & Data", price: 51,
+    # #   description: "Come learn the essentials of simple application and web development.",
+    # #   address: "R. de Borges Carneiro 38A, 1200-661 Lisboa")
+    # course = Course.create!(subject: Subject.all[1], user: User.first, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "JavaScript for Beginners", title: "Javascript Beginners", price: 23,
+    #   description: "Come learn the basics and essentials of JavaScript. This tutorial is an introduction to programming in general, through the medium of JavaScript. We’ll get into interacting with web pages in the Intermediate section. Look at my other courses for more information",
+    #   address: "Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1527849942/goran-ivos-343495-unsplash.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"BEJ3d6IgmVk")
 
 
 

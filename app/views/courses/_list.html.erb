@@ -10,7 +10,7 @@
         <div class="lesson-card-left">
           <img class="lesson-card-avatar" src=<%= !course.photo.url.nil? ? cl_image_path(course.photo) : 'http://res.cloudinary.com/arthurpfister/image/upload/v1528218508/max-nelson-492729-unsplash.jpg' %>>
           <p class="lesson-card-teacher"><%= "#{course.user.first_name} #{course.user.last_name.first}." %></p>
-          <p class="lesson-card-rating"><%= '★' * (1..5).to_a.sample %></p>
+          <p class="lesson-card-rating"><%= '★' * course.rate.to_i %></p>
         </div>
 
         <div class="lesson-card-right">
