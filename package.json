@@ -9,7 +9,7 @@
     "carbon-components": "^8.23.0",
     "flatpickr": "^4.5.0",
     "gmaps": "^0.4.24",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "modal-video": "^2.4.1",
     "pug": "^2.0.3",
     "sweetalert": "^2.1.0",
