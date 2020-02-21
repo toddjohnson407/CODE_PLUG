@@ -61,46 +61,46 @@ User.all.each do |user|
       description: "Come learn the essentials of simple application and web development through JavaScript and all the benefits that comes with it.",
       address:"Rua dos Bacalhoeiros, 1100-135 Lisboa", remote_photo_url:"http://res.cloudinary.com/arthurpfister/image/upload/v1528218488/clark-tibbs-367075-unsplash.jpg", remote_document_1_url: "https://www.evl.uic.edu/luc/bvis546/Essential_Javascript_--_A_Javascript_Tutorial.pdf", remote_document_2_url: "", video:"BEJ3d6IgmVk")
 
-    # 3.times do
+    3.times do
 
-    #   review = Review.create!()
-    # end
+      review = Review.create!()
+    end
 
-    # course4 = Course.create!(subject: Subject.all[0], user: user, city: "Lisbon", requirement: "None", learning: "Ruby Basics", title: "Ruby Step 1", price: 18,
-    #   description: "Ruby is the best way to start working on your programming skills and your computational thinking.",
-    #   address: "R. do Duque 9, 1200-158 Lisboa")
+    course4 = Course.create!(subject: Subject.all[0], user: user, city: "Lisbon", requirement: "None", learning: "Ruby Basics", title: "Ruby Step 1", price: 18,
+      description: "Ruby is the best way to start working on your programming skills and your computational thinking.",
+      address: "R. do Duque 9, 1200-158 Lisboa")
 
-    # course5 = Course.create!(subject: Subject.all[0], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Following your dreams the best way: with Ruby", title: "Programming is Creation", price: 34,
-    #   description: "Programming is creation. Whenever you run a program a little universe is created. Things come to life and interact with each other, according to the rules that you, as their creator, define.
-    #   Imagine you build an application like Twitter. Then, as a developer, in the programming language of your choice, you would say things like “Let there be users! And let there be tweets!”, and once your application starts these things will come into existence. Next you would go ahead and define “Users can create tweets, and they can follow each other”. And from now on, every time new users are created in the little universe that is your application, these users will have the ability to tweet and follow each other.",
-    #   address: "Av. da Liberdade 2, 1250-144 Lisboa")
+    course5 = Course.create!(subject: Subject.all[0], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Following your dreams the best way: with Ruby", title: "Programming is Creation", price: 34,
+      description: "Programming is creation. Whenever you run a program a little universe is created. Things come to life and interact with each other, according to the rules that you, as their creator, define.
+      Imagine you build an application like Twitter. Then, as a developer, in the programming language of your choice, you would say things like “Let there be users! And let there be tweets!”, and once your application starts these things will come into existence. Next you would go ahead and define “Users can create tweets, and they can follow each other”. And from now on, every time new users are created in the little universe that is your application, these users will have the ability to tweet and follow each other.",
+      address: "Av. da Liberdade 2, 1250-144 Lisboa")
 
-    # course6 = Course.create!(subject: Subject.all[0], user: user, city: "Lisbon", requirement: "Deep understanding and knowledge in the Ruby language.", learning: "Advanced Ruby", title: "Advanced Ruby", price: 50,
-    #   description: "Ruby is big. Like, really big. Like a bus. For elephants. Injected with growth hormones. In this guide we’ll look at some of the numerous more advanced aspects of programming with the language.",
-    #   address: "Tv. Santa Teresa 28, 1200-405 Lisboa")
-
-
-    # course7 = Course.create!(subject: Subject.all[3], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Web Development with HTML/CSS", title: "Basics of HTML/CSS", price: 17,
-    #   description: "In this track, you will learn the building blocks of HTML and CSS in order to create and style your first web page from scratch.",
-    #   address: "R. Patrocínio 26-b, 1350-229 Lisboa")
-
-    # course8 = Course.create!(subject: Subject.all[3], user: user, city: "Lisbon", requirement: "Notions of design always a plus.", learning: "attractive, modern, minimalist landing pages that catch attention.", title: "Landing Page: HTML/CSS", price: 37,
-    #   description: "Learn the essentials of making an attractive Landing Page: the most important page of any website to lead the way to success.",
-    #   address:"R. Sousa Martins 7, 1050-009 Lisboa")
-
-    # course9 = Course.create!(subject: Subject.all[3], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Web Dev", title: "Basics Web Development", price: 59,
-    #   description: "Come learn the essentials of simple application and web development.",
-    #   address: "70, R. Pascoal de Melo, 1000-102 Lisboa")
+    course6 = Course.create!(subject: Subject.all[0], user: user, city: "Lisbon", requirement: "Deep understanding and knowledge in the Ruby language.", learning: "Advanced Ruby", title: "Advanced Ruby", price: 50,
+      description: "Ruby is big. Like, really big. Like a bus. For elephants. Injected with growth hormones. In this guide we’ll look at some of the numerous more advanced aspects of programming with the language.",
+      address: "Tv. Santa Teresa 28, 1200-405 Lisboa")
 
 
+    course7 = Course.create!(subject: Subject.all[3], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Web Development with HTML/CSS", title: "Basics of HTML/CSS", price: 17,
+      description: "In this track, you will learn the building blocks of HTML and CSS in order to create and style your first web page from scratch.",
+      address: "R. Patrocínio 26-b, 1350-229 Lisboa")
 
-    # course10 = Course.create!(subject: Subject.all[2], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Python", title: "Basics of Python", price: 27,
-    #   description: "Come learn the essentials of simple application and web development.",
-    #   address: "R. Infantaria 16 30, 1250-096 Lisboa")
+    course8 = Course.create!(subject: Subject.all[3], user: user, city: "Lisbon", requirement: "Notions of design always a plus.", learning: "attractive, modern, minimalist landing pages that catch attention.", title: "Landing Page: HTML/CSS", price: 37,
+      description: "Learn the essentials of making an attractive Landing Page: the most important page of any website to lead the way to success.",
+      address:"R. Sousa Martins 7, 1050-009 Lisboa")
 
-    # course11 = Course.create!(subject: Subject.all[2], user: user, city: "Lisbon", requirement: "Basics of Python absolutely necessary to complete this course. Short introduction in general Data Science included.", learning: "Data Science with Python", title: "Python & Data", price: 51,
-    #   description: "Come learn the essentials of simple application and web development.",
-    #   address: "R. de Borges Carneiro 38A, 1200-661 Lisboa")
+    course9 = Course.create!(subject: Subject.all[3], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Web Dev", title: "Basics Web Development", price: 59,
+      description: "Come learn the essentials of simple application and web development.",
+      address: "70, R. Pascoal de Melo, 1000-102 Lisboa")
+
+
+
+    course10 = Course.create!(subject: Subject.all[2], user: user, city: "Lisbon", requirement: "No previous computer programming experience required.", learning: "Basics of Python", title: "Basics of Python", price: 27,
+      description: "Come learn the essentials of simple application and web development.",
+      address: "R. Infantaria 16 30, 1250-096 Lisboa")
+
+    course11 = Course.create!(subject: Subject.all[2], user: user, city: "Lisbon", requirement: "Basics of Python absolutely necessary to complete this course. Short introduction in general Data Science included.", learning: "Data Science with Python", title: "Python & Data", price: 51,
+      description: "Come learn the essentials of simple application and web development.",
+      address: "R. de Borges Carneiro 38A, 1200-661 Lisboa")
 
 
 
